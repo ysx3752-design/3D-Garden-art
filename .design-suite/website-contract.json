@@ -1,0 +1,205 @@
+{
+  "state": "sector-contract-ready",
+  "sector": "general",
+  "delivery_adapter": "static-export",
+  "delivery_format": "single-html",
+  "export_mode": "single-file",
+  "asset_policy": "inline-base64",
+  "data_source": "static",
+  "network_dependencies": [],
+  "navigation_mode": "same-document",
+  "source_brief": {
+    "path": ".design-suite/source-brief.json",
+    "preserved": true,
+    "unresolved": [
+      "园林测绘、面积、年代、票价、开放时间等事实未由用户提供，页面不作陈述"
+    ]
+  },
+  "deliverable": "website",
+  "page_context": "website",
+  "design_target": "web",
+  "page": {
+    "product_domain": "cultural-heritage-garden",
+    "domain_overlay": "museum-art-gallery",
+    "domain_requirements": [
+      "机构身份、责任主体和开放信息可核验",
+      "展览、馆藏、艺术家/作品名称、年代与来源",
+      "图片版权、授权范围和媒体 provenance",
+      "参观、预约、购票、导览或继续阅读去向",
+      "空状态、闭馆/售罄、展览结束和访问失败的恢复路径"
+    ],
+    "style_family": "chinese-ink-editorial",
+    "style_label": "国风",
+    "style_status": "pilot",
+    "style_profile_id": "chinese-ink-editorial",
+    "product_scope": "not-applicable",
+    "page_task": "editorial-content",
+    "content_archetype": null,
+    "audience": "general-user",
+    "primary_action": "在浏览器中环视江南水乡平地园林 3D 场景，并按天气与时辰体验不同氛围",
+    "trust_strategy": "editorial-authority",
+    "media_strategy": "editorial-illustration",
+    "motion_level": "moderate",
+    "content_density": "low",
+    "locale": "zh-CN",
+    "composition_mode": null
+  },
+  "media": {
+    "generation_mode": "disabled",
+    "media_required": false,
+    "provider": null,
+    "supplied_assets": [],
+    "generated_assets": [],
+    "missing_assets": [],
+    "runtime_status": "not-needed"
+  },
+  "facts": {
+    "supplied": [
+      {
+        "field": "organization_name",
+        "value": "江南水乡 · 园林生态漫境（页面标题，见 src/index.html）",
+        "source": "src/index.html <title> 与 <h1>"
+      }
+    ],
+    "unresolved": [
+      "services",
+      "locations",
+      "dates",
+      "pricing",
+      "contacts",
+      "customers",
+      "metrics",
+      "credentials",
+      "availability"
+    ],
+    "creative_additions": [
+      {
+        "field": "scene_visualization",
+        "value": "程序化低多边形江南水乡园林场景（Three.js 几何体 + Canvas 动态纹理），风格化概念呈现，非测绘还原",
+        "label": "concept decision"
+      },
+      {
+        "field": "garden_motifs",
+        "value": "题材取自拙政园与狮子林的公共形象性元素（荷池水阁、香洲石舫、波形水廊、叠石奇峰），仅作风格化重构，不构成测绘或史实陈述",
+        "label": "concept decision"
+      },
+      {
+        "field": "weather_time_system",
+        "value": "5 种天气 × 4 个时辰的虚拟氛围切换与 HUD 读数",
+        "label": "concept decision"
+      }
+    ]
+  },
+  "design": {
+    "thesis": "首屏以南岸向北眺望的平地基底全景建立对象关系（前景大湖水榭、中景多座殿阁、后景后园平地林木与院墙），纸墨留白的中文编辑式界面承载单一主行动与天气/时辰控件，用户在环视中理解同一片平地园林在不同天光下的差异。",
+    "terrain_policy": {
+      "elevation": "none",
+      "baseline_y": 0,
+      "statement": "场景不生成任何高地形：无山体、无台地、无坡地、无远景山峦；建筑、院墙、植被、假山叠石、水系与船只全部坐落在 y=0 平地标高，不悬空、不移位。"
+    },
+    "composition": {
+      "catalog": null,
+      "mode": null,
+      "path": null,
+      "section_contract_loaded": false
+    },
+    "first_viewport": "平地基底的园林全景 3D 场景（前景开阔主池、中景多座殿阁、后景后园林木与院墙）+ 左上短标题与单一主行动 + 右上角 HUD 天气/时辰读数，并提示可拖拽环视",
+    "sections": [
+      {
+        "id": "hero-scene",
+        "purpose": "打开即看到可辨识的江南园林全景并知道可以环视",
+        "proof": "程序化 3D 场景 + 加载进度",
+        "layout": "全幅画布 + 纸边细框 + 左上标题块",
+        "media": "WebGL 场景（代码生成，无外部媒体）",
+        "states": ["loading", "ready", "webgl-unavailable"]
+      },
+      {
+        "id": "hud-climate",
+        "purpose": "查询当前天气与虚拟时辰，并切换 5 种天气与 4 个时辰",
+        "proof": "天气图标+中文天气、HH:mm、温度、日期计算值",
+        "layout": "右上角固定卡片，移动端缩小并可折叠",
+        "media": "内联 SVG 图标（project-inline-glyph-family）",
+        "states": ["expanded", "collapsed", "transitioning"]
+      },
+      {
+        "id": "fact-boundary",
+        "purpose": "说明本页为风格化概念演示，不提供真实开放信息与票价，也不作高地形假设",
+        "proof": "文字说明（无可核验事实时保持 unresolved）",
+        "layout": "HUD 折叠面板内的说明区",
+        "media": "none",
+        "states": ["collapsed", "expanded"]
+      }
+    ],
+    "tokens": {
+      "paper": "#efe7d8",
+      "paper_light": "#f7f2e8",
+      "mist_grey": "#c9c3b6",
+      "ink": "#22201d",
+      "ink_soft": "#4a4640",
+      "muted_tea_green": "#6f8467",
+      "bamboo_green": "#5d7a56",
+      "faded_blue": "#7d93a0",
+      "cinnabar": "#9e2f28",
+      "container_max_width_px": 1180,
+      "gutter_px": { "desktop": [24, 80], "mobile": [15, 24] },
+      "body_px": [16, 17],
+      "supporting_px": [11, 13],
+      "display_px": { "desktop": [44, 104], "mobile": [34, 58] },
+      "line_height": { "display": [1.04, 1.15], "body": [1.55, 1.7] },
+      "card_radius_px": [0, 8],
+      "control_radius_px": [0, 8],
+      "border_px": [0, 1],
+      "button_height_px": [40, 48],
+      "button_font_px": [13, 16],
+      "section_padding_y_px": [86, 150],
+      "motion": {
+        "entrance_ms": [200, 700],
+        "state_ms": [200, 300],
+        "weather_transition_ms": [800, 1200],
+        "easing": "ease-out",
+        "reduced_motion": "instant settled state with no non-essential animation"
+      },
+      "responsive_breakpoints_px": [380, 800]
+    },
+    "avoid": [
+      "任何高地形：山体、台地、坡地、崖壁与远景山峦块面",
+      "大面积朱砂或红金装饰",
+      "用竖排或手写体承载正文、数字与控件标签",
+      "把纸张纹理铺成主要信息层",
+      "页面级横向溢出",
+      "任何外部网络资源（字体、脚本、图片、CDN 运行时依赖）",
+      "把程序化场景当作测绘级真实还原"
+    ]
+  },
+  "responsive": {
+    "mobile_layout": "required",
+    "viewport_matrix": ["320x568", "390x844", "768x1024", "1440x1000", "1920x1080", "2560x1080"],
+    "container_invariants": [
+      "document.scrollWidth 不超过 viewport 宽度，无页面级横向溢出",
+      "HUD 宽度不超过视口宽度减去 24px 边距",
+      "320px 下 HUD 折叠为状态摘要，展开后不超过视口",
+      "canvas 始终为视口尺寸，不因 DPR 上限变化产生溢出"
+    ],
+    "geometry_evidence": ".design-suite/layout-geometry.json"
+  },
+  "accessibility": {
+    "target": "WCAG 2.1 AA 适用项（对比度、键盘可达、可见焦点、reduced motion）",
+    "keyboard": "Tab 顺序：画布（可聚焦）→ HUD 折叠按钮 → 天气组 → 时辰组 → 关于本页；方向键切换分组内选项，Enter/Space 激活；画布聚焦时方向键环绕、+/- 缩放",
+    "focus": "所有可交互元素使用 focus-visible 2px 朱砂色轮廓，与纸面底色对比度不低于 3:1",
+    "reduced_motion": "prefers-reduced-motion: reduce 时关闭水面波纹、粒子与相机缓动，天气/时辰切换直接呈现稳定状态"
+  },
+  "downstream_capabilities": [
+    {
+      "capability": "motion-recipes/animation-systems",
+      "responsibility": "定义克制、可访问且可维护的页面动效（过渡时长与 reduced-motion 回退）"
+    },
+    {
+      "capability": "webgl-3d/threejs",
+      "responsibility": "实现 Three.js 场景图、透视相机、OrbitControls、渲染循环与 resize/DPR 性能预算"
+    },
+    {
+      "capability": "webgl-3d/webgl-3d-object",
+      "responsibility": "提供 PBR 材质（MeshStandardMaterial）、主光/环境光/轮廓光、阴影贴图上限、dispose 与 reduced-motion 基线"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+127.0.0.1 - - [06/Nov/2026 20:50:14] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2026 20:50:14] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2026 20:50:14] "GET /three.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2026 20:50:14] "GET /OrbitControls.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2026 20:50:14] "GET /app.js HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55307)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 56297)
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 1342, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 415, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 1342, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+----------------------------------------
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\http\server.py", line 415, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\APP2\DuMate\Data\lightsandbox\python\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+----------------------------------------

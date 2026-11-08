@@ -1,0 +1,104 @@
+{
+  "evidence_type": "website-browser-evidence/v1",
+  "generator": "capture-website-browser-evidence.mjs",
+  "kind": "website",
+  "served_url": "http://127.0.0.1:8791/index.html",
+  "captured_at": "2026-11-07T04:07:27.050Z",
+  "browser": "chrome.exe",
+  "build_sha256": "68480a7d489b31c9d7beae360b4bb195812708d194a62f03e60ed357c2d6d662",
+  "contract_sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
+  "main_selector": "main",
+  "checks": {
+    "main_task": "passed",
+    "console": "passed",
+    "resources": "passed",
+    "keyboard": "passed",
+    "responsive": "passed",
+    "states": "passed"
+  },
+  "viewports": [
+    {
+      "width": 320,
+      "height": 568,
+      "ready_state": "complete",
+      "client_width": 320,
+      "scroll_width": 320,
+      "main_visible": true,
+      "body_text_length": 82,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "ready_state": "complete",
+      "client_width": 390,
+      "scroll_width": 390,
+      "main_visible": true,
+      "body_text_length": 82,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "ready_state": "complete",
+      "client_width": 768,
+      "scroll_width": 768,
+      "main_visible": true,
+      "body_text_length": 82,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "ready_state": "complete",
+      "client_width": 1440,
+      "scroll_width": 1440,
+      "main_visible": true,
+      "body_text_length": 202,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "ready_state": "complete",
+      "client_width": 1920,
+      "scroll_width": 1920,
+      "main_visible": true,
+      "body_text_length": 198,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    },
+    {
+      "width": 2560,
+      "height": 1080,
+      "ready_state": "complete",
+      "client_width": 2560,
+      "scroll_width": 2560,
+      "main_visible": true,
+      "body_text_length": 202,
+      "failed_images": [],
+      "failed_resources": [],
+      "fonts_status": "loaded",
+      "error_count": 0
+    }
+  ],
+  "keyboard_focus": {
+    "tag": "canvas",
+    "visible": true,
+    "body_focused": false
+  }
+}

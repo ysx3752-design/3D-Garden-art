@@ -1,0 +1,34 @@
+[
+  {
+    "wall": "S-wall z=20",
+    "crossingCount": 0,
+    "crossing": [],
+    "insideOnlyCount": 2,
+    "outsideOnlyCount": 0,
+    "outsideOnly": []
+  },
+  {
+    "wall": "N-wall z=-32",
+    "crossingCount": 0,
+    "crossing": [],
+    "insideOnlyCount": 2,
+    "outsideOnlyCount": 0,
+    "outsideOnly": []
+  },
+  {
+    "wall": "W-wall x=-38",
+    "crossingCount": 0,
+    "crossing": [],
+    "insideOnlyCount": 0,
+    "outsideOnlyCount": 0,
+    "outsideOnly": []
+  },
+  {
+    "wall": "E-wall x=38",
+    "crossingCount": 0,
+    "crossing": [],
+    "insideOnlyCount": 2,
+    "outsideOnlyCount": 0,
+    "outsideOnly": []
+  }
+]

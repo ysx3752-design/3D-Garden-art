@@ -1,0 +1,359 @@
+{
+  "schema": "design-suite-layout-geometry/v1",
+  "artifact_path": "index.html",
+  "captured_at": "2026-11-06T15:26:25.908Z",
+  "url": "http://127.0.0.1:8767/index.html",
+  "required_viewports": [
+    {
+      "id": "vp-320",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "id": "vp-390",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "vp-768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "id": "vp-1440",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "id": "vp-1920",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "vp-2560",
+      "width": 2560,
+      "height": 1080
+    }
+  ],
+  "probe_invariants": [
+    {
+      "probe": "canvas",
+      "viewports": [
+        "vp-320",
+        "vp-390",
+        "vp-768",
+        "vp-1440",
+        "vp-1920",
+        "vp-2560"
+      ],
+      "max_shrink_px": 1,
+      "min_width": 300
+    },
+    {
+      "probe": "hud",
+      "viewports": [
+        "vp-320",
+        "vp-390",
+        "vp-768",
+        "vp-1440",
+        "vp-1920",
+        "vp-2560"
+      ],
+      "max_shrink_px": 8,
+      "min_width": 200,
+      "max_width": 400
+    },
+    {
+      "probe": "title",
+      "viewports": [
+        "vp-320",
+        "vp-390",
+        "vp-768",
+        "vp-1440",
+        "vp-1920",
+        "vp-2560"
+      ],
+      "max_shrink_px": 1,
+      "min_width": 150,
+      "max_width": 440
+    }
+  ],
+  "viewports": [
+    {
+      "id": "vp-320",
+      "width": 320,
+      "height": 568,
+      "client_width": 320,
+      "scroll_width": 320,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 320,
+          "top": 0,
+          "bottom": 568,
+          "width": 320,
+          "height": 568
+        },
+        "hud": {
+          "left": 12,
+          "right": 308,
+          "top": 12.48,
+          "bottom": 117.48,
+          "width": 296,
+          "height": 105
+        },
+        "title": {
+          "left": 14,
+          "right": 212.39,
+          "top": 420.5,
+          "bottom": 514,
+          "width": 198.39,
+          "height": 93.5
+        },
+        "frame": {
+          "left": 8,
+          "right": 312,
+          "top": 8,
+          "bottom": 560,
+          "width": 304,
+          "height": 552
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    },
+    {
+      "id": "vp-390",
+      "width": 390,
+      "height": 844,
+      "client_width": 390,
+      "scroll_width": 390,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "bottom": 844,
+          "width": 390,
+          "height": 844
+        },
+        "hud": {
+          "left": 58,
+          "right": 378,
+          "top": 18.56,
+          "bottom": 125.56,
+          "width": 320,
+          "height": 107
+        },
+        "title": {
+          "left": 16,
+          "right": 251.03,
+          "top": 709.89,
+          "bottom": 782,
+          "width": 235.03,
+          "height": 72.11
+        },
+        "frame": {
+          "left": 8,
+          "right": 382,
+          "top": 8,
+          "bottom": 836,
+          "width": 374,
+          "height": 828
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    },
+    {
+      "id": "vp-768",
+      "width": 768,
+      "height": 1024,
+      "client_width": 768,
+      "scroll_width": 768,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 768,
+          "top": 0,
+          "bottom": 1024,
+          "width": 768,
+          "height": 1024
+        },
+        "hud": {
+          "left": 429.58,
+          "right": 749.58,
+          "top": 22.52,
+          "bottom": 129.52,
+          "width": 320,
+          "height": 107
+        },
+        "title": {
+          "left": 16,
+          "right": 307.61,
+          "top": 883.61,
+          "bottom": 962,
+          "width": 291.61,
+          "height": 78.39
+        },
+        "frame": {
+          "left": 8,
+          "right": 760,
+          "top": 8,
+          "bottom": 1016,
+          "width": 752,
+          "height": 1008
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    },
+    {
+      "id": "vp-1440",
+      "width": 1440,
+      "height": 1000,
+      "client_width": 1440,
+      "scroll_width": 1440,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 1440,
+          "top": 0,
+          "bottom": 1000,
+          "width": 1440,
+          "height": 1000
+        },
+        "hud": {
+          "left": 1085.45,
+          "right": 1405.45,
+          "top": 22,
+          "bottom": 133.59,
+          "width": 320,
+          "height": 111.59
+        },
+        "title": {
+          "left": 57.59,
+          "right": 487.59,
+          "top": 60,
+          "bottom": 335.81,
+          "width": 430,
+          "height": 275.81
+        },
+        "frame": {
+          "left": 14,
+          "right": 1426,
+          "top": 14,
+          "bottom": 986,
+          "width": 1412,
+          "height": 972
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    },
+    {
+      "id": "vp-1920",
+      "width": 1920,
+      "height": 1080,
+      "client_width": 1920,
+      "scroll_width": 1920,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 1920,
+          "top": 0,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "hud": {
+          "left": 1558,
+          "right": 1878,
+          "top": 23.75,
+          "bottom": 135.34,
+          "width": 320,
+          "height": 111.59
+        },
+        "title": {
+          "left": 64,
+          "right": 494,
+          "top": 64,
+          "bottom": 369,
+          "width": 430,
+          "height": 305
+        },
+        "frame": {
+          "left": 14,
+          "right": 1906,
+          "top": 14,
+          "bottom": 1066,
+          "width": 1892,
+          "height": 1052
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    },
+    {
+      "id": "vp-2560",
+      "width": 2560,
+      "height": 1080,
+      "client_width": 2560,
+      "scroll_width": 2560,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "image_count": 0,
+      "loaded_images": 0,
+      "probes": {
+        "canvas": {
+          "left": 0,
+          "right": 2560,
+          "top": 0,
+          "bottom": 1080,
+          "width": 2560,
+          "height": 1080
+        },
+        "hud": {
+          "left": 2198,
+          "right": 2518,
+          "top": 23.75,
+          "bottom": 135.34,
+          "width": 320,
+          "height": 111.59
+        },
+        "title": {
+          "left": 64,
+          "right": 494,
+          "top": 64,
+          "bottom": 369,
+          "width": 430,
+          "height": 305
+        },
+        "frame": {
+          "left": 14,
+          "right": 2546,
+          "top": 14,
+          "bottom": 1066,
+          "width": 2532,
+          "height": 1052
+        }
+      },
+      "note": "measured from the final single-file artifact served over http; loader hidden: false; hud collapsed: true; clock 06:20 晴 17°"
+    }
+  ]
+}

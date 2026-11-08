@@ -1,0 +1,844 @@
+{
+  "summary": {
+    "S-wall(z=20)": {
+      "total": 34,
+      "covered": 34,
+      "missed": []
+    },
+    "N-wall(z=-32)": {
+      "total": 37,
+      "covered": 37,
+      "missed": []
+    },
+    "W-wall(x=-38)": {
+      "total": 25,
+      "covered": 25,
+      "missed": []
+    },
+    "E-wall(x=38)": {
+      "total": 25,
+      "covered": 25,
+      "missed": []
+    }
+  },
+  "checks": [
+    {
+      "dir": "S-wall(z=20)",
+      "p": -36,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -34,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -32,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -30,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -28,
+      "firstZ": 26.46,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -26,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -24,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -22,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -20,
+      "firstZ": 20.32,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -18,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -16,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -14,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -12,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -10,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -8,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -6,
+      "firstZ": 23.9,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -4,
+      "firstZ": 23.9,
+      "onWall": false,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": -2,
+      "firstZ": -4.21,
+      "onWall": false,
+      "inGate": false,
+      "door": true
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 0,
+      "firstZ": 30.47,
+      "onWall": false,
+      "inGate": false,
+      "door": true
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 2,
+      "firstZ": -4.21,
+      "onWall": false,
+      "inGate": false,
+      "door": true
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 4,
+      "firstZ": 23.9,
+      "onWall": false,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 6,
+      "firstZ": 23.9,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 8,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 10,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 12,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 14,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 16,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 18,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 20,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 22,
+      "firstZ": 20.32,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 24,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 26,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 28,
+      "firstZ": 26.46,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 30,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 32,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 34,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "S-wall(z=20)",
+      "p": 36,
+      "firstZ": 20.25,
+      "onWall": true,
+      "inGate": true,
+      "door": false
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -36,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -34,
+      "firstZ": -38.42,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -32,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -30,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -28,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -26,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -24,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -22,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -20,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -18,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -16,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -14,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -12,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -10,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -8,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -6,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -4,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": -2,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 0,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 2,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 4,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 6,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 8,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 10,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 12,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 14,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 16,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 18,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 20,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 22,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 24,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 26,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 28,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 30,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 32,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 34,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "N-wall(z=-32)",
+      "p": 36,
+      "firstZ": -32.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -30,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -28,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -26,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -24,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -22,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -20,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -18,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -16,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -14,
+      "firstX": -38.8,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -12,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -10,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -8,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -6,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -4,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": -2,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 0,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 2,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 4,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 6,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 8,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 10,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 12,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 14,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 16,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "W-wall(x=-38)",
+      "p": 18,
+      "firstX": -38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -30,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -28,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -26,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -24,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -22,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -20,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -18,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -16,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -14,
+      "firstX": 38.8,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -12,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -10,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -8,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -6,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -4,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": -2,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 0,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 2,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 4,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 6,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 8,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 10,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 12,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 14,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 16,
+      "firstX": 38.25,
+      "onWall": true
+    },
+    {
+      "dir": "E-wall(x=38)",
+      "p": 18,
+      "firstX": 38.25,
+      "onWall": true
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "schema_version": "1.0.0",
+  "state": "compiled-route-contract",
+  "cache_key": "chinese-ink-editorial:1.0.0:b4f83a697107fff04c0393c3f14ef271a7704d38fe7384bec824802d4643c810:-:chinese-ink-editorial-ancient-culture:302827671d52edbd519b2029df04e70adfae533bb6d13d45bfd3795a28215e79:76d344dc16670b7c551dd92933110c7c272d9605524b7eae6877203be5bcc358",
+  "source_route": {
+    "path": ".design-suite/route.json",
+    "sha256": "5aec9e6faba3bd44456a701fbdb7f1a9b52076d5a2ca175110acdd762c7bc98d",
+    "state": "route-ready"
+  },
+  "profile": {
+    "id": "chinese-ink-editorial",
+    "label": "国风",
+    "status": "pilot",
+    "path": "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/presets/chinese-ink-editorial/preset.json",
+    "runtime_manifest": {
+      "path": null,
+      "sha256": null
+    },
+    "prompt": {
+      "variant_id": null,
+      "path": "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/presets/chinese-ink-editorial/PROMPT.md",
+      "sha256": "76d344dc16670b7c551dd92933110c7c272d9605524b7eae6877203be5bcc358"
+    },
+    "visual_contract": {
+      "intent": {
+        "design_thesis": "让文化语境与真实对象先建立阅读关系，再通过克制的章节节奏引导用户理解、选择和行动。",
+        "tone": [
+          "含蓄",
+          "清雅",
+          "有出处",
+          "从容",
+          "可读"
+        ],
+        "emotional_goal": "让用户感到内容有文化气质但不故作古意，愿意继续阅读并完成浏览、咨询或购买。",
+        "differentiation": "国风来自纸、墨、留白、中文排版和对象叙事的关系，不来自龙凤、宫墙、书法贴图或泛化的红金模板。"
+      },
+      "visual_language": {
+        "color": [
+          "以暖纸张、灰褐、墨黑建立材料层级；项目可选择低饱和茶绿、竹青、褪色青蓝或旧金作为辅助语义色，避免把国风默认处理成苍白蓝灰。",
+          "朱砂或印泥色只承担印章、分隔、选中态和单一主要行动，不铺满背景，也不与高饱和渐变叠加。",
+          "正文和说明文字必须满足对比度要求；纸张纹理只能作为低对比背景，不能降低文字可读性。"
+        ],
+        "typography": [
+          "标题可使用已授权的现代宋体或书卷感衬线；正文优先清晰的本地化无衬线或宋体，不能依赖未授权字体。",
+          "使用短标题、节奏化段落、少量竖排标签和印章式短标记；正文不使用竖排或手写体承载关键事实。",
+          "字距默认为 0，中文正文不通过负字距制造古意；显示字号按断点离散收拢。"
+        ],
+        "spacing": [
+          "章节之间保留宽松但有内容锚点的留白，留白必须服务阅读分组，不能掩盖缺失的事实或行动。",
+          "桌面使用宽内容车道与细分隔线，移动端按内容顺序重排并重新计算上下间距，不等比缩小桌面构图。"
+        ],
+        "layout": [
+          "首页首屏使用宽幅对象媒体与短标题/说明/行动组合，后续以章节 band 交替安排图文关系。",
+          "左图右文、右图左文、全幅静物和局部纸墨环境可以轮换；文化叙事首屏可使用带纸边的长卷式媒体，并以远景、中景、前景叠层建立空间深度，但不得把所有章节复制为同一种卡片。",
+          "导航低高度、细分隔线、宽松间距；结尾设置清晰收束和去向明确的行动区。需要长卷画框变体时，首屏采用暖纸画布包围一幅中央宽幅画面，并让前景人物/器物沿画面下沿形成叠层。"
+        ],
+        "shape": [
+          "优先无框、细线和稳定矩形；卡片和控件圆角保持克制，通常不超过 8px。",
+          "印章、纸边和墨迹只作为局部语义标记，不把装饰纹样扩展成整页噪声。",
+          "阴影只用于表达真实层叠或媒体深度，纸张层级优先使用色差、分隔线和留白。"
+        ],
+        "imagery": [
+          "真实产品、茶具、人物或场景摄影优先；水墨山水、远山、荷叶、竹影、飞鸟和长卷式前中后景媒体只能使用原创或有权素材。",
+          "缺少真实媒体时可用 gpt-image-2 生成概念媒体，必须记录 generated-concept provenance，不能承担商品或文化事实证明。",
+          "媒体定义稳定比例、焦点、移动端裁切、安全区、替代内容和失败回退；不要用参考截图或整页长图当作素材。"
+        ],
+        "iconography": [
+          "导航、搜索、返回、购买和播放使用熟悉图标并配可访问名称；印章和篆刻符号不替代操作标签。",
+          "不为装饰大量引入图标，也不复制参考项目的 glyph、印记或品牌符号。"
+        ],
+        "motion": [
+          "默认静态或 restrained motion；只使用轻微滚动显现、章节锚点和低幅视差，并提供 reduced-motion 回退。",
+          "动效不得制造水墨扩散遮挡正文、延迟 CTA 或伪装加载状态；所有媒体和错误状态在无动效时仍完整可读。"
+        ]
+      },
+      "rules": [
+        {
+          "id": "ink-paper-surface-hierarchy",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "页面必须用纸张白、雾灰、墨黑和细分隔建立表面层级，纸张纹理不得成为主要信息层。",
+          "rationale": "国风编辑感依赖材料与阅读层级，而不是把整页铺成纹理背景。",
+          "validation": "关闭纹理背景后检查章节、正文和行动仍有清晰层级；抽检正文对比度和分隔线可见性。",
+          "evidence_ids": [
+            "cie-ink-paper-visual"
+          ]
+        },
+        {
+          "id": "restrained-cinnabar-accent",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "朱砂或印泥色只用于少量印章、分隔、选中态或单一主要行动，不得扩展为大面积装饰色。",
+          "rationale": "小面积暖色可以建立视觉锚点，过量会退化为泛化红金模板并破坏留白。",
+          "validation": "统计页面主行动与强调区域的色相；确认朱砂色没有铺满背景、卡片或所有按钮。",
+          "evidence_ids": [
+            "cie-ink-paper-visual"
+          ]
+        },
+        {
+          "id": "editorial-whitespace-and-lines",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "章节之间必须保留有内容锚点的留白、细线和小型标签节奏，移动端重新计算间距而不是压缩为卡片列表。",
+          "rationale": "留白和分隔承担阅读分组；不对称章节是编辑节奏，不是固定装饰模板。",
+          "validation": "检查每个章节是否同时有标题、对象/证明、去向和可读留白，并在 320px/390px 检查无溢出。",
+          "evidence_ids": [
+            "cie-section-band-sequence",
+            "cie-asymmetric-vertical-type"
+          ]
+        },
+        {
+          "id": "scroll-painting-story-hero",
+          "level": "SHOULD",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "文化叙事首屏可以使用带纸边的宽幅长卷式媒体，并通过远景、中景和前景叠层建立阅读入口；标题、对象主题和单一主行动必须保持独立可理解。",
+          "rationale": "用户提供的参考补充了现有国风规则中的首屏媒体容器和空间叙事机制，但单张截图不能证明该构图适用于所有页面。",
+          "validation": "关闭媒体后检查标题、对象、主行动和下一步仍成立；在 320px/390px 检查焦点、裁切和页面无横向溢出。",
+          "evidence_ids": [
+            "cie-tech25-scroll-painting-hero",
+            "cie-tech25-layered-foreground-figures"
+          ]
+        },
+        {
+          "id": "framed-scroll-portal-visual-variant",
+          "level": "SHOULD",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "当项目选择长卷画框视觉变体时，首屏应使用暖纸画布、中央带纸边的宽幅画面、远中近三层空间和沿下沿展开的原创人物/器物前景；标题与单一主行动放在画面留白中。",
+          "rationale": "该变体把用户提供的长卷参考转化为可执行的媒体构图和色彩方向，同时不把单张参考图的身份、人物或精确构图迁移到新项目。",
+          "validation": "检查首屏是否存在稳定的中央画面容器、暖纸外圈、前中后景关系和标题安全区；确认媒体保持 generated-concept 或具备真实素材 provenance。",
+          "evidence_ids": [
+            "cie-tech25-scroll-painting-hero",
+            "cie-tech25-layered-foreground-figures",
+            "cie-tech25-paper-frame-navigation"
+          ]
+        },
+        {
+          "id": "direct-hero-background-replacement",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "主题悬停或键盘聚焦必须替换同一个 hero 媒体层的背景图，不得新增第二张图片、伪元素预览或缩略图；保留原有画幅几何与前景关系。",
+          "rationale": "长卷首屏的主题切换是同一叙事画幅的内容变化，不应制造重复媒体、缩略图或全屏遮罩来表达状态。",
+          "validation": "检查 hover/focus 前后 DOM 是否仍只有一个 hero 媒体层；确认背景颜色没有被全局白色遮罩洗掉，标题与主行动在不同主题图上仍可读。",
+          "evidence_ids": [
+            "cie-ancient-culture-hover-replacement",
+            "cie-ancient-culture-hover-contrast"
+          ]
+        },
+        {
+          "id": "object-before-symbolism",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "首屏和主要章节必须先呈现可辨识的真实对象、项目内容或明确文字主题，水墨意象不能替代产品、服务或事实。",
+          "rationale": "文化氛围只能帮助理解，不能让用户猜测页面在讲什么。",
+          "validation": "隐藏水墨背景后检查对象身份、章节结论和下一步仍成立；缺少真实素材时明确标注概念媒体。",
+          "evidence_ids": [
+            "cie-product-and-ink-composite"
+          ]
+        },
+        {
+          "id": "clear-chinese-reading",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "竖排、手写或篆刻风格只用于短标签和装饰性提示；正文、价格、规格、政策和 CTA 必须使用清晰的横排文字。",
+          "rationale": "风格化中文不能牺牲事实阅读、选择和完成行动的能力。",
+          "validation": "逐项检查正文、数字、价格、规格、表单和 CTA 的方向、字号、对比度与键盘顺序。",
+          "evidence_ids": [
+            "cie-asymmetric-vertical-type"
+          ]
+        },
+        {
+          "id": "ink-motion-restraint",
+          "level": "SHOULD",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "动效默认静态或轻微显现，水墨扩散、视差和滚动叙事必须有明确任务、性能预算和 reduced-motion 回退。",
+          "rationale": "单张长图不能证明原站动效；克制动效更容易保持中文阅读和行动可达。",
+          "validation": "在 prefers-reduced-motion 下关闭非必要动效，并验证首屏、章节 CTA、媒体失败和键盘焦点。",
+          "evidence_ids": []
+        },
+        {
+          "id": "identity-and-fact-boundary",
+          "level": "AVOID",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "不得复制参考品牌的 Logo、包装、字体、文案、产品摄影、精确章节比例或把水墨概念图当成商品和文化事实。",
+          "rationale": "可迁移的是视觉机制，不是参考对象身份或未经确认的业务事实。",
+          "validation": "检查资产 provenance、字体授权、产品事实来源、图片 alt 和页面相似度；缺失事实保持 unresolved。",
+          "evidence_ids": [
+            "cie-identity-boundary",
+            "cie-tech25-identity-boundary"
+          ]
+        },
+        {
+          "id": "cultural-content-band-discovery",
+          "level": "SHOULD",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "文化内容首页应使用可重复的内容带或服务入口组织发现任务；每带明确主题、辅助说明、内容集合和继续入口，不把整页压成同一种卡片墙。",
+          "rationale": "Tech16 与两组 Tech17 观察都显示，文化网站需要在氛围之外提供可扫描、可继续浏览的内容结构。",
+          "validation": "检查首页每个内容带是否能快速识别主题、内容类型和继续路径，并确认移动端仍保持阅读顺序。",
+          "evidence_ids": [
+            "cie-tech16-content-bands",
+            "cie-tech17-folklore-bands",
+            "cie-tech17-pattern-service-entries"
+          ]
+        },
+        {
+          "id": "cultural-media-metadata-pairing",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "真实文化媒体必须与可读的名称、作者/年代/来源或项目元数据同组呈现；水墨或纹样环境层不能替代对象识别和事实说明。",
+          "rationale": "文化内容的可信度来自可辨识媒体与来源线索的配对，而不是来自装饰性传统符号。",
+          "validation": "在桌面、390px 和图片失败状态检查媒体焦点、标题、元数据、alt 和继续入口是否仍可辨识。",
+          "evidence_ids": [
+            "cie-tech16-art-metadata",
+            "cie-tech17-pattern-media",
+            "cie-product-and-ink-composite"
+          ]
+        },
+        {
+          "id": "cultural-responsive-reflow",
+          "level": "MUST",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "窄屏必须通过真实单列重排或局部横向发现适配文化内容；不得复制固定桌面宽度、页面级 overflow 裁切或浮标遮挡。",
+          "rationale": "Tech16 的局部横向发现和 Tech17 的移动重排/裁切反例共同说明，文化媒体需要按内容关系重新编排。",
+          "validation": "在 320px、390px 和桌面检查 scrollWidth、固定工具栏、Banner 焦点、下一项可见性、键盘焦点和触摸目标。",
+          "evidence_ids": [
+            "cie-tech16-mobile-reflow",
+            "cie-tech17-folklore-mobile",
+            "cie-tech17-pattern-mobile-gap"
+          ]
+        },
+        {
+          "id": "cultural-ornament-supporting-role",
+          "level": "SHOULD",
+          "applies_to": [
+            "website"
+          ],
+          "statement": "传统纹样、牌匾、印章、纸张和朱砂/石青等强调色只能辅助内容层级与主题识别；不得复制样本的精确色值、装饰图、图片烘焙文字或机构身份。",
+          "rationale": "不同文化来源都使用装饰强化主题，但可迁移的是层级关系，不能把装饰本身当作品牌和事实。",
+          "validation": "关闭装饰层后检查标题、对象、元数据和 CTA 仍成立；审查颜色、字体、媒体和身份 provenance。",
+          "evidence_ids": [
+            "cie-tech16-paper-system",
+            "cie-tech17-charcoal-vermilion",
+            "cie-tech17-pattern-media"
+          ]
+        }
+      ],
+      "page_context_adapter": {
+        "navigation": [
+          "低高度品牌导航、细分隔线和宽松间距；章节锚点保持可见焦点。"
+        ],
+        "layout": [
+          "宽幅首屏对象媒体 + 短标题/说明/主行动；章节 band 交替图文关系，结尾独立收束区。"
+        ],
+        "typography": [
+          "显示标题可使用已授权宋体或衬线，正文横排清晰；竖排只承载短标签，正文不低于项目可读性下限。"
+        ],
+        "media": [
+          "真实产品/场景媒体优先；水墨环境层低对比；生成媒体标注 generated-concept。"
+        ],
+        "interaction": [
+          "轻微滚动显现、章节锚点和可暂停媒体；所有 CTA、错误和恢复状态在无动效时可用。"
+        ],
+        "constraints": [
+          "移动端必须单列重排且页面无横向溢出；不得虚构价格、产地、工艺、认证或评价。"
+        ],
+        "responsive": {
+          "navigation": [
+            "导航在窄屏折叠或横向滚动，保持触摸目标和可见焦点。"
+          ],
+          "layout": [
+            "图文 band 改为单列阅读顺序，保留局部横向画廊但不产生页面级横向溢出。"
+          ],
+          "typography": [
+            "标题与竖排标签按断点收拢；正文和价格/规格保持横排与可读字号。"
+          ],
+          "media": [
+            "重新定义主体焦点和裁切安全区，不把桌面宽幅图直接缩小。"
+          ],
+          "interaction": [
+            "锚点、展开、购买和咨询入口保持可触达；reduced-motion 关闭显现和视差。"
+          ],
+          "constraints": [
+            "至少检查 320px 与 390px；不得依赖悬停传达产品或事实。"
+          ]
+        }
+      },
+      "identity_boundary": {
+        "reference_only": false,
+        "must_not_copy": [
+          "任何参考品牌的 Logo、字标、印章、包装、口号、文案、字体文件和产品摄影",
+          "参考长图的精确章节比例、整页构图、插画、山水素材、前中后景角色关系和可识别产品身份",
+          "把水墨概念媒体当作真实商品、产地、工艺、认证、评价或公共文化事实"
+        ],
+        "production_rule": "只迁移留白、纸张表面、墨色层级、朱砂点题、非对称章节和中文编辑节奏；项目必须重新生成语义 token、品牌资产、产品事实和媒体 provenance。"
+      }
+    },
+    "selected_variant": null,
+    "quantitative": {
+      "id": "chinese-ink-editorial-ancient-culture",
+      "label": "国风长卷画框参数集",
+      "selection": "profile-default",
+      "path": "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/style-metrics/chinese-ink-editorial-ancient-culture.json",
+      "tokens": {
+        "container": {
+          "max_width_px": [
+            1180,
+            1180
+          ],
+          "gutter_px": {
+            "desktop": [
+              24,
+              80
+            ],
+            "mobile": [
+              15,
+              24
+            ]
+          },
+          "reading_width_px": [
+            420,
+            590
+          ]
+        },
+        "typography": {
+          "font_role": "project-owned authorized Chinese serif or Songti for editorial text; system sans-serif for metadata",
+          "display_px": {
+            "desktop": [
+              44,
+              104
+            ],
+            "mobile": [
+              34,
+              58
+            ]
+          },
+          "section_heading_px": [
+            34,
+            66
+          ],
+          "body_px": [
+            16,
+            17
+          ],
+          "supporting_px": [
+            11,
+            13
+          ],
+          "line_height": {
+            "display": [
+              1.04,
+              1.15
+            ],
+            "body": [
+              1.55,
+              1.7
+            ]
+          },
+          "weight": {
+            "display": [
+              400,
+              400
+            ],
+            "body": [
+              400,
+              400
+            ],
+            "button": [
+              400,
+              500
+            ]
+          },
+          "measure_chars": [
+            20,
+            42
+          ]
+        },
+        "spacing": {
+          "base_unit_px": 4,
+          "section_padding_y_px": [
+            86,
+            150
+          ],
+          "hero_gap_px": [
+            22,
+            34
+          ],
+          "card_gap_px": [
+            1,
+            12
+          ],
+          "control_gap_px": [
+            7,
+            18
+          ]
+        },
+        "shape": {
+          "card_radius_px": [
+            0,
+            8
+          ],
+          "control_radius_px": [
+            0,
+            50
+          ],
+          "border_px": [
+            0,
+            1
+          ],
+          "shadow": "none or restrained tonal lift; preserve paper, line and whitespace hierarchy"
+        },
+        "controls": {
+          "button_height_px": [
+            40,
+            48
+          ],
+          "button_font_px": [
+            13,
+            16
+          ],
+          "button_radius_px": [
+            0,
+            8
+          ]
+        },
+        "layout": {
+          "grid_columns": {
+            "desktop": 12,
+            "tablet": 8,
+            "mobile": 4
+          },
+          "hero_columns": [
+            1,
+            1
+          ],
+          "card_min_width_px": [
+            140,
+            240
+          ],
+          "section_rhythm": "identity -> object -> context -> proof -> metadata -> selection -> action -> support"
+        },
+        "media": {
+          "hero_ratio": [
+            1.33,
+            1.5
+          ],
+          "band_media_ratio": [
+            0.8,
+            1.5
+          ],
+          "gallery_tile_ratio": [
+            0.75,
+            1.5
+          ],
+          "safe_area_percent": 8,
+          "object_position": "center center"
+        },
+        "motion": {
+          "entrance_ms": [
+            200,
+            700
+          ],
+          "state_ms": [
+            200,
+            300
+          ],
+          "stagger_ms": [
+            0,
+            32
+          ],
+          "easing": "ease-out",
+          "reduced_motion": "instant settled state with no non-essential animation"
+        },
+        "responsive": {
+          "breakpoints_px": [
+            380,
+            800
+          ],
+          "mobile_order": "hero -> theme index -> media band -> text band -> gallery -> academy/context -> closing action",
+          "local_hscroll_only": true
+        }
+      },
+      "basis": {
+        "aggregation": "single-project CSS token extraction with six-viewport forward-test anchor",
+        "source_codes": [
+          "ancient-culture-forward-test"
+        ],
+        "confidence": "low",
+        "note": "Values are production starting ranges derived from output/ancient-culture/index.html and its geometry evidence; they are not cross-project brand tokens. Promote confidence only after another independent Chinese-style website passes the same checks."
+      },
+      "selection_guidance": {
+        "when": [
+          "文化专题、公共文化内容、博物馆/艺术馆入口和沉浸式长卷浏览",
+          "项目明确选择 framed-scroll-portal 视觉变体"
+        ],
+        "avoid_when": [
+          "B 端工作台、原生移动 App 或不需要内容叙事的高密度工具页",
+          "真实对象、事实来源和主行动尚未准备"
+        ],
+        "override_policy": "Keep the editorial hierarchy and restrained geometry; projects may define their own paper, ink, muted and accent values and must retain media provenance."
+      }
+    }
+  },
+  "page": {
+    "deliverable": "website",
+    "page_context": "website",
+    "design_target": "web",
+    "product_domain": "cultural-heritage-garden",
+    "domain_overlay": "museum-art-gallery",
+    "domain_requirements": [
+      "机构身份、责任主体和开放信息可核验",
+      "展览、馆藏、艺术家/作品名称、年代与来源",
+      "图片版权、授权范围和媒体 provenance",
+      "参观、预约、购票、导览或继续阅读去向",
+      "空状态、闭馆/售罄、展览结束和访问失败的恢复路径"
+    ],
+    "page_task": "editorial-content",
+    "audience": "general-user",
+    "primary_action": "在浏览器中环视园林 3D 场景，并按天气与时间体验不同氛围",
+    "trust_strategy": "editorial-authority",
+    "media_strategy": "editorial-illustration",
+    "motion_level": "moderate",
+    "content_density": "low",
+    "locale": "zh-CN"
+  },
+  "domain": {
+    "id": "museum-art-gallery",
+    "requirements": [
+      "机构身份、责任主体和开放信息可核验",
+      "展览、馆藏、艺术家/作品名称、年代与来源",
+      "图片版权、授权范围和媒体 provenance",
+      "参观、预约、购票、导览或继续阅读去向",
+      "空状态、闭馆/售罄、展览结束和访问失败的恢复路径"
+    ]
+  },
+  "composition": {
+    "route": null,
+    "outline": [],
+    "loaded": false
+  },
+  "media": {
+    "mode": "disabled",
+    "provider": null,
+    "state": "disabled",
+    "trigger": "never",
+    "provenance": null,
+    "supplied_assets": [],
+    "runtime_status": "not-requested"
+  },
+  "references": {
+    "catalog": null,
+    "trace": null
+  },
+  "downstream_capabilities": [
+    {
+      "legacy_skill": "animation-systems",
+      "capability": "motion-recipes/animation-systems",
+      "path": "assets/capabilities/animation-systems/CAPABILITY.md",
+      "responsibility": "定义克制、可访问且可维护的页面动效",
+      "reason": "motion_level=moderate"
+    }
+  ],
+  "validation_plan": [
+    "visual",
+    "responsive",
+    "interaction",
+    "accessibility"
+  ],
+  "load_plan": {
+    "loaded": [
+      ".design-suite/route.json",
+      "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/preset-index.json",
+      "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/presets/chinese-ink-editorial/preset.json",
+      "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/style-metrics/chinese-ink-editorial-ancient-culture.json",
+      "C:/Users/ZhongKe/AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/design-style-core/references/presets/chinese-ink-editorial/PROMPT.md"
+    ],
+    "parallelizable": [
+      "visual-contract",
+      "domain-requirements",
+      "page-composition"
+    ],
+    "deferred": [
+      "DESIGN.md",
+      "evidence.json",
+      "references/research/*.json"
+    ]
+  }
+}

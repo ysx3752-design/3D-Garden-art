@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>江南水乡 · 园林生态漫境</title>
+<!-- 开发期引用本地文件；交付时由套件 static-export 适配器把 CSS/JS 全部内联为单文件，
+     因此最终产物不包含任何外部资源，断网也能直接双击打开。 -->
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI0IiBmaWxsPSIjZWZlN2Q4Ii8+PHJlY3QgeD0iNi41IiB5PSI3LjUiIHdpZHRoPSIxOSIgaGVpZ2h0PSI0IiByeD0iMSIgZmlsbD0iIzU0NWI2MCIvPjxyZWN0IHg9IjkiIHk9IjExLjUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMyIgZmlsbD0iI2Y3ZjJlOCIgc3Ryb2tlPSIjMjIyMDFkIiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSIxNiIgY3k9IjE4IiByPSI0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzllMmYyOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="stage">
+  <canvas id="scene" tabindex="0" role="img"
+    aria-label="江南水乡园林三维场景：四面院墙合围、南面三开间重檐正门门楼，白墙黛瓦、曲溪流水、石拱桥与乌篷船，翠竹繁花环绕。可拖拽环视；键盘聚焦后使用左右方向键环绕、上下方向键调整俯仰、加号与减号缩放。"></canvas>
+
+  <div class="frame" aria-hidden="true"></div>
+
+  <!-- 漫游交互模式切换栏（上帝俯瞰 / 沉浸游园 / 自动导览） -->
+  <nav class="view-switch-bar" id="view-switch-bar" aria-label="游园视角切换">
+    <button type="button" class="view-btn active" id="btn-mode-god" data-mode="god" title="上帝视角 · 俯瞰全貌">
+      <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </svg>
+      <span>俯瞰全貌</span>
+    </button>
+    <button type="button" class="view-btn" id="btn-mode-walk" data-mode="walk" title="第一人称 · 沉浸游园漫步">
+      <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="5" r="2.5"></circle>
+        <path d="M10 22l2-7 3 3v4M14 11l-3 4-3-3 2-4"></path>
+      </svg>
+      <span>游园漫步</span>
+    </button>
+    <button type="button" class="view-btn" id="btn-mode-tour" data-mode="tour" title="自动导览 · 电影级曲线穿梭">
+      <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+      </svg>
+      <span>自动游园</span>
+    </button>
+  </nav>
+
+  <!-- 第一人称漫游准星与操作轻提示 -->
+  <div class="walk-reticle" id="walk-reticle" aria-hidden="true"></div>
+  <div class="walk-hud-tip" id="walk-hud-tip" role="status" aria-live="polite">
+    <div class="tip-inner">
+      <span class="tip-seal">漫步</span>
+      <span class="tip-text"><b>W A S D</b> 移动 · <b>鼠标点击</b>锁定视角 · 踏青石板闻清脆步履 · 临水畔听潺潺水声</span>
+    </div>
+  </div>
+
+  <!-- 自动导览全景信息横幅 -->
+  <div class="tour-banner" id="tour-banner" role="status" aria-live="polite">
+    <div class="tour-banner-inner">
+      <span class="tour-seal">导览</span>
+      <div class="tour-texts">
+        <span class="tour-title">自动漫游中 · 穿梭回廊、拱桥、水榭与狮子林奇峰</span>
+        <span class="tour-sub">轻触任意键或点击画面即可退出导览</span>
+      </div>
+      <button type="button" class="tour-exit-btn" id="tour-exit-btn">退出导览</button>
+    </div>
+    <div class="tour-progress-bar"><div class="tour-progress-fill" id="tour-progress-fill"></div></div>
+  </div>
+
+  <header class="titleblock">
+    <span class="seal" aria-hidden="true">江南</span>
+    <h1>江南水乡 · 园林漫境</h1>
+    <p class="lede">四面院墙合围、南面重檐正门可步入园中，融汇拙政园荷池水阁与直廊水庭，兼具狮子林奇峰叠石之胜。平畴之上远眺一池碧水与翠竹林带，沉浸体验江南水乡的诗意画境。</p>
+  </header>
+
+  <aside class="hud" id="hud" aria-label="场景天气与时间控制">
+    <div class="hud-head">
+      <div class="hud-weather">
+        <span class="hud-glyph" id="weather-glyph" aria-hidden="true"></span>
+        <span>
+          <span class="hud-label">天气</span>
+          <span class="hud-weather-name" id="weather-name">晴</span>
+        </span>
+      </div>
+      <span class="hud-temp" id="temp">15°</span>
+    </div>
+
+    <div class="hud-readout" id="hud-readout">
+      <span class="hud-clock" id="clock">06:20</span>
+      <span class="hud-date" id="date">—</span>
+    </div>
+
+    <div class="hud-body" id="hud-body">
+      <!-- 1. 拖动祥云切换天气 -->
+      <section class="hud-group" aria-labelledby="group-weather">
+        <div class="hud-group-header">
+          <h2 class="hud-group-title" id="group-weather">天象气韵 · 拖云变幻</h2>
+          <span class="hud-group-hint">左右拖拽或轻触</span>
+        </div>
+        <div class="cloud-track-wrapper" id="cloud-track-wrapper">
+          <div class="cloud-track" id="cloud-track">
+            <button type="button" class="cloud-node" data-weather="sunny" aria-label="晴">
+              <span class="node-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"></path></svg>
+              </span>
+              <span class="node-name">晴</span>
+            </button>
+            <button type="button" class="cloud-node" data-weather="cloudy" aria-label="阴">
+              <span class="node-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7.3 16.2h9.2a3.3 3.3 0 0 0 .2-6.6 4.8 4.8 0 0 0-9.1-1.4A3.5 3.5 0 0 0 7.3 16.2z"></path></svg>
+              </span>
+              <span class="node-name">阴</span>
+            </button>
+            <button type="button" class="cloud-node" data-weather="rain" aria-label="雨">
+              <span class="node-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7.3 13.6h9.2a3.3 3.3 0 0 0 .2-6.6 4.8 4.8 0 0 0-9.1-1.4A3.5 3.5 0 0 0 7.3 13.6z"></path><path d="M9 16.6l-.9 3M12.4 16.6l-.9 3M15.8 16.6l-.9 3"></path></svg>
+              </span>
+              <span class="node-name">雨</span>
+            </button>
+            <button type="button" class="cloud-node" data-weather="snow" aria-label="雪">
+              <span class="node-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7.3 13.6h9.2a3.3 3.3 0 0 0 .2-6.6 4.8 4.8 0 0 0-9.1-1.4A3.5 3.5 0 0 0 7.3 13.6z"></path><path d="M9.4 17.4h1.6M10.2 16.6v1.6M14.4 17.4H16M15.2 16.6v1.6"></path></svg>
+              </span>
+              <span class="node-name">雪</span>
+            </button>
+            <button type="button" class="cloud-node" data-weather="fog" aria-label="雾">
+              <span class="node-glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.6 11.4h8.4a2.9 2.9 0 0 0 .2-5.8 4.2 4.2 0 0 0-7.9-1.2A3.1 3.1 0 0 0 8.6 11.4z"></path><path d="M4.6 15h14.8M6.8 18.2h11"></path></svg>
+              </span>
+              <span class="node-name">雾</span>
+            </button>
+          </div>
+          <!-- 浮动可拖拽古典祥云 (Auspicious Cloud Thumb) -->
+          <div class="cloud-thumb" id="cloud-thumb" role="slider" aria-label="拖动祥云改变天气" tabindex="0">
+            <svg viewBox="0 0 46 28" class="cloud-thumb-svg">
+              <path class="cloud-base" d="M12 24h22a7 7 0 0 0 5.6-11.2A8.5 8.5 0 0 0 23 7a9 9 0 0 0-12.2 7.5A6.5 6.5 0 0 0 12 24z"/>
+              <path class="cloud-deco" d="M14 20c-1.5-2 0-4.5 2.5-3.8 3-3 7-.8 6.2 2.3"/>
+            </svg>
+            <div class="cloud-drops" id="cloud-drops">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 拨动日晷 / 风水罗盘切换时辰 -->
+      <section class="hud-group" aria-labelledby="group-time">
+        <div class="hud-group-header">
+          <h2 class="hud-group-title" id="group-time">日月轮转 · 拨动日晷罗盘</h2>
+          <span class="hud-group-hint">转动晷针或点击四象</span>
+        </div>
+        <div class="sundial-wrap">
+          <div class="sundial" id="sundial" role="slider" aria-label="拨动日晷指针选择时辰" tabindex="0">
+            <!-- 罗盘盘面图案 -->
+            <svg viewBox="0 0 220 220" class="sundial-plate">
+              <!-- 外环青铜回纹饰圈 -->
+              <circle cx="110" cy="110" r="104" class="sd-ring-outer"/>
+              <circle cx="110" cy="110" r="97" class="sd-ring-mid"/>
+              <circle cx="110" cy="110" r="74" class="sd-ring-inner"/>
+              <circle cx="110" cy="110" r="32" class="sd-ring-core"/>
+              <!-- 12 时辰星位刻线 -->
+              <g class="sd-rays">
+                <line x1="110" y1="13" x2="110" y2="23"/>
+                <line x1="110" y1="197" x2="110" y2="207"/>
+                <line x1="13" y1="110" x2="23" y2="110"/>
+                <line x1="197" y1="110" x2="207" y2="110"/>
+                <line x1="41" y1="41" x2="49" y2="49"/>
+                <line x1="171" y1="49" x2="179" y2="41"/>
+                <line x1="41" y1="179" x2="49" y2="171"/>
+                <line x1="171" y1="171" x2="179" y2="179"/>
+              </g>
+            </svg>
+
+            <!-- 四大时辰扇区交互点击位（南在上为午、北在下为子、东在左为卯、西在右为酉） -->
+            <button type="button" class="sd-sector sd-sec-noon" data-time="noon" aria-label="正午" title="正午 · 午时">
+              <span class="sd-kanji">午</span>
+              <span class="sd-word">正午</span>
+            </button>
+            <button type="button" class="sd-sector sd-sec-dusk" data-time="dusk" aria-label="黄昏" title="黄昏 · 酉时">
+              <span class="sd-kanji">酉</span>
+              <span class="sd-word">黄昏</span>
+            </button>
+            <button type="button" class="sd-sector sd-sec-night" data-time="night" aria-label="夜晚" title="夜晚 · 子时">
+              <span class="sd-kanji">子</span>
+              <span class="sd-word">夜晚</span>
+            </button>
+            <button type="button" class="sd-sector sd-sec-morning" data-time="morning" aria-label="清晨" title="清晨 · 卯时">
+              <span class="sd-kanji">卯</span>
+              <span class="sd-word">清晨</span>
+            </button>
+
+            <!-- 旋转日晷晷针 (Gnomon needle) -->
+            <div class="sundial-pointer" id="sundial-pointer">
+              <div class="sd-gnomon-shadow"></div>
+              <div class="sd-gnomon-body">
+                <div class="sd-needle-tip"></div>
+                <div class="sd-needle-shaft"></div>
+                <div class="sd-needle-counter"></div>
+              </div>
+              <div class="sd-pivot-jewel"></div>
+            </div>
+          </div>
+          <!-- 罗盘读数印签 -->
+          <div class="sundial-badge" id="sundial-badge">
+            <span class="sd-badge-seal" id="sundial-seal">清晨</span>
+            <span class="sd-badge-text" id="sundial-text">卯时 · 东方拂晓晨光熹微</span>
+          </div>
+        </div>
+      </section>
+
+      <details class="fact">
+        <summary>关于本页与名园美学</summary>
+        <p>本页融汇<b>四面合围院墙与南面正门门楼、拙政园荷池水阁、直廊水庭</b>与<b>狮子林奇峰叠石</b>等江南园林精粹：</p>
+        <ul>
+          <li>四面院墙合围：北、西、东三面云墙连续闭合，南面只设一座三开间重檐正门门楼，门外三级石阶、门内石甬道与直廊南端上岸踏步同高搭接，可自正门步入园中。</li>
+          <li>全景平地布局：无山体、无台地、无坡地，建筑、叠石与林木全部坐落于同一标高平地；不设周边小屋，湖岸、直廊与平地林木层叠展开。</li>
+          <li>严谨空间规划，树木与亭廊水榭绝无穿插交叠，呈现澄澈静美的园林生态空间。</li>
+          <li>全流程纯前端即时程序化渲染，无外部网络依赖，天光、雨雪、流水与倒影即时联动；场景为风格化概念渲染，非测绘级还原。</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="hud-foot">
+      <span class="hud-note">演示读数</span>
+      <button type="button" class="fold" id="fold" aria-expanded="true" aria-controls="hud-readout hud-body">
+        <span id="fold-text">收起</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14l6-6 6 6"></path></svg>
+      </button>
+    </div>
+  </aside>
+
+  <p class="hint">拖拽环视 · 滚轮缩放 · 右键平移 · 触摸屏单指旋转 / 双指缩放</p>
+  <p class="concept-note"><b>风格化概念渲染</b> · 平地园林生态重构，非测绘还原</p>
+
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <p class="loader-title">江南水乡 · 园林漫境</p>
+    <div class="loader-track" aria-hidden="true"><div class="loader-fill" id="loader-fill"></div></div>
+    <p class="loader-text" id="loader-text">正在生成水乡生态场景…</p>
+  </div>
+
+  <div class="fallback" id="fallback" hidden>
+    <div class="fallback-inner">
+      <h2>当前浏览器未能启用 WebGL</h2>
+      <p>本页的三维水乡园林场景需要 WebGL 渲染能力。可尝试：更新浏览器到最新版、在设置中开启硬件加速，或改用最新的 Chrome / Edge / Firefox / Safari 打开本文件。</p>
+      <p>页面本身不依赖网络，标题、天气与时辰控件在 WebGL 不可用时仍可正常阅读，不会出现白屏。</p>
+    </div>
+  </div>
+
+  <p class="visually-hidden" id="live" role="status" aria-live="polite"></p>
+</main>
+
+<script src="three.min.js" data-design-suite-vendor="three@0.147.0"></script>
+<script src="OrbitControls.js" data-design-suite-vendor="three@0.147.0-examples"></script>
+<script src="app.js"></script>
+</body>
+</html>
