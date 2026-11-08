@@ -5986,38 +5986,46 @@ async function __designSuiteOfflineFetch(url){
   var tourCurve = null;
   var tourPoints = [
     new THREE.Vector3(0, 2.2, 18.2),     // 1. 南大门正门石阶，仰望三开间重檐门楼
-    new THREE.Vector3(2.8, 1.95, 14.2),  // 2. 南庭绿渚柳树下，远眺池面碧波
-    new THREE.Vector3(0.5, 1.95, 10.5),  // 3. 走上临水曲桥平步
-    new THREE.Vector3(-1.6, 2.15, 8.5),  // 4. 步入临水水上直廊，框景透视
-    new THREE.Vector3(-4.6, 2.2, 8.5),   // 5. 穿入湖心水榭亭内，环顾碧波与石灯笼
-    new THREE.Vector3(-3.2, 1.95, 4.5),  // 6. 出水榭漫步沿湖石矶汀步
-    new THREE.Vector3(3.5, 2.6, 5.2),    // 7. 走上青石拱桥桥顶，俯瞰游鸭与锦鲤
-    new THREE.Vector3(12.5, 2.0, 5.8),   // 8. 下拱桥至东侧临水绿渚与芦苇丛
-    new THREE.Vector3(23.5, 2.1, 1.0),   // 9. 经东侧石径至东书斋庭院
-    new THREE.Vector3(18.0, 2.2, -6.5),  // 10. 仰观东书斋黛瓦卷棚与芭蕉竹影
-    new THREE.Vector3(6.0, 2.7, -4.2),   // 11. 踏上主殿远香堂南向石阶月台
-    new THREE.Vector3(-6.0, 2.7, -4.2),  // 12. 缓步主殿月台，赏莲花石雕栏杆与满池荷花
-    new THREE.Vector3(-15.0, 2.1, -12.0),// 13. 绕至主殿西侧，步入狮子林太湖石假山群
-    new THREE.Vector3(-12.0, 2.6, -24.0),// 14. 在假山奇峰怪石林立间穿梭
-    new THREE.Vector3(0.0, 2.7, -26.0),  // 15. 假山幽径回望主殿宏伟屋脊
-    new THREE.Vector3(12.0, 2.2, -22.0), // 16. 出假山至后园苍松翠竹林带
-    new THREE.Vector3(7.5, 2.1, -10.0),  // 17. 穿过主殿东夹道回到南庭
-    new THREE.Vector3(0, 2.2, 18.2)      // 18. 平滑闭合回到南大门
+    new THREE.Vector3(0, 2.25, 12.5),    // 2. 漫步中央水上长廊，望两岸池水荷花
+    new THREE.Vector3(3.2, 2.35, 8.5),   // 3. 步入走廊横跨平桥，迎微风走向荷风四面水亭
+    new THREE.Vector3(8.5, 2.35, 8.5),   // 4. 驻足湖心水榭亭内，环顾碧波池水与八角宫灯
+    new THREE.Vector3(8.8, 2.35, 3.2),   // 5. 穿出水亭，漫步水上九曲青石板平桥
+    new THREE.Vector3(10.5, 2.9, -1.8),  // 6. 拾级而上主殿东侧月洞门石阶
+    new THREE.Vector3(6.0, 3.1, -4.2),   // 7. 漫步主殿远香堂月台东侧，观莲花石雕栏杆
+    new THREE.Vector3(-6.0, 3.1, -4.2),  // 8. 走过主殿正门月台，俯瞰全池盛景
+    new THREE.Vector3(-14.5, 2.4, 0.5),  // 9. 经主殿西侧绿渚，迎向小飞虹石拱桥
+    new THREE.Vector3(-20.5, 3.9, 4.0),  // 10. 登上小飞虹拱桥顶峰，俯览西池清流与回廊
+    new THREE.Vector3(-12.0, 2.1, 14.5), // 11. 经水码头与临水石矶，回眺荷塘
+    new THREE.Vector3(0, 2.2, 18.2)      // 12. 平滑闭合回到南大门
   ];
 
   // 地面高程判定（包含台阶、踏步、桥梁、走廊、亭榭、石台）
   function getGroundHeight(x, z) {
-    // 1. 主殿远香堂台座与室内地坪 (1.45m)
+    // 1. 小飞虹石拱桥（群中心 (-20.5, 4.0)，旋转 0.45 弧度）
+    var archDx = x - (-20.5);
+    var archDz = z - 4.0;
+    var cosArch = 0.9004; // Math.cos(-0.45)
+    var sinArch = -0.4350; // Math.sin(-0.45)
+    var lx = archDx * cosArch - archDz * sinArch;
+    var lz = archDx * sinArch + archDz * cosArch;
+    if (Math.abs(lz) <= 2.0 && lx >= -5.7 && lx <= 7.8) {
+      if (lx < -4.8) return 0.74;
+      if (lx > 5.0) return 0.70 - ((lx - 5.0) / 2.8) * 0.45;
+      var archT = (lx + 5.5) / 11.0;
+      return 0.78 + Math.sin(archT * Math.PI) * 1.58;
+    }
+
+    // 2. 主殿远香堂台座与室内地坪 (1.45m)
     if (Math.abs(x) < 14.5 && z >= -16.5 && z <= -0.1) {
       return 1.45;
     }
     // 主殿朝南垂带台阶（自廊面 0.56m 升至台座 1.35m）
-    if (Math.abs(x) < 5.0 && z >= -0.2 && z <= 0.6) {
-      var stepRatio = (0.6 - z) / 0.8;
+    if (Math.abs(x) < 5.0 && z >= -0.2 && z <= 0.8) {
+      var stepRatio = (0.8 - z) / 1.0;
       return 0.56 + Math.max(0, Math.min(1.0, stepRatio)) * 0.89;
     }
 
-    // 2. 南大门门楼台座与门内门外石阶
+    // 3. 南大门门楼台座与门内门外石阶
     if (Math.abs(x) < 7.5 && z >= 17.6 && z <= 22.5) {
       if (z > 20.6) {
         return 0.08 + Math.max(0, Math.min(1.0, (22.5 - z) / 1.9)) * 0.37;
@@ -6025,35 +6033,41 @@ async function __designSuiteOfflineFetch(url){
       return 0.45;
     }
 
-    // 3. 水上中央直廊（中轴 x=0，自南端 z=17.6 至北端 z=-0.10，标高 0.56m）
-    if (Math.abs(x) <= 1.5 && z >= -0.2 && z <= 17.6) {
+    // 4. 水上中央直廊（中轴 x=0，自南端 z=17.6 至北端 z=-0.10，标高 0.56m）
+    if (Math.abs(x) <= 1.4 && z >= -0.2 && z <= 17.8) {
       return 0.56;
     }
 
-    // 4. 湖心水榭亭与平桥（标高 0.56m）
-    if (Math.hypot(x - (-4.6), z - 8.5) <= 4.4) {
-      return 0.56;
+    // 5. 走廊至水亭横跨平桥（x: 1.0 ~ 5.2, z=8.5, 标高 0.65m）
+    if (x >= 1.0 && x <= 5.2 && Math.abs(z - 8.5) <= 1.2) {
+      return 0.65;
     }
-    // 平桥（连接直廊与水榭）
-    if (x >= -4.6 && x <= 0.5 && Math.abs(z - 8.5) <= 1.6) {
+
+    // 6. 荷风四面水亭（中心 (8.5, 8.5)，半径 4.2m，标高 0.65m）
+    if (Math.hypot(x - 8.5, z - 8.5) <= 4.2) {
+      return 0.65;
+    }
+
+    // 7. 月洞门延伸石阶与九曲青石板平桥（由主殿东台座通向水亭北入口）
+    if (x >= 7.8 && x <= 11.5 && z >= -2.2 && z <= 4.8) {
+      if (z <= 0.4) {
+        var tStep = (z - (-2.2)) / 2.6;
+        return 1.35 - tStep * 0.70;
+      }
+      return 0.65;
+    }
+
+    // 8. 临水石码头（中心 (-12.0, 14.5)）
+    if (x >= -14.8 && x <= -9.2 && z >= 12.0 && z <= 18.0) {
+      return 0.35;
+    }
+
+    // 9. 东书斋卷棚与前台
+    if (x >= 21.0 && x <= 34.0 && z >= -13.0 && z <= 1.5) {
       return 0.56;
     }
 
-    // 5. 青石拱桥（跨水起拱，桥顶标高约 1.62m）
-    if (x >= 0.8 && x <= 12.2 && Math.abs(z - 5.5) <= 1.8) {
-      var archT = (x - 6.5) / 5.5;
-      return 0.35 + Math.max(0, (1.0 - archT * archT)) * 1.30;
-    }
-
-    // 6. 东书斋卷棚与前台
-    if (x >= 21.0 && x <= 34.0 && z >= -13.0 && z <= -3.0) {
-      return 0.56;
-    }
-    if (x >= 21.0 && x <= 34.0 && z >= -3.0 && z <= 1.5) {
-      return 0.32;
-    }
-
-    // 7. 沿水石汀步
+    // 10. 沿水石汀步
     if (Math.hypot(x - 0.2, z - 4.2) <= 1.2 || Math.hypot(x - (-1.8), z - 4.2) <= 1.2) {
       return 0.35;
     }
@@ -6066,20 +6080,36 @@ async function __designSuiteOfflineFetch(url){
   function canWalk(x, z) {
     if (x < -36.5 || x > 36.5 || z < -30.5 || z > 21.5) return false;
 
-    // 湖面开阔深水区阻挡
-    var inLake = (x > -17.5 && x < 21.0 && z > 0.0 && z < 17.2);
+    // 1. 小飞虹石拱桥（西侧跨水拱桥）
+    var archDx = x - (-20.5);
+    var archDz = z - 4.0;
+    var cosArch = 0.9004;
+    var sinArch = -0.4350;
+    var lx = archDx * cosArch - archDz * sinArch;
+    var lz = archDx * sinArch + archDz * cosArch;
+    if (Math.abs(lz) <= 2.0 && lx >= -5.7 && lx <= 7.8) return true;
+
+    // 2. 中央水上直廊
+    if (Math.abs(x) <= 1.4 && z >= -0.2 && z <= 17.8) return true;
+
+    // 3. 走廊至水亭横跨平桥
+    if (x >= 1.0 && x <= 5.2 && Math.abs(z - 8.5) <= 1.2) return true;
+
+    // 4. 荷风四面水亭
+    if (Math.hypot(x - 8.5, z - 8.5) <= 4.2) return true;
+
+    // 5. 月洞门石阶与九曲平桥
+    if (x >= 7.8 && x <= 11.5 && z >= -2.2 && z <= 4.8) return true;
+
+    // 6. 临水石码头
+    if (x >= -14.8 && x <= -9.2 && z >= 12.0 && z <= 18.0) return true;
+
+    // 7. 沿水石汀步
+    if (Math.hypot(x - 0.2, z - 4.2) <= 1.2 || Math.hypot(x - (-1.8), z - 4.2) <= 1.2) return true;
+
+    // 湖面开阔深水区阻挡（排除上述水上走廊、桥梁、水亭、码头后的池水）
+    var inLake = (x > -17.5 && x < 17.5 && z > -1.2 && z < 18.2);
     if (inLake) {
-      // 允许通行的结构：
-      // 1. 中央水上直廊
-      if (Math.abs(x) <= 1.5 && z >= -0.2 && z <= 17.6) return true;
-      // 2. 湖心水榭亭与平桥
-      if (Math.hypot(x - (-4.6), z - 8.5) <= 4.4) return true;
-      if (x >= -4.6 && x <= 0.5 && Math.abs(z - 8.5) <= 1.6) return true;
-      // 3. 青石拱桥
-      if (x >= 0.8 && x <= 12.2 && Math.abs(z - 5.5) <= 1.8) return true;
-      // 4. 沿水石汀步
-      if (Math.hypot(x - 0.2, z - 4.2) <= 1.2 || Math.hypot(x - (-1.8), z - 4.2) <= 1.2) return true;
-      // 其它开阔深水区阻隔
       return false;
     }
     return true;
@@ -6203,26 +6233,23 @@ async function __designSuiteOfflineFetch(url){
   }
 
   function updateWalkMode(dt) {
-    var moveX = 0;
-    var moveZ = 0;
-    if (walkKeys.forward) moveZ -= 1;
-    if (walkKeys.backward) moveZ += 1;
-    if (walkKeys.left) moveX -= 1;
-    if (walkKeys.right) moveX += 1;
+    var fwd = (walkKeys.forward ? 1 : 0) - (walkKeys.backward ? 1 : 0);
+    var str = (walkKeys.right ? 1 : 0) - (walkKeys.left ? 1 : 0);
 
-    var isMoving = (moveX !== 0 || moveZ !== 0);
+    var isMoving = (fwd !== 0 || str !== 0);
     if (isMoving) {
-      var len = Math.hypot(moveX, moveZ);
-      moveX /= len;
-      moveZ /= len;
+      var len = Math.hypot(fwd, str);
+      fwd /= len;
+      str /= len;
 
       var speed = (walkKeys.sprint ? 5.2 : 3.2) * dt;
 
       var sinY = Math.sin(playerYaw);
       var cosY = Math.cos(playerYaw);
 
-      var dx = (moveX * cosY + moveZ * sinY) * speed;
-      var dz = (-moveX * sinY + moveZ * cosY) * speed;
+      // 视角朝向：Forward 为 (sinY, -cosY)，Right 为 (cosY, sinY)
+      var dx = (sinY * fwd + cosY * str) * speed;
+      var dz = (-cosY * fwd + sinY * str) * speed;
 
       var nextX = playerPos.x + dx;
       var nextZ = playerPos.z + dz;
@@ -6414,14 +6441,14 @@ async function __designSuiteOfflineFetch(url){
     window.addEventListener('mousemove', function (e) {
       if (viewMode === 'walk') {
         if (document.pointerLockElement === canvas) {
-          playerYaw -= e.movementX * 0.0022;
+          playerYaw += e.movementX * 0.0022;
           playerPitch = clamp(playerPitch - e.movementY * 0.0022, -1.25, 1.25);
         } else if (isDraggingWalk) {
           var dx = e.clientX - lastDragX;
           var dy = e.clientY - lastDragY;
           lastDragX = e.clientX;
           lastDragY = e.clientY;
-          playerYaw -= dx * 0.0035;
+          playerYaw += dx * 0.0035;
           playerPitch = clamp(playerPitch - dy * 0.0035, -1.25, 1.25);
         }
       }
@@ -6455,7 +6482,7 @@ async function __designSuiteOfflineFetch(url){
         var dy = e.touches[0].clientY - lastDragY;
         lastDragX = e.touches[0].clientX;
         lastDragY = e.touches[0].clientY;
-        playerYaw -= dx * 0.005;
+        playerYaw += dx * 0.005;
         playerPitch = clamp(playerPitch - dy * 0.005, -1.2, 1.2);
       }
     }, { passive: true });
