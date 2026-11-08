@@ -1,0 +1,44 @@
+- main [ref=e2]:
+  - img "江南水乡园林三维场景：白墙黛瓦、曲溪流水、石拱桥与乌篷船，翠竹繁花环绕。可拖拽环视；键盘聚焦后使用左右方向键环绕、上下方向键调整俯仰、加号与减号缩放。" [ref=e3]
+  - generic:
+    - generic: 江南
+    - heading "江南水乡 · 园林漫境" [level=1]
+    - paragraph: 融汇拙政园荷池水阁、香洲石舫与直廊水庭，兼具狮子林奇峰叠石之胜。平畴之上远眺一池碧水与翠竹林带，沉浸体验江南水乡的诗意画境。
+  - complementary "场景天气与时间控制" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e11]: 天气 晴
+      - generic [ref=e12]: 17°
+    - generic [ref=e13]:
+      - generic [ref=e14]: 06:20
+      - generic [ref=e15]: 2026年11月6日 · 周五
+    - generic [ref=e16]:
+      - region "天气" [ref=e17]:
+        - heading "天气" [level=2] [ref=e18]
+        - group "天气" [ref=e19]:
+          - button "晴" [pressed] [ref=e20] [cursor=pointer]
+          - button "阴" [ref=e21] [cursor=pointer]
+          - button "雨" [ref=e22] [cursor=pointer]
+          - button "雪" [ref=e23] [cursor=pointer]
+          - button "雾" [ref=e24] [cursor=pointer]
+      - region "时辰" [ref=e25]:
+        - heading "时辰" [level=2] [ref=e26]
+        - group "时辰" [ref=e27]:
+          - button "清晨" [pressed] [ref=e28] [cursor=pointer]
+          - button "正午" [ref=e29] [cursor=pointer]
+          - button "黄昏" [ref=e30] [cursor=pointer]
+          - button "夜晚" [ref=e31] [cursor=pointer]
+      - group [ref=e32]:
+        - generic "关于本页与名园美学" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - generic [ref=e35]: 演示读数
+      - button "收起" [expanded] [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: 收起
+        - img [ref=e38]
+  - paragraph: 拖拽环视 · 滚轮缩放 · 右键平移 · 触摸屏单指旋转 / 双指缩放
+  - paragraph: 风格化概念渲染 · 平地园林生态重构，非测绘还原
+  - status [ref=e40]:
+    - paragraph [ref=e41]: 江南水乡 · 园林漫境
+    - paragraph [ref=e44]: 铺展平地大地图、开辟南向开朗大池…
+  - status [ref=e45]

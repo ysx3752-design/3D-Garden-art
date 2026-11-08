@@ -1,0 +1,189 @@
+{
+  "ok": true,
+  "state": "export-approved",
+  "receipt": "C:\\Users\\ZhongKe\\Desktop\\Design\\.design-suite\\execution-receipt.json",
+  "receipt_id": "0b339a1a59616b1d8634cb924a715c1167b6c973ce6d3bda62512369a18823f6",
+  "errors": [],
+  "checks": [
+    {
+      "ok": true,
+      "expected": {
+        "label": "contract",
+        "path": "website-contract.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "contract",
+        "path": "website-contract.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "source",
+        "path": "../src",
+        "path_base": "receipt-directory",
+        "type": "directory",
+        "sha256": "7a030ea206b94d9113ea225a77037506b85177ea9c2eb1cdb8736cefb500b610",
+        "file_count": 3
+      },
+      "actual": {
+        "label": "source",
+        "path": "../src",
+        "path_base": "receipt-directory",
+        "type": "directory",
+        "sha256": "7a030ea206b94d9113ea225a77037506b85177ea9c2eb1cdb8736cefb500b610",
+        "file_count": 3
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "model",
+        "path": "../../../AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/build-website-page/references/sectors/general/sector-model.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "d61c4c2eb03b39f1d1fb1d3d99a031c5f72ab0a208c4030d5ed26bb11b131430",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "model",
+        "path": "../../../AppData/Roaming/qianfan-desktop-app/qianfan_desk_xdg/0d6ea5e730a945b69f1924c71a13fc04/data/plugins/official/design-suite-router/skills/build-website-page/references/sectors/general/sector-model.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "d61c4c2eb03b39f1d1fb1d3d99a031c5f72ab0a208c4030d5ed26bb11b131430",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "route",
+        "path": "route.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "5aec9e6faba3bd44456a701fbdb7f1a9b52076d5a2ca175110acdd762c7bc98d",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "route",
+        "path": "route.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "5aec9e6faba3bd44456a701fbdb7f1a9b52076d5a2ca175110acdd762c7bc98d",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "geometry",
+        "path": "layout-geometry.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "7abc14c8119ec5f5335ca06949aa9c8bc0b895054b7f98bb4dbcb7bd46aadc13",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "geometry",
+        "path": "layout-geometry.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "7abc14c8119ec5f5335ca06949aa9c8bc0b895054b7f98bb4dbcb7bd46aadc13",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "build",
+        "path": "../dist",
+        "path_base": "receipt-directory",
+        "type": "directory",
+        "sha256": "68480a7d489b31c9d7beae360b4bb195812708d194a62f03e60ed357c2d6d662",
+        "file_count": 5
+      },
+      "actual": {
+        "label": "build",
+        "path": "../dist",
+        "path_base": "receipt-directory",
+        "type": "directory",
+        "sha256": "68480a7d489b31c9d7beae360b4bb195812708d194a62f03e60ed357c2d6d662",
+        "file_count": 5
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "browser",
+        "path": "browser-evidence.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "58294eee038c043da32c4ef84689719ed350d8fd32087a647a4a91f1123c37a3",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "browser",
+        "path": "browser-evidence.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "58294eee038c043da32c4ef84689719ed350d8fd32087a647a4a91f1123c37a3",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "artifact:1",
+        "path": "../index.html",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "64bf4d3d8c66b962902df7c8bb426559d5261b2ad494972634f128a316c8d410",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "artifact:1",
+        "path": "../index.html",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "64bf4d3d8c66b962902df7c8bb426559d5261b2ad494972634f128a316c8d410",
+        "file_count": 1
+      },
+      "mismatches": []
+    },
+    {
+      "ok": true,
+      "expected": {
+        "label": "static-evidence",
+        "path": "static-export-evidence.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "7cd8117976e64e0a1f2845cbde362e5355b8512f4d335c7d8d1a1754327bee5b",
+        "file_count": 1
+      },
+      "actual": {
+        "label": "static-evidence",
+        "path": "static-export-evidence.json",
+        "path_base": "receipt-directory",
+        "type": "file",
+        "sha256": "7cd8117976e64e0a1f2845cbde362e5355b8512f4d335c7d8d1a1754327bee5b",
+        "file_count": 1
+      },
+      "mismatches": []
+    }
+  ]
+}

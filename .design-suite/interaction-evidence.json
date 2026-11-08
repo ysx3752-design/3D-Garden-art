@@ -1,0 +1,60 @@
+{
+  "captured_at": "2026-11-06T14:38:11.408Z",
+  "url": "http://127.0.0.1:8769/index.html",
+  "allInteractionsChangedFrames": true,
+  "readoutOk": true,
+  "foldOk": true,
+  "results": [
+    {
+      "check": "左键拖拽环视",
+      "changed": true,
+      "before": "6d0be96944eda569",
+      "after": "c22dccaad318f898"
+    },
+    {
+      "check": "滚轮缩放",
+      "changed": true,
+      "after": "f52392f0c142cd9e"
+    },
+    {
+      "check": "右键平移",
+      "changed": true,
+      "after": "f3fe1924489e8858"
+    },
+    {
+      "check": "HUD 天气/时辰切换与读数",
+      "changed": true,
+      "readout": {
+        "weather": "雪",
+        "temp": "0°",
+        "clock": "21:10",
+        "date": "2026年11月6日 · 周五",
+        "snowPressed": "true",
+        "nightPressed": "true",
+        "sunnyPressed": "false",
+        "live": "已切换为雪·夜晚，演示温度 0 度",
+        "glyphChildren": 1
+      }
+    },
+    {
+      "check": "HUD 折叠",
+      "fold": {
+        "before": "false",
+        "after": "true",
+        "label": "展开",
+        "expanded": "false"
+      }
+    },
+    {
+      "check": "触摸单指旋转",
+      "changed": true,
+      "before": "2d5969ff116c206c",
+      "after": "167cea524ab88485"
+    },
+    {
+      "check": "触摸双指缩放",
+      "changed": true,
+      "after": "24c8bb67552378ef"
+    }
+  ]
+}

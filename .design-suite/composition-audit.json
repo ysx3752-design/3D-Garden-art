@@ -1,0 +1,47 @@
+{
+  "camera": {
+    "x": 0,
+    "y": 5.618131205218486,
+    "z": 16.165900532992637,
+    "tx": 0,
+    "ty": 3.6,
+    "tz": -6,
+    "fov": 50,
+    "dist": 22.25758297749331
+  },
+  "canvas": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1000
+  },
+  "hud": {
+    "x": 1085.453125,
+    "y": 22,
+    "w": 320,
+    "h": 111.59375
+  },
+  "hallProjection": {
+    "box": {
+      "x0": -101.90933361797764,
+      "x1": 1541.9093336179776,
+      "y0": 191.22145909164385,
+      "y1": 719.1015220702222
+    },
+    "centerScreen": {
+      "x": 720,
+      "y": 448
+    },
+    "canvasCenterX": 720
+  },
+  "hudHallOverlapPx2": 0,
+  "hudHallOverlapRatioOfHall": 0,
+  "lowerThird": {
+    "cells": 52,
+    "water": 16,
+    "waterShare": 0.308,
+    "skyShare": 0
+  },
+  "midRowKinds": "-0.9:rail/low -0.75:building/tree -0.6:building/tree -0.45:building/tree -0.3:building/tree -0.15:building/tree 0:building/tree 0.15:building/tree 0.3:building/tree 0.45:building/tree 0.6:building/tree 0.75:building/tree 0.9:building/tree",
+  "gridText": "0.95 | 高高高高高高高高高高高高高\n0.80 | 高高高高高高高高高高高高高\n0.65 | 高高高高高高高高高高高高高\n0.50 | 屋屋屋屋屋屋屋屋屋屋屋屋屋\n0.35 | 屋屋屋屋屋屋屋屋屋屋屋屋屋\n0.20 | 屋屋屋屋屋屋屋屋屋屋屋屋屋\n0.05 | 低屋屋屋屋屋屋屋屋屋屋屋屋\n-0.10 | 水低低低低低低低低低低低水\n-0.25 | 低低低低低低低低低低低低低\n-0.40 | 铺铺铺铺铺低低低铺低铺铺低\n-0.55 | 水铺水水水低低低铺铺低低铺\n-0.70 | 铺铺水水低低低低低水铺水水\n-0.85 | 水铺水水低低低低低水水水水"
+}

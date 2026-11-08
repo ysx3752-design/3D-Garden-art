@@ -1,0 +1,999 @@
+{
+  "walk": [
+    {
+      "z": 26,
+      "surface": 0.05,
+      "hits": [
+        0.05,
+        0.03,
+        0.03,
+        0
+      ]
+    },
+    {
+      "z": 25.5,
+      "surface": 0.11,
+      "hits": [
+        0.11,
+        0.05,
+        0.03,
+        0.03
+      ]
+    },
+    {
+      "z": 25,
+      "surface": 0.11,
+      "hits": [
+        0.11,
+        0.05,
+        0.03,
+        0.03
+      ]
+    },
+    {
+      "z": 24.5,
+      "surface": 0.22,
+      "hits": [
+        5.3,
+        0.22,
+        0.05,
+        0.03
+      ]
+    },
+    {
+      "z": 24,
+      "surface": 0.22,
+      "hits": [
+        6.2,
+        5.3,
+        0.22,
+        0.03
+      ]
+    },
+    {
+      "z": 23.5,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 23,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 22.5,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 22,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 21.5,
+      "surface": 0.32,
+      "hits": [
+        7.1,
+        6.6,
+        6.2,
+        5.3
+      ]
+    },
+    {
+      "z": 21,
+      "surface": 0.32,
+      "hits": [
+        7.1,
+        6.6,
+        6.2,
+        5.3
+      ]
+    },
+    {
+      "z": 20.5,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 20,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 19.5,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32
+      ]
+    },
+    {
+      "z": 19,
+      "surface": 0.32,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        4.8
+      ]
+    },
+    {
+      "z": 18.5,
+      "surface": 0.56,
+      "hits": [
+        5.3,
+        0.56,
+        0.56,
+        0.34
+      ]
+    },
+    {
+      "z": 18,
+      "surface": 0.56,
+      "hits": [
+        5.3,
+        0.56,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "z": 17.5,
+      "surface": 0.56,
+      "hits": [
+        2.89,
+        2.73,
+        0.56,
+        0.3
+      ]
+    },
+    {
+      "z": 17,
+      "surface": 0.56,
+      "hits": [
+        2.89,
+        2.73,
+        0.56,
+        0.29
+      ]
+    },
+    {
+      "z": 16.5,
+      "surface": 0.56,
+      "hits": [
+        2.89,
+        2.73,
+        0.56,
+        0.28
+      ]
+    },
+    {
+      "z": 16,
+      "surface": 0.56,
+      "hits": [
+        2.89,
+        2.73,
+        0.56,
+        0.28
+      ]
+    },
+    {
+      "z": 15.5,
+      "surface": 0.56,
+      "hits": [
+        2.89,
+        2.73,
+        0.56,
+        0.29
+      ]
+    }
+  ],
+  "ringResult": [
+    {
+      "dir": "radial-north-to-south",
+      "out": [
+        {
+          "p": -36,
+          "hitZ": 20.25,
+          "hitX": -36,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -33,
+          "hitZ": 20.25,
+          "hitX": -33,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -30,
+          "hitZ": 20.25,
+          "hitX": -30,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -27,
+          "hitZ": 20.25,
+          "hitX": -27,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -24,
+          "hitZ": 20.25,
+          "hitX": -24,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -21,
+          "hitZ": 20.25,
+          "hitX": -21,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -18,
+          "hitZ": 20.25,
+          "hitX": -18,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -15,
+          "hitZ": 20.25,
+          "hitX": -15,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -12,
+          "hitZ": 20.25,
+          "hitX": -12,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -9,
+          "hitZ": 20.25,
+          "hitX": -9,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -6,
+          "hitZ": 23.9,
+          "hitX": -6,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -3,
+          "hitZ": 23.9,
+          "hitX": -3,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 0,
+          "hitZ": -4.6,
+          "hitX": 0,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 3,
+          "hitZ": 23.9,
+          "hitX": 3,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 6,
+          "hitZ": 23.9,
+          "hitX": 6,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 9,
+          "hitZ": 20.25,
+          "hitX": 9,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 12,
+          "hitZ": 20.25,
+          "hitX": 12,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 15,
+          "hitZ": 20.25,
+          "hitX": 15,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 18,
+          "hitZ": 20.25,
+          "hitX": 18,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 21,
+          "hitZ": 20.25,
+          "hitX": 21,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 24,
+          "hitZ": 20.25,
+          "hitX": 24,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 27,
+          "hitZ": 20.25,
+          "hitX": 27,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 30,
+          "hitZ": 20.25,
+          "hitX": 30,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 33,
+          "hitZ": 20.25,
+          "hitX": 33,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 36,
+          "hitZ": 20.25,
+          "hitX": 36,
+          "hitY": 3,
+          "type": "Mesh"
+        }
+      ]
+    },
+    {
+      "dir": "radial-south-to-north",
+      "out": [
+        {
+          "p": -36,
+          "hitZ": -32.25,
+          "hitX": -36,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -33,
+          "hitZ": -32.25,
+          "hitX": -33,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -30,
+          "hitZ": -32.25,
+          "hitX": -30,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -27,
+          "hitZ": -32.25,
+          "hitX": -27,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -24,
+          "hitZ": -32.25,
+          "hitX": -24,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -21,
+          "hitZ": -32.25,
+          "hitX": -21,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -18,
+          "hitZ": -32.25,
+          "hitX": -18,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -15,
+          "hitZ": -32.25,
+          "hitX": -15,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -12,
+          "hitZ": -32.25,
+          "hitX": -12,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -9,
+          "hitZ": -32.25,
+          "hitX": -9,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -6,
+          "hitZ": -32.25,
+          "hitX": -6,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -3,
+          "hitZ": -32.25,
+          "hitX": -3,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 0,
+          "hitZ": -32.25,
+          "hitX": 0,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 3,
+          "hitZ": -32.25,
+          "hitX": 3,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 6,
+          "hitZ": -32.25,
+          "hitX": 6,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 9,
+          "hitZ": -32.25,
+          "hitX": 9,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 12,
+          "hitZ": -32.25,
+          "hitX": 12,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 15,
+          "hitZ": -32.25,
+          "hitX": 15,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 18,
+          "hitZ": -32.25,
+          "hitX": 18,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 21,
+          "hitZ": -32.25,
+          "hitX": 21,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 24,
+          "hitZ": -32.25,
+          "hitX": 24,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 27,
+          "hitZ": -32.25,
+          "hitX": 27,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 30,
+          "hitZ": -32.25,
+          "hitX": 30,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 33,
+          "hitZ": -32.25,
+          "hitX": 33,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 36,
+          "hitZ": -32.25,
+          "hitX": 36,
+          "hitY": 3,
+          "type": "Mesh"
+        }
+      ]
+    },
+    {
+      "dir": "radial-east-to-west",
+      "out": [
+        {
+          "p": -36,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": -33,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": -30,
+          "hitZ": -30,
+          "hitX": 3.89,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -27,
+          "hitZ": -27,
+          "hitX": 18.22,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -24,
+          "hitZ": -24,
+          "hitX": 18.35,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -21,
+          "hitZ": -21,
+          "hitX": 10.95,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -18,
+          "hitZ": -18,
+          "hitX": 32.52,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -15,
+          "hitZ": -15,
+          "hitX": 31.47,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -12,
+          "hitZ": -12,
+          "hitX": 12.2,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -9,
+          "hitZ": -9,
+          "hitX": 24.7,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -6,
+          "hitZ": -6,
+          "hitX": 29.65,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -3,
+          "hitZ": -3,
+          "hitX": 28.56,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 0,
+          "hitZ": 0,
+          "hitX": 17.56,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 3,
+          "hitZ": 3,
+          "hitX": 25.78,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 6,
+          "hitZ": 6,
+          "hitX": 30.37,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 9,
+          "hitZ": 9,
+          "hitX": -37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 12,
+          "hitZ": 12,
+          "hitX": 27.66,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 15,
+          "hitZ": 15,
+          "hitX": -37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 18,
+          "hitZ": 18,
+          "hitX": -37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 21,
+          "hitZ": 21,
+          "hitX": 6.1,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 24,
+          "hitZ": 24,
+          "hitX": 27.24,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 27,
+          "hitZ": 27,
+          "hitX": 29.44,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 30,
+          "hitZ": 30,
+          "hitX": 15.44,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 33,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": 36,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        }
+      ]
+    },
+    {
+      "dir": "radial-west-to-east",
+      "out": [
+        {
+          "p": -36,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": -33,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": -30,
+          "hitZ": -30,
+          "hitX": -4.54,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -27,
+          "hitZ": -27,
+          "hitX": -33.25,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -24,
+          "hitZ": -24,
+          "hitX": -33.97,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -21,
+          "hitZ": -21,
+          "hitX": -10.69,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -18,
+          "hitZ": -18,
+          "hitX": -14.21,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -15,
+          "hitZ": -15,
+          "hitX": -12.2,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -12,
+          "hitZ": -12,
+          "hitX": -12.2,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -9,
+          "hitZ": -9,
+          "hitX": -12.2,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -6,
+          "hitZ": -6,
+          "hitX": -12.2,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": -3,
+          "hitZ": -3,
+          "hitX": 21.19,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 0,
+          "hitZ": 0,
+          "hitX": -33.7,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 3,
+          "hitZ": 3,
+          "hitX": -33.12,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 6,
+          "hitZ": 6,
+          "hitX": -30.25,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 9,
+          "hitZ": 9,
+          "hitX": 37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 12,
+          "hitZ": 12,
+          "hitX": -26.76,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 15,
+          "hitZ": 15,
+          "hitX": 37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 18,
+          "hitZ": 18,
+          "hitX": 37.75,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 21,
+          "hitZ": 21,
+          "hitX": -6.1,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 24,
+          "hitZ": 24,
+          "hitX": -28.78,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 27,
+          "hitZ": 27,
+          "hitX": -26.57,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 30,
+          "hitZ": 30,
+          "hitX": -12.57,
+          "hitY": 3,
+          "type": "Mesh"
+        },
+        {
+          "p": 33,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        },
+        {
+          "p": 36,
+          "hitZ": null,
+          "hitX": null,
+          "hitY": null,
+          "type": null
+        }
+      ]
+    }
+  ],
+  "boatSite": [
+    {
+      "x": -4,
+      "z": 17.5,
+      "hits": [
+        0.66,
+        0.4,
+        0.02,
+        0
+      ]
+    },
+    {
+      "x": -6,
+      "z": 14,
+      "hits": [
+        0.38,
+        0.02,
+        0
+      ]
+    },
+    {
+      "x": -2,
+      "z": 20,
+      "hits": [
+        6.6,
+        6.2,
+        5.3,
+        0.32,
+        0
+      ]
+    },
+    {
+      "x": -8,
+      "z": 12,
+      "hits": [
+        0.38,
+        0.02,
+        0
+      ]
+    },
+    {
+      "x": 0,
+      "z": 18,
+      "hits": [
+        5.3,
+        0.56,
+        0.3,
+        0.3,
+        0.02,
+        0
+      ]
+    }
+  ]
+}

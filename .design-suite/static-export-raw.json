@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "state": "static-export-evidence-ready",
+  "output": "C:\\Users\\ZhongKe\\Desktop\\Design\\.design-suite\\static-export-evidence.json",
+  "evidence": {
+    "evidence_type": "static-export-browser-evidence/v1",
+    "generator": "verify_static_export.mjs",
+    "kind": "website",
+    "delivery_adapter": "static-export",
+    "export_mode": "single-file",
+    "visual_provider": null,
+    "artifact_path": "../index.html",
+    "artifact_path_base": "evidence-directory",
+    "captured_at": "2026-11-06T03:35:57.066Z",
+    "browser": "chrome.exe",
+    "contract_sha256": "910b227c58d1a17ef68285fa508e7e70d0d69bd92f82b70d57d42225e7ec3e76",
+    "artifact_sha256": "7f980c9edc61e5f0a58b51992af3115fe29f0e95912defddca80792ff8b7571f",
+    "media_manifest_sha256": null,
+    "checks": {
+      "structure": "passed",
+      "offline": "passed",
+      "render": "passed",
+      "console": "passed",
+      "responsive": "passed"
+    },
+    "sandbox_runtime": {
+      "authored_violations": [],
+      "bundled_warnings": [],
+      "runtime_shim_usage": []
+    },
+    "viewports": [
+      {
+        "width": 320,
+        "height": 568,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      },
+      {
+        "width": 2560,
+        "height": 1080,
+        "process_status": 0,
+        "state": "ready",
+        "provider": "none",
+        "main": "visible",
+        "error_count": 0,
+        "error_messages": [],
+        "sandbox_api_usage": [],
+        "overflow": "false",
+        "app_preview": null,
+        "media": null,
+        "stderr": [
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "libpng warning: iCCP: known incorrect sRGB profile",
+          "DevTools listening on ws://127.0.0.1:56941/devtools/browser/0360ad0e-5781-439a-a9cd-c42e7cd55f36"
+        ]
+      }
+    ],
+    "structure": {
+      "ok": true,
+      "errors": [],
+      "references": [],
+      "local_references": [],
+      "external_references": [],
+      "sandbox_runtime": {
+        "authored_violations": [],
+        "bundled_warnings": []
+      }
+    }
+  }
+}

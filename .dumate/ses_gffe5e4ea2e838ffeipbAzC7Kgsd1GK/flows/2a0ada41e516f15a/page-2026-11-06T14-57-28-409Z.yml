@@ -1,0 +1,21 @@
+- main [ref=e2]:
+  - img "江南水乡园林三维场景：四面院墙合围、南面三开间重檐正门门楼，白墙黛瓦、曲溪流水、石拱桥与乌篷船，翠竹繁花环绕。可拖拽环视；键盘聚焦后使用左右方向键环绕、上下方向键调整俯仰、加号与减号缩放。" [ref=e3]
+  - generic:
+    - generic: 江南
+    - heading "江南水乡 · 园林漫境" [level=1]
+  - complementary "场景天气与时间控制" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e11]: 天气 晴
+      - generic [ref=e12]: 17°
+    - generic [ref=e13]:
+      - generic [ref=e14]: 演示读数
+      - button "展开" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: 展开
+        - img [ref=e17]
+  - paragraph: 风格化概念渲染 · 平地园林生态重构，非测绘还原
+  - status [ref=e19]:
+    - paragraph [ref=e20]: 江南水乡 · 园林漫境
+    - paragraph [ref=e23]: 铺展平地大地图、开辟南向开朗大池…
+  - status [ref=e24]

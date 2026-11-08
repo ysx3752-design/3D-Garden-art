@@ -1,0 +1,46 @@
+[
+  {
+    "step": "initial(晴/清晨)",
+    "brightness": 113.75
+  },
+  {
+    "step": "night t=0ms",
+    "brightness": 98.59
+  },
+  {
+    "step": "night t=300ms",
+    "brightness": 87.71
+  },
+  {
+    "step": "night t=600ms",
+    "brightness": 87.65
+  },
+  {
+    "step": "night t=900ms",
+    "brightness": 87.63
+  },
+  {
+    "step": "night t=1400ms(settled)",
+    "brightness": 87.63
+  },
+  {
+    "step": "rain/night",
+    "brightness": 103.76
+  },
+  {
+    "step": "rain/noon",
+    "brightness": 122.9
+  },
+  {
+    "step": "snow/morning",
+    "brightness": 135.65
+  },
+  {
+    "step": "fog/dusk",
+    "brightness": 134.04
+  },
+  {
+    "step": "sunny/noon",
+    "brightness": 146.56
+  }
+]
