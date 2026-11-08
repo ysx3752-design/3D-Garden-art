@@ -55,38 +55,42 @@
   var TIMES = {
     morning: {
       label: '清晨', clock: '06:20', baseTemp: 14,
-      skyTop: 0x2c466c, skyBottom: 0xdcb692, glow: 0xffcb90,
-      sunColor: 0xffd4a6, sunIntensity: 1.15, elevation: 11, azimuth: -82,
-      ambient: 0.32, hemiSky: 0xa8c5dc, hemiGround: 0x76755a, hemi: 0.50,
-      exposure: 1.04, fogColor: 0xd3dadf, fogDensity: 0.0038,
-      moon: 0, glowIntensity: 0.15, star: 0, celestial: 0xffeecc,
+      // 新海诚/吉卜力风格：明丽清透的淡蓝天顶、晨光初晓的暖金低斜朝阳，拉长亭桥倒影
+      skyTop: 0x1d5a98, skyBottom: 0xc8e4f7, glow: 0xffe2ac,
+      sunColor: 0xfff1d2, sunIntensity: 2.8, elevation: 26, azimuth: -54,
+      ambient: 0.18, hemiSky: 0x9bd8ff, hemiGround: 0x2e4426, hemi: 1.05,
+      exposure: 1.08, fogColor: 0xcfe4f5, fogDensity: 0.0034,
+      moon: 0, glowIntensity: 0.15, star: 0, celestial: 0xfffaea,
       firefly: 0
     },
     noon: {
       label: '正午', clock: '12:30', baseTemp: 25,
-      skyTop: 0x2767a5, skyBottom: 0xd2e5f2, glow: 0xfff2ce,
-      sunColor: 0xfff6dc, sunIntensity: 1.85, elevation: 64, azimuth: -16,
-      ambient: 0.44, hemiSky: 0xc2ddf2, hemiGround: 0x8b876a, hemi: 0.65,
-      exposure: 1.0, fogColor: 0xdde7f0, fogDensity: 0.0018,
-      moon: 0, glowIntensity: 0, star: 0, celestial: 0xfffaea,
+      // 吉卜力盛夏晴朗白昼：饱满蓝天、清亮绿水与分明屋檐落影
+      skyTop: 0x1668be, skyBottom: 0xcde8fc, glow: 0xfff6db,
+      sunColor: 0xfffef4, sunIntensity: 3.2, elevation: 48, azimuth: -34,
+      ambient: 0.20, hemiSky: 0xa4dbff, hemiGround: 0x324d28, hemi: 1.15,
+      exposure: 1.04, fogColor: 0xd6eaf8, fogDensity: 0.0028,
+      moon: 0, glowIntensity: 0, star: 0, celestial: 0xffffff,
       firefly: 0
     },
     dusk: {
       label: '黄昏', clock: '18:40', baseTemp: 20,
-      skyTop: 0x4d3d6a, skyBottom: 0xe89260, glow: 0xffaf6a,
-      sunColor: 0xffb578, sunIntensity: 0.98, elevation: 8, azimuth: 76,
-      ambient: 0.32, hemiSky: 0xa087b3, hemiGround: 0x6e6250, hemi: 0.45,
-      exposure: 1.08, fogColor: 0xc49b88, fogDensity: 0.0042,
-      moon: 0, glowIntensity: 0.85, star: 0.15, celestial: 0xffb272,
+      // 高级黄昏电影感：低角度金红晚霞、超长戏剧感拉长阴影、紫金暮色天际
+      skyTop: 0x482f64, skyBottom: 0xe88752, glow: 0xff994a,
+      sunColor: 0xff9548, sunIntensity: 2.4, elevation: 13, azimuth: 68,
+      ambient: 0.16, hemiSky: 0x9e6f98, hemiGround: 0x423223, hemi: 0.85,
+      exposure: 1.12, fogColor: 0xde956c, fogDensity: 0.0038,
+      moon: 0, glowIntensity: 0.95, star: 0.15, celestial: 0xff9e58,
       firefly: 0.8
     },
     night: {
       label: '夜晚', clock: '21:10', baseTemp: 12,
-      skyTop: 0x0a1428, skyBottom: 0x1a2c46, glow: 0x394f72,
-      sunColor: 0x9cb4dc, sunIntensity: 0.22, elevation: 36, azimuth: 116,
-      ambient: 0.18, hemiSky: 0x324368, hemiGround: 0x242a32, hemi: 0.32,
-      exposure: 1.15, fogColor: 0x162237, fogDensity: 0.0052,
-      moon: 0.65, glowIntensity: 1.25, star: 0.92, celestial: 0xe3eaf8,
+      // 诗意江南静谧水乡月夜：冷调月光与幽蓝天幕，暖黄灯火交相辉映
+      skyTop: 0x091426, skyBottom: 0x182a44, glow: 0x32486c,
+      sunColor: 0x8aa8d8, sunIntensity: 0.38, elevation: 36, azimuth: 118,
+      ambient: 0.10, hemiSky: 0x1c2b44, hemiGround: 0x101814, hemi: 0.42,
+      exposure: 1.16, fogColor: 0x141f30, fogDensity: 0.0048,
+      moon: 0.70, glowIntensity: 1.6, star: 0.95, celestial: 0xe3eaf8,
       firefly: 1.0
     }
   };
@@ -1500,6 +1504,73 @@
 
   // 6. 【荷风四面水亭】：湖心六角水榭亭台
   // 6. 【荷风四面水亭】：走廊右侧（用户视角东侧）水上六角水榭亭台
+  
+  /* ---------------- 围棋盘十九路纹理生成（天然榧木色调、精致网格与九星） ---------------- */
+  function weiqiBoardTexture() {
+    var c = document.createElement('canvas');
+    c.width = 512;
+    c.height = 512;
+    var ctx = c.getContext('2d');
+
+    // 棋盘主体榧木温润色泽与木纹底色
+    var grad = ctx.createLinearGradient(0, 0, 512, 512);
+    grad.addColorStop(0, '#eac07e');
+    grad.addColorStop(0.5, '#deb060');
+    grad.addColorStop(1, '#cfa04c');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 512, 512);
+
+    // 细腻行云木纹
+    ctx.strokeStyle = 'rgba(150, 95, 30, 0.14)';
+    ctx.lineWidth = 1.2;
+    for (var i = 0; i < 512; i += 3) {
+      ctx.beginPath();
+      ctx.moveTo(0, i + Math.sin(i * 0.08) * 3);
+      ctx.bezierCurveTo(160, i + Math.sin(i * 0.05) * 5, 340, i - Math.cos(i * 0.04) * 4, 512, i);
+      ctx.stroke();
+    }
+
+    // 19x19 围棋标准路网格与星位
+    var pad = 38;
+    var step = (512 - pad * 2) / 18; // 24.22px
+    ctx.strokeStyle = '#26201b';
+    ctx.lineWidth = 1.6;
+    for (var l = 0; l < 19; l++) {
+      var p = Math.round(pad + l * step);
+      // 横线
+      ctx.beginPath();
+      ctx.moveTo(pad, p);
+      ctx.lineTo(512 - pad, p);
+      ctx.stroke();
+      // 竖线
+      ctx.beginPath();
+      ctx.moveTo(p, pad);
+      ctx.lineTo(p, 512 - pad);
+      ctx.stroke();
+    }
+    // 粗外边框
+    ctx.lineWidth = 2.6;
+    ctx.strokeRect(pad, pad, 512 - pad * 2, 512 - pad * 2);
+
+    // 九个星位（天元与八星：第4、10、16道交点，即 0-indexed 3, 9, 15）
+    var stars = [3, 9, 15];
+    ctx.fillStyle = '#1c1713';
+    stars.forEach(function (sx) {
+      stars.forEach(function (sy) {
+        var x = pad + sx * step;
+        var y = pad + sy * step;
+        ctx.beginPath();
+        ctx.arc(x, y, 4.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    });
+
+    var tex = new THREE.CanvasTexture(c);
+    tex.wrapS = THREE.ClampToEdgeWrapping;
+    tex.wrapT = THREE.ClampToEdgeWrapping;
+    return tex;
+  }
+
   function buildLakePavilion() {
     var g = new THREE.Group();
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: 0xbeb9af, roughness: 0.9 });
@@ -1556,6 +1627,138 @@
     lampLights.push(light);
 
     // 位于走廊右侧（用户视角东侧，x: 8.5, z: 8.5），坐落于水池中心
+    
+    // ---------------- 石桌、棋盘与坐垫（荷风四面水亭核心对弈雅趣） ----------------
+    // 1. 古典青石雕花圆石桌（束腰鼓腹石座与厚圆石台面）
+    var tableStoneMat = new THREE.MeshStandardMaterial({
+      map: stoneTexture(),
+      color: 0xdfddd6,
+      roughness: 0.62,
+      metalness: 0.04
+    });
+    snowCoverMats.push(tableStoneMat);
+    applySnowAccumulation(tableStoneMat, 0.85);
+
+    // 石桌底座
+    addMesh(new THREE.CylinderGeometry(0.36, 0.42, 0.10, 20), tableStoneMat, 0, 0.85, 0, { parent: g, cast: true, receive: true });
+    // 束腰雕花鼓腹立柱
+    addMesh(new THREE.CylinderGeometry(0.22, 0.32, 0.36, 20), tableStoneMat, 0, 1.08, 0, { parent: g, cast: true });
+    // 承托台面托首
+    addMesh(new THREE.CylinderGeometry(0.38, 0.25, 0.10, 20), tableStoneMat, 0, 1.31, 0, { parent: g, cast: true });
+    // 圆石桌面（标高 1.40m，台面高 1.44m）
+    var tableTopMesh = addMesh(new THREE.CylinderGeometry(0.56, 0.56, 0.08, 36), tableStoneMat, 0, 1.40, 0, { parent: g, cast: true, receive: true });
+    tableTopMesh.name = 'pavilionTableTop';
+
+    // 2. 传统实木围棋盘（十九路标准棋盘，置于石桌中心）
+    var woodBoardSideMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0xcca366, roughness: 0.65 });
+    var weiqiFaceMat = new THREE.MeshStandardMaterial({ map: weiqiBoardTexture(), roughness: 0.55 });
+    var boardMaterials = [
+      woodBoardSideMat, // +X
+      woodBoardSideMat, // -X
+      weiqiFaceMat,     // +Y (棋盘顶面)
+      woodBoardSideMat, // -Y
+      woodBoardSideMat, // +Z
+      woodBoardSideMat  // -Z
+    ];
+    var boardMesh = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.045, 0.44), boardMaterials);
+    boardMesh.position.set(0, 1.44 + 0.045 / 2, 0);
+    boardMesh.castShadow = true;
+    boardMesh.receiveShadow = true;
+    boardMesh.name = 'pavilionChessboard';
+    g.add(boardMesh);
+
+    // 3. 两个棋笥（黑子罐与白子罐，置于棋盘东西两侧，盒盖半启）
+    var blackBowlMat = new THREE.MeshStandardMaterial({ color: 0x181818, roughness: 0.22, metalness: 0.15 });
+    var whiteBowlMat = new THREE.MeshStandardMaterial({ color: 0xf5f3ee, roughness: 0.25, metalness: 0.08 });
+    // 黑子罐（东侧，local x: 0.30, z: 0.16）
+    addMesh(new THREE.CylinderGeometry(0.065, 0.05, 0.075, 18), blackBowlMat, 0.30, 1.44 + 0.038, 0.16, { parent: g, cast: true });
+    addMesh(new THREE.CylinderGeometry(0.068, 0.07, 0.016, 18), blackBowlMat, 0.38, 1.44 + 0.012, 0.12, { parent: g, rotX: 0.25, cast: true });
+    // 白子罐（西侧，local x: -0.30, z: -0.16）
+    addMesh(new THREE.CylinderGeometry(0.065, 0.05, 0.075, 18), whiteBowlMat, -0.30, 1.44 + 0.038, -0.16, { parent: g, cast: true });
+    addMesh(new THREE.CylinderGeometry(0.068, 0.07, 0.016, 18), whiteBowlMat, -0.38, 1.44 + 0.012, -0.12, { parent: g, rotX: -0.25, cast: true });
+
+    // 4. 云子棋子（棋局正酣，星位与角部定式中盘厮杀）
+    var blackStoneMat = new THREE.MeshStandardMaterial({ color: 0x161616, roughness: 0.14, metalness: 0.1 });
+    var whiteStoneMat = new THREE.MeshStandardMaterial({ color: 0xf8f6f0, roughness: 0.20, metalness: 0.04 });
+    var stoneGeo = new THREE.SphereGeometry(0.0094, 10, 6);
+    stoneGeo.scale(1.0, 0.35, 1.0);
+
+    var step3d = (0.44 * (436 / 512)) / 18; // 约 0.0208m
+    var boardTopY = 1.44 + 0.045 + 0.0032;
+
+    var blackPlacements = [
+      [3, 3], [3, 4], [4, 3], [2, 5], [5, 2],
+      [-3, 3], [-4, 3], [-3, 5], [-2, 6], [-5, 2],
+      [-3, -3], [-4, -3], [-3, -5], [-5, -2],
+      [3, -3], [4, -3], [3, -5], [5, -4],
+      [0, 0], [1, 0], [-1, 1], [0, -1], [2, -1], [-2, 0]
+    ];
+    var whitePlacements = [
+      [4, 4], [5, 3], [3, 5], [2, 4], [6, 4],
+      [-4, 4], [-5, 3], [-3, 4], [-5, 5], [-4, 2],
+      [-4, -4], [-5, -4], [-3, -4], [-4, -5],
+      [4, -4], [5, -3], [4, -5], [3, -4],
+      [0, 1], [-1, 0], [1, -1], [0, 2], [-1, -1], [1, 1]
+    ];
+
+    blackPlacements.forEach(function (pt) {
+      var sm = new THREE.Mesh(stoneGeo, blackStoneMat);
+      sm.position.set(pt[0] * step3d, boardTopY, pt[1] * step3d);
+      g.add(sm);
+    });
+    whitePlacements.forEach(function (pt) {
+      var sm = new THREE.Mesh(stoneGeo, whiteStoneMat);
+      sm.position.set(pt[0] * step3d, boardTopY, pt[1] * step3d);
+      g.add(sm);
+    });
+
+    // 5. 绣墩与丝缎坐垫（南北两相对席：石鼓绣墩，其上置大红锦缎厚坐垫，让人舒适入座）
+    var stoolMat = new THREE.MeshStandardMaterial({
+      map: woodTexture(),
+      color: 0x422d20,
+      roughness: 0.65
+    });
+    var cushionMat = new THREE.MeshStandardMaterial({
+      color: 0xa32d2c, // 经典朱红锦缎
+      roughness: 0.78
+    });
+    var goldTrimMat = new THREE.MeshStandardMaterial({
+      color: 0xd4af37, // 金色滚边与鼓钉
+      roughness: 0.35,
+      metalness: 0.6
+    });
+
+    [-1, 1].forEach(function (dir) {
+      var sz = dir * 0.85;
+      var stoolG = new THREE.Group();
+      stoolG.position.set(0, 0, sz);
+
+      // 绣墩底座与鼓形腰腹
+      addMesh(new THREE.CylinderGeometry(0.20, 0.23, 0.08, 20), stoolMat, 0, 0.84, 0, { parent: stoolG, cast: true, receive: true });
+      addMesh(new THREE.CylinderGeometry(0.24, 0.20, 0.22, 20), stoolMat, 0, 0.98, 0, { parent: stoolG, cast: true });
+      addMesh(new THREE.CylinderGeometry(0.21, 0.24, 0.06, 20), stoolMat, 0, 1.11, 0, { parent: stoolG, cast: true });
+
+      // 金色鼓钉纹饰
+      for (var d = 0; d < 12; d++) {
+        var da = (d / 12) * Math.PI * 2;
+        addMesh(new THREE.SphereGeometry(0.010, 6, 6), goldTrimMat,
+          Math.cos(da) * 0.22, 1.11, Math.sin(da) * 0.22, { parent: stoolG });
+        addMesh(new THREE.SphereGeometry(0.010, 6, 6), goldTrimMat,
+          Math.cos(da) * 0.21, 0.86, Math.sin(da) * 0.21, { parent: stoolG });
+      }
+
+      // 柔软大红锦缎坐垫（厚实饱满，让人安心落座）
+      var cMesh = addMesh(new THREE.CylinderGeometry(0.235, 0.245, 0.08, 24), cushionMat, 0, 1.17, 0, { parent: stoolG, cast: true });
+      cMesh.name = (dir > 0) ? 'pavilionCushionSouth' : 'pavilionCushionNorth';
+      // 坐垫金丝滚边
+      var ringMesh = new THREE.Mesh(new THREE.TorusGeometry(0.24, 0.014, 8, 28), goldTrimMat);
+      ringMesh.rotation.x = Math.PI / 2;
+      ringMesh.position.set(0, 1.17, 0);
+      stoolG.add(ringMesh);
+
+      g.add(stoolG);
+    });
+
     g.position.set(8.5, WATER_Y, 8.5);
     scene.add(g);
   }
@@ -3425,22 +3628,83 @@
     var leafGeo = new THREE.CircleGeometry(0.78, 14, 0, Math.PI * 1.76);
     leafGeo.rotateX(-Math.PI / 2);
 
-    // 荷叶与荷花群落中心规划：
-    // 重点分散小船那一侧（西池）的水面荷叶，避开主屋扎堆，自然散布于小船周围水湾、西岸垂柳下以及全园各个水域
+    // 荷叶与荷花群落中心精准规划：
+    // 1. 【红色区域 1】：小飞虹石拱桥南侧开阔水面（z = 7.0 ~ 9.5 纯净水面区）
+    // 2. 【红色区域 2】：汀步石西侧月牙水湾（汀步与西岸栅栏之间纯净水面区）
+    // 3. 【红色区域 3】：乌篷木船右侧/南侧与直廊之间水面（木船与直廊间水道）
+    // 4. 【彻底根治桥头穿模】：将石拱桥落坪石阶、临水石护栏与周围叠石区（x: -16.5 ~ -7.0, z: -1.5 ~ 4.5）设为绝对禁区！
+    //    杜绝任何荷叶或花朵进入桥头石阶、扶手与假山石范围！
     var clusterCenters = [
-      // 西池（小船一侧）：自然疏密分布，从小船旁延伸至西岸垂柳水湾，绝不全挤在主屋前
-      { cx: -8.0, cz: 11.5, r: 3.8, count: 18 },  // 小船北侧开阔水面
-      { cx: -12.5, cz: 8.5, r: 3.5, count: 16 },  // 小船西侧近岸石矶与水湾
-      { cx: -13.0, cz: 14.5, r: 2.8, count: 10 }, // 码头与小船南侧近岸
-      { cx: -9.5, cz: 3.5, r: 3.2, count: 12 },   // 西池通往小飞虹拱桥南侧水域
-      // 东池（水亭一侧）：环水榭与东绿渚
-      { cx: 8.5, cz: 12.5, r: 4.2, count: 18 },   // 水亭南侧碧波水面
-      { cx: 13.5, cz: 7.5, r: 3.8, count: 16 },   // 东岸芦苇与石矶旁
-      { cx: 5.5, cz: 5.2, r: 3.2, count: 14 },    // 直廊与水亭之间水面
-      // 南北开阔水域自然点缀
-      { cx: -4.5, cz: 7.5, r: 2.8, count: 10 },   // 直廊西侧中段水面
-      { cx: 0.0, cz: 3.5, r: 2.5, count: 8 }      // 主屋前方适量散布（少量点缀，不再密集扎堆）
+      // 1. 西池中心开阔水域（疏朗点缀，远离任何建筑物）
+      { cx: -10.5, cz: 10.5, r: 1.8, count: 5 },
+      // 2. 【红色区域 1】：小飞虹石拱桥南侧开阔水面（远离桥体与桥头）
+      { cx: -12.5, cz: 8.2, r: 1.6, count: 5 },
+      // 3. 【红色区域 2】：汀步石西侧月牙水湾（汀步与西岸栅栏之间水域）
+      { cx: -22.0, cz: 11.0, r: 1.8, count: 5 },
+      // 4. 【红色区域 3】：乌篷木船与直廊之间水面（木船南侧/右侧开阔水面）
+      { cx: -4.8, cz: 15.2, r: 1.5, count: 4 },
+      // 5. 西池月牙水湾深处垂柳下（避开拱桥与西岸）
+      { cx: -21.5, cz: -0.5, r: 1.4, count: 4 },
+      // 6. 东池群落（水亭南侧碧波、东岸绿渚与东溪水面）
+      { cx: 8.5, cz: 13.0, r: 3.2, count: 12 },
+      { cx: 13.8, cz: 8.0, r: 2.8, count: 10 },
+      { cx: 6.0, cz: 4.8, r: 2.6, count: 4 },
+      { cx: 16.5, cz: 2.5, r: 2.0, count: 5 },
+      { cx: 3.5, cz: 13.5, r: 1.8, count: 4 }
     ];
+
+    var stepPts = [
+      [-21.5, 9.5], [-19.5, 10.8], [-17.5, 11.8], [-15.5, 12.5], [-13.5, 13.0]
+    ];
+
+    // 高精度全景防穿模与防堆积检测判定
+    function isValidLotusPos(x, z, placedArr) {
+      // 1. 【核心禁区：拱桥东落坪石阶、转角大石坪、临水护栏与驳岸叠石区】：
+      //    范围覆盖 x: -16.5 ~ -7.0, z: -1.5 ~ 4.5，彻底杜绝桥头台阶、栏杆与岩石任何穿模！
+      if (x >= -16.5 && x <= -7.0 && z >= -1.5 && z <= 4.5) return false;
+
+      // 2. 直廊平台（x=0，平台半宽 1.2m，附加荷叶半径保护区 2.1m）
+      if (Math.abs(x) < 2.1 && z >= -1.0 && z <= 18.0) return false;
+      // 3. 主殿汉白玉台座前沿踏步（z < -0.6m 且在主殿面宽范围内）
+      if (z < -0.6 && Math.abs(x) < 14.0) return false;
+      // 4. 西南亲水码头（x: -15.5 ~ -9.0, z: 12.0 ~ 18.0，带安全外延）
+      if (x >= -15.5 && x <= -9.0 && z >= 12.0) return false;
+      // 5. 乌篷木船主体（x=-8.2, z=14.8，外延包围盒保护）
+      if (Math.hypot(x - (-8.2), z - 14.8) < 2.1) return false;
+      if (x >= -9.6 && x <= -6.8 && z >= 12.0 && z <= 17.6) return false;
+      // 6. 5 处青石漫水汀步石（严格避开汀步石体）
+      for (var s = 0; s < stepPts.length; s++) {
+        if (Math.hypot(x - stepPts[s][0], z - stepPts[s][1]) < 1.35) return false;
+      }
+      // 7. 小飞虹石拱桥桥身全域
+      var dx = x - (-20.5);
+      var dz = z - 4.0;
+      var cosA = Math.cos(-0.45);
+      var sinA = Math.sin(-0.45);
+      var lx = dx * cosA - dz * sinA;
+      var lz = dx * sinA + dz * cosA;
+      if (Math.abs(lz) < 2.8 && lx > -6.5 && lx < 9.0) return false;
+      // 8. 西岸岸线与木栅栏
+      if (x < -24.8) return false;
+      // 9. 南面合围墙体边缘
+      if (z > 17.4) return false;
+      // 10. 水亭荷风四面亭八角台座与栏杆
+      if (Math.hypot(x - 8.5, z - 8.5) < 4.2) return false;
+      // 11. 直廊通往水亭平桥
+      if (x > 1.0 && x < 5.2 && Math.abs(z - 8.5) < 1.4) return false;
+      // 12. 亭台北侧九曲平桥
+      var bzPts = [[9.8, 0.4], [9.2, 1.8], [8.8, 3.2], [8.5, 4.4]];
+      for (var b = 0; b < bzPts.length; b++) {
+        if (Math.hypot(x - bzPts[b][0], z - bzPts[b][1]) < 1.4) return false;
+      }
+      // 13. 防重叠堆积：与已生成荷叶保持至少 0.68m 间距，留出清秀水影
+      if (placedArr) {
+        for (var p = 0; p < placedArr.length; p++) {
+          if (Math.hypot(x - placedArr[p][0], z - placedArr[p][1]) < 0.68) return false;
+        }
+      }
+      return true;
+    }
 
     var totalLeaves = 0;
     clusterCenters.forEach(function (c) { totalLeaves += c.count; });
@@ -3451,31 +3715,25 @@
     var s = new THREE.Vector3();
     var rnd = makeRandom(68);
 
+    var placedLeaves = [];
     var leafIdx = 0;
+
     clusterCenters.forEach(function (c) {
-      for (var k = 0; k < c.count; k++) {
+      var placedInCluster = 0;
+      for (var a = 0; a < c.count * 15 && placedInCluster < c.count; a++) {
         var ang = rnd() * Math.PI * 2;
         var dist = Math.sqrt(rnd()) * c.r;
-        var lx = c.cx + Math.cos(ang) * dist + (rnd() - 0.5) * 0.8;
-        var lz = c.cz + Math.sin(ang) * dist + (rnd() - 0.5) * 0.8;
+        var lx = c.cx + Math.cos(ang) * dist;
+        var lz = c.cz + Math.sin(ang) * dist;
 
-        // 精准避让直廊地面
-        if (Math.abs(lx) < 1.4 && lz >= -0.15 && lz <= 17.8) continue;
-        // 避让小船船舱主体（小船位于 x=-8.2, z=14.8）
-        if (Math.hypot(lx - (-8.2), lz - 14.8) < 1.8) continue;
-        // 避让水亭台座
-        if (Math.hypot(lx - 8.5, lz - 8.5) < 3.8) continue;
-        // 避让小飞虹石拱桥桥面
-        var archDx = lx - (-20.5); var archDz = lz - 4.0;
-        var alx = archDx * 0.9004 - archDz * -0.4350;
-        var alz = archDx * -0.4350 + archDz * 0.9004;
-        if (Math.abs(alz) < 2.0 && alx > -5.5 && alx < 7.5) continue;
-        // 避让直廊通往水亭的平桥
-        if (lx > 1.0 && lx < 4.8 && Math.abs(lz - 8.5) < 1.0) continue;
+        if (!isValidLotusPos(lx, lz, placedLeaves)) continue;
 
-        p.set(lx, WATER_Y + 0.14 + rnd() * 0.035, lz);
-        q.setFromEuler(new THREE.Euler((rnd() - 0.5) * 0.12, rnd() * Math.PI * 2, (rnd() - 0.5) * 0.12));
-        var sc = 0.65 + rnd() * 0.75;
+        placedLeaves.push([lx, lz]);
+        placedInCluster++;
+
+        p.set(lx, WATER_Y + 0.14 + (rnd() - 0.5) * 0.02, lz);
+        q.setFromEuler(new THREE.Euler((rnd() - 0.5) * 0.10, rnd() * Math.PI * 2, (rnd() - 0.5) * 0.10));
+        var sc = 0.70 + rnd() * 0.65;
         s.set(sc, 1, sc);
         m.compose(p, q, s);
         lotusLeaves.setMatrixAt(leafIdx++, m);
@@ -3495,60 +3753,48 @@
 
     var flowerMats = [petalPinkMat, petalPinkMat, petalWhiteMat, petalRoseMat];
 
-    // 全池增加丰富荷花（荷花总数增加至 42 朵，均匀分布于小船侧、水亭侧及全池各群落）
+    // 荷花伴生分布：依托荷叶伴生盛放荷花，高低错落
     var flowerRnd = makeRandom(92);
-    var flowersPerCluster = [5, 5, 4, 4, 6, 6, 5, 4, 3];
+    placedLeaves.forEach(function (leafPt, idx) {
+      if (flowerRnd() > 0.52 && idx % 3 !== 0) return;
 
-    clusterCenters.forEach(function (c, cIdx) {
-      var numF = flowersPerCluster[cIdx] || 4;
-      for (var f = 0; f < numF; f++) {
-        var fang = flowerRnd() * Math.PI * 2;
-        var fdist = Math.sqrt(flowerRnd()) * (c.r * 0.95);
-        var fx = c.cx + Math.cos(fang) * fdist + (flowerRnd() - 0.5) * 0.6;
-        var fz = c.cz + Math.sin(fang) * fdist + (flowerRnd() - 0.5) * 0.6;
+      var fOffsetAng = flowerRnd() * Math.PI * 2;
+      var fOffsetDist = 0.18 + flowerRnd() * 0.28;
+      var fx = leafPt[0] + Math.cos(fOffsetAng) * fOffsetDist;
+      var fz = leafPt[1] + Math.sin(fOffsetAng) * fOffsetDist;
 
-        // 避让建筑物结构
-        if (Math.abs(fx) < 1.4 && fz >= -0.15 && fz <= 17.8) continue;
-        if (Math.hypot(fx - (-8.2), fz - 14.8) < 1.8) continue;
-        if (Math.hypot(fx - 8.5, fz - 8.5) < 3.8) continue;
-        var f_archDx = fx - (-20.5); var f_archDz = fz - 4.0;
-        var f_alx = f_archDx * 0.9004 - f_archDz * -0.4350;
-        var f_alz = f_archDx * -0.4350 + f_archDz * 0.9004;
-        if (Math.abs(f_alz) < 2.0 && f_alx > -5.5 && f_alx < 7.5) continue;
-        if (fx > 1.0 && fx < 4.8 && Math.abs(fz - 8.5) < 1.0) continue;
+      if (!isValidLotusPos(fx, fz, null)) return;
 
-        var fg = new THREE.Group();
-        var stemH = 0.35 + flowerRnd() * 0.32; // 高出水面婷婷玉立
-        var curPetalMat = flowerMats[Math.floor(flowerRnd() * flowerMats.length)];
+      var fg = new THREE.Group();
+      var stemH = 0.36 + flowerRnd() * 0.30;
+      var curPetalMat = flowerMats[Math.floor(flowerRnd() * flowerMats.length)];
 
-        // 荷梗
-        addMesh(new THREE.CylinderGeometry(0.025, 0.025, stemH, 4), stemMat, 0, stemH / 2, 0, { parent: fg });
+      // 荷梗
+      addMesh(new THREE.CylinderGeometry(0.024, 0.024, stemH, 4), stemMat, 0, stemH / 2, 0, { parent: fg });
 
-        // 金黄莲蓬莲心
-        addMesh(new THREE.CylinderGeometry(0.12, 0.08, 0.14, 6), centerMat, 0, stemH + 0.05, 0, { parent: fg });
+      // 金黄莲蓬莲心
+      addMesh(new THREE.CylinderGeometry(0.12, 0.08, 0.14, 6), centerMat, 0, stemH + 0.05, 0, { parent: fg });
 
-        // 双层花瓣（外层盛开，内层挺立，或者含苞待放）
-        var isOpen = flowerRnd() > 0.22;
-        var petCount = isOpen ? 8 : 5;
-        for (var pet = 0; pet < petCount; pet++) {
-          var pa = (pet / petCount) * Math.PI * 2 + (flowerRnd() - 0.5) * 0.3;
-          var coneH = isOpen ? (0.42 + flowerRnd() * 0.15) : (0.36 + flowerRnd() * 0.1);
-          var rotTilt = isOpen ? (0.40 + flowerRnd() * 0.18) : (0.15 + flowerRnd() * 0.1);
-          addMesh(new THREE.ConeGeometry(0.14, coneH, 4), curPetalMat,
-            Math.cos(pa) * 0.13, stemH + 0.06, Math.sin(pa) * 0.13,
-            { parent: fg, rotZ: Math.cos(pa) * rotTilt, rotX: Math.sin(pa) * rotTilt });
-        }
-
-        // 适度微调随机朝向
-        fg.rotation.y = flowerRnd() * Math.PI * 2;
-        fg.rotation.z = (flowerRnd() - 0.5) * 0.10;
-        fg.position.set(fx, WATER_Y + 0.14, fz);
-        scene.add(fg);
+      // 双层花瓣（盛开或含苞）
+      var isOpen = flowerRnd() > 0.25;
+      var petCount = isOpen ? 8 : 5;
+      for (var pet = 0; pet < petCount; pet++) {
+        var pa = (pet / petCount) * Math.PI * 2 + (flowerRnd() - 0.5) * 0.3;
+        var coneH = isOpen ? (0.42 + flowerRnd() * 0.15) : (0.36 + flowerRnd() * 0.1);
+        var rotTilt = isOpen ? (0.40 + flowerRnd() * 0.18) : (0.15 + flowerRnd() * 0.1);
+        addMesh(new THREE.ConeGeometry(0.14, coneH, 4), curPetalMat,
+          Math.cos(pa) * 0.13, stemH + 0.06, Math.sin(pa) * 0.13,
+          { parent: fg, rotZ: Math.cos(pa) * rotTilt, rotX: Math.sin(pa) * rotTilt });
       }
+
+      fg.rotation.y = flowerRnd() * Math.PI * 2;
+      fg.rotation.z = (flowerRnd() - 0.5) * 0.10;
+      fg.position.set(fx, WATER_Y + 0.14, fz);
+      scene.add(fg);
     });
   }
 
-  /* ---------------- 12.5 古典庭院石灯笼系统（傍水随径，黄昏自动点亮） ---------------- */
+    /* ---------------- 12.5 古典庭院石灯笼系统（傍水随径，黄昏自动点亮） ---------------- */
 
   function buildStoneLantern(x, y, z, scale) {
     scale = scale || 1.0;
@@ -3594,12 +3840,12 @@
   function buildStoneLanterns() {
     var spots = [
       // 1. 庭院与水岸石灯笼（湖滨观景点与引桥引道）
-      [2.2, 0.08, 6.8, 1.0],     // 中轴直廊水榭连桥畔
-      [7.2, 0.08, 4.2, 0.95],    // 荷风四面水亭北石阶引桥畔
       [-21.5, 0.08, 5.2, 1.05],  // 小飞虹西桥堍古石径旁
       [23.6, 0.08, -3.2, 0.95],  // 涵青书斋月洞门步道旁
-      [5.2, 0.08, 16.5, 1.0],    // 南岸赏荷青石步道旁
       [-9.8, 0.08, 13.5, 1.0],   // 西南岸曲廊外石径旁
+
+      // 【荷风四面水亭石灯笼】：原水池中3座多余石灯均已移除（绝不在水中），仅留1座立于水亭西南石基边缘（标高1.14m，不设于水中）
+      [5.6, 1.14, 7.2, 0.95],
 
       // 2. 【主屋四个角落石灯笼】：依柱座四角平地而设，烘托正殿庄重雅致
       [-15.0, 0.08, -2.2, 1.0],  // 主屋前西南角（近西侧登桥石阶）
@@ -3772,25 +4018,33 @@
   }
 
   function buildLights() {
-    hemiLight = new THREE.HemisphereLight(0xc2ddf2, 0x8b876a, 0.65);
+    // 3. 半球光（HemisphereLight）补光：天空色淡蓝色，地面反射色暗草绿，彻底解决阴影死黑问题，注入新海诚/吉卜力通透水彩色调
+    hemiLight = new THREE.HemisphereLight(0x9bd8ff, 0x2e4426, 0.95);
     scene.add(hemiLight);
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+
+    // 辅助环境弱光：柔和微暖基底
+    ambientLight = new THREE.AmbientLight(0xfffaec, 0.16);
     scene.add(ambientLight);
 
-    sunLight = new THREE.DirectionalLight(0xfff6dc, 1.6);
-    sunLight.position.set(80, 115, 60);
-    sunLight.castShadow = !isMobile;
-    if (!isMobile) {
-      sunLight.shadow.mapSize.set(1024, 1024);
-      sunLight.shadow.camera.near = 10;
-      sunLight.shadow.camera.far = 480;
-      sunLight.shadow.camera.left = -85;
-      sunLight.shadow.camera.right = 85;
-      sunLight.shadow.camera.top = 85;
-      sunLight.shadow.camera.bottom = -85;
-      sunLight.shadow.bias = -0.0006;
-      sunLight.shadow.camera.updateProjectionMatrix();
-    }
+    // 2. 主方向光（DirectionalLight）模拟太阳：低斜侧射角使建筑、亭桥与柳树投射出清晰拉长、层次丰富的画意长影
+    sunLight = new THREE.DirectionalLight(0xfff3db, 2.8);
+    sunLight.position.set(78, 56, 68);
+    sunLight.target.position.set(0, 0, 4);
+    sunLight.castShadow = true;
+
+    // 2. 优化阴影相机视锥体与高精度阴影贴图（2048x2048）
+    sunLight.shadow.mapSize.set(2048, 2048);
+    sunLight.shadow.camera.near = 5;
+    sunLight.shadow.camera.far = 340;
+    sunLight.shadow.camera.left = -64;
+    sunLight.shadow.camera.right = 64;
+    sunLight.shadow.camera.top = 64;
+    sunLight.shadow.camera.bottom = -64;
+    sunLight.shadow.bias = -0.00035;
+    sunLight.shadow.normalBias = 0.038; // 彻底消除曲面柱体与屋檐的阶梯状阴影条纹（shadow acne）
+    sunLight.shadow.radius = 2.0;       // PCFSoft 柔化半影边缘，呈现吉卜力/新海诚手绘动画柔光质感
+    sunLight.shadow.camera.updateProjectionMatrix();
+
     scene.add(sunLight);
     scene.add(sunLight.target);
 
@@ -4005,7 +4259,7 @@
 
   /* ---------------- 15.5 漫游交互、第一人称行走与原生过程化声学合成 ---------------- */
 
-  var viewMode = 'god'; // 'god' | 'walk' | 'tour'
+  var viewMode = 'god'; // 'god' | 'walk'
   var playerPos = new THREE.Vector3(0, 1.73, 13.5);
   var playerYaw = 0;   // 0 = facing north (-z)
   var playerPitch = -0.05;
@@ -4016,22 +4270,6 @@
   var lastDragX = 0;
   var lastDragY = 0;
 
-  var tourProgress = 0;
-  var tourCurve = null;
-  var tourPoints = [
-    new THREE.Vector3(0, 2.2, 18.2),     // 1. 南大门正门石阶，仰望三开间重檐门楼
-    new THREE.Vector3(0, 2.25, 12.5),    // 2. 漫步中央水上长廊，望两岸池水荷花
-    new THREE.Vector3(3.2, 2.35, 8.5),   // 3. 步入走廊横跨平桥，迎微风走向荷风四面水亭
-    new THREE.Vector3(8.5, 2.35, 8.5),   // 4. 驻足湖心水榭亭内，环顾碧波池水与八角宫灯
-    new THREE.Vector3(8.8, 2.35, 3.2),   // 5. 穿出水亭，漫步水上九曲青石板平桥
-    new THREE.Vector3(10.5, 2.9, -1.8),  // 6. 拾级而上主殿东侧月洞门石阶
-    new THREE.Vector3(6.0, 3.1, -4.2),   // 7. 漫步主殿远香堂月台东侧，观莲花石雕栏杆
-    new THREE.Vector3(-6.0, 3.1, -4.2),  // 8. 走过主殿正门月台，俯瞰全池盛景
-    new THREE.Vector3(-14.5, 2.4, 0.5),  // 9. 经主殿西侧绿渚，迎向小飞虹石拱桥
-    new THREE.Vector3(-20.5, 3.9, 4.0),  // 10. 登上小飞虹拱桥顶峰，俯览西池清流与回廊
-    new THREE.Vector3(-12.0, 2.1, 14.5), // 11. 经水码头与临水石矶，回眺荷塘
-    new THREE.Vector3(0, 2.2, 18.2)      // 12. 平滑闭合回到南大门
-  ];
 
   // 地面高程判定（包含台阶、踏步、桥梁、走廊、亭榭、石台）
   function getGroundHeight(x, z) {
@@ -4095,12 +4333,16 @@
       return 0.56;
     }
 
-    // 6. 走廊至水亭横跨平桥（x: 0.8 ~ 5.2, z=8.5, 标高 0.65m，与长廊及水亭丝滑微调衔接）
+    // 6. 走廊至水亭横跨平桥（x: 0.8 ~ 5.2, z=8.5, 标高 0.65m 至 1.14m 丝滑微调衔接）
     if (x >= 0.8 && x <= 5.2 && Math.abs(z - 8.5) <= 1.4) {
       var bHeight = 0.65;
       if (x < 1.8) {
         var tCorr = (x - 0.8) / 1.0;
         bHeight = THREE.MathUtils.lerp(0.56, 0.65, THREE.MathUtils.smoothstep(tCorr, 0, 1));
+      }
+      if (x > 3.8) {
+        var tPav = (x - 3.8) / 1.4;
+        bHeight = THREE.MathUtils.lerp(0.65, 1.14, THREE.MathUtils.smoothstep(tPav, 0, 1));
       }
       if (Math.abs(z - 8.5) > 1.0) {
         var tBEdge = (Math.abs(z - 8.5) - 1.0) / 0.4;
@@ -4109,9 +4351,9 @@
       return bHeight;
     }
 
-    // 7. 荷风四面水亭（中心 (8.5, 8.5)，半径 4.2m，标高 0.65m）
+    // 7. 荷风四面水亭（中心 (8.5, 8.5)，半径 4.2m，地面标高 1.14m）
     if (Math.hypot(x - 8.5, z - 8.5) <= 4.2) {
-      return 0.65;
+      return 1.14;
     }
 
     // 8. 月洞门延伸石阶与九曲青石板平桥（由主殿东台座通向水亭北入口，丝滑斜降）
@@ -4167,7 +4409,74 @@
   function playFootstep() {}
   function updateWaterAudio(posX, posZ) {}
 
+  
+  // ---------------- 荷风四面水亭 · 坐垫对弈交互系统 ----------------
+  var isSitting = false;
+  var sitEyeY = 1.14 + 0.38 + 0.46; // 1.98m 舒适坐姿人眼标高
+  var sitSouthPos = new THREE.Vector3(8.5, sitEyeY, 9.22); // 南坐席（面北朝向棋盘）
+  var sitNorthPos = new THREE.Vector3(8.5, sitEyeY, 7.78); // 北坐席（面南朝向棋盘）
+  var activeSitPos = sitSouthPos;
+
+  function sitDown(seat) {
+    if (viewMode !== 'walk') {
+      switchViewMode('walk');
+    }
+    isSitting = true;
+    activeSitPos = (seat === 'north') ? sitNorthPos : sitSouthPos;
+    // 南坐席面向 -Z（北方棋盘，yaw = 0），北坐席面向 +Z（南方棋盘，yaw = Math.PI）
+    playerYaw = (seat === 'north') ? Math.PI : 0;
+    playerPitch = -0.46; // 舒适俯角注视棋盘与对弈黑白子
+    var promptEl = document.getElementById('pavilion-seat-prompt');
+    var hudEl = document.getElementById('pavilion-sitting-hud');
+    if (promptEl) promptEl.style.display = 'none';
+    if (hudEl) hudEl.style.display = 'block';
+  }
+
+  function standUp() {
+    if (!isSitting) return;
+    isSitting = false;
+    var hudEl = document.getElementById('pavilion-sitting-hud');
+    if (hudEl) hudEl.style.display = 'none';
+    playerPos.y = getGroundHeight(playerPos.x, playerPos.z) + 1.65;
+  }
+
+  window.sitDown = sitDown;
+  window.standUp = standUp;
+  window.isSitting = function () { return isSitting; };
+
   function updateWalkMode(dt) {
+    var promptEl = document.getElementById('pavilion-seat-prompt');
+    var hudEl = document.getElementById('pavilion-sitting-hud');
+    var distToTable = Math.hypot(playerPos.x - 8.5, playerPos.z - 8.5);
+
+    if (isSitting) {
+      // 坐姿状态：平滑定位于坐垫上，允许自由环顾四周与注视棋盘
+      var sitDamp = 1.0 - Math.exp(-12.0 * Math.min(dt, 0.05));
+      playerPos.x = THREE.MathUtils.lerp(playerPos.x, activeSitPos.x, sitDamp);
+      playerPos.y = THREE.MathUtils.lerp(playerPos.y, activeSitPos.y, sitDamp);
+      playerPos.z = THREE.MathUtils.lerp(playerPos.z, activeSitPos.z, sitDamp);
+      camera.position.copy(playerPos);
+
+      var dirX = Math.sin(playerYaw) * Math.cos(playerPitch);
+      var dirY = Math.sin(playerPitch);
+      var dirZ = -Math.cos(playerYaw) * Math.cos(playerPitch);
+      camera.lookAt(camera.position.x + dirX, camera.position.y + dirY, camera.position.z + dirZ);
+
+      if (promptEl) promptEl.style.display = 'none';
+      if (hudEl) hudEl.style.display = 'block';
+      return;
+    }
+
+    // 未入座时：在亭内靠近石桌与坐垫（距离 < 2.3m）浮现提示
+    if (promptEl) {
+      if (viewMode === 'walk' && distToTable < 2.3) {
+        promptEl.style.display = 'block';
+      } else {
+        promptEl.style.display = 'none';
+      }
+    }
+    if (hudEl) hudEl.style.display = 'none';
+
     var fwd = (walkKeys.forward ? 1 : 0) - (walkKeys.backward ? 1 : 0);
     var str = (walkKeys.right ? 1 : 0) - (walkKeys.left ? 1 : 0);
 
@@ -4235,28 +4544,11 @@
     updateWaterAudio(playerPos.x, playerPos.z);
   }
 
-  function updateTourMode(dt) {
-    if (!tourCurve) {
-      tourCurve = new THREE.CatmullRomCurve3(tourPoints, true, 'centripetal', 0.5);
-    }
-    // 约 46 秒环行导览一周
-    tourProgress = (tourProgress + dt / 46.0) % 1.0;
-
-    var curPos = tourCurve.getPointAt(tourProgress);
-    var lookPos = tourCurve.getPointAt((tourProgress + 0.018) % 1.0);
-
-    camera.position.lerp(curPos, 0.28);
-    camera.lookAt(lookPos);
-
-    var fillEl = document.getElementById('tour-progress-fill');
-    if (fillEl) {
-      fillEl.style.width = (tourProgress * 100).toFixed(1) + '%';
-    }
-
-    updateWaterAudio(camera.position.x, camera.position.z);
-  }
 
   function switchViewMode(newMode) {
+    if (isSitting) {
+      standUp();
+    }
     if (newMode === viewMode) return;
     resumeAudioOnGesture();
 
@@ -4264,7 +4556,7 @@
     viewMode = newMode;
     document.body.setAttribute('data-view', newMode);
 
-    ['god', 'walk', 'tour'].forEach(function (m) {
+    ['god', 'walk'].forEach(function (m) {
       var btn = document.getElementById('btn-mode-' + m);
       if (btn) {
         if (m === newMode) btn.classList.add('active');
@@ -4288,25 +4580,31 @@
         playerPitch = -0.05;
       }
       camera.position.copy(playerPos);
-    } else if (newMode === 'tour') {
-      if (document.exitPointerLock && document.pointerLockElement) {
-        document.exitPointerLock();
-      }
-      controls.enabled = false;
-      tourProgress = 0;
     }
   }
 
   function bindRoamingControls() {
     var btnGod = document.getElementById('btn-mode-god');
     var btnWalk = document.getElementById('btn-mode-walk');
-    var btnTour = document.getElementById('btn-mode-tour');
-    var btnExitTour = document.getElementById('tour-exit-btn');
 
     if (btnGod) btnGod.addEventListener('click', function () { switchViewMode('god'); });
     if (btnWalk) btnWalk.addEventListener('click', function () { switchViewMode('walk'); });
-    if (btnTour) btnTour.addEventListener('click', function () { switchViewMode('tour'); });
-    if (btnExitTour) btnExitTour.addEventListener('click', function () { switchViewMode('god'); });
+
+    var promptEl = document.getElementById('pavilion-seat-prompt');
+    if (promptEl) {
+      promptEl.addEventListener('click', function (e) {
+        e.stopPropagation();
+        sitDown(playerPos.z < 8.5 ? 'north' : 'south');
+      });
+    }
+
+    var btnStandUp = document.getElementById('btn-stand-up');
+    if (btnStandUp) {
+      btnStandUp.addEventListener('click', function (e) {
+        e.stopPropagation();
+        standUp();
+      });
+    }
 
     window.addEventListener('keydown', function (e) {
       resumeAudioOnGesture();
@@ -4318,7 +4616,7 @@
       var isA = (code === 'KeyA' || key === 'a' || code === 'ArrowLeft' || key === 'arrowleft');
       var isD = (code === 'KeyD' || key === 'd' || code === 'ArrowRight' || key === 'arrowright');
 
-      if (viewMode === 'god' || viewMode === 'tour') {
+      if (viewMode === 'god') {
         if (isW || isS || isA || isD) {
           switchViewMode('walk');
           if (isW) walkKeys.forward = true;
@@ -4328,13 +4626,25 @@
           e.preventDefault();
           return;
         }
-        if (code === 'Escape' || key === 'escape' || code === 'Space' || key === ' ') {
-          if (viewMode === 'tour') switchViewMode('god');
-          return;
-        }
       }
 
       if (viewMode === 'walk') {
+        if (isSitting) {
+          if (isW || isS || isA || isD || code === 'Space' || key === ' ' || code === 'KeyE' || key === 'e' || code === 'Escape' || key === 'escape') {
+            standUp();
+            e.preventDefault();
+            return;
+          }
+        } else {
+          if (code === 'KeyE' || key === 'e') {
+            var distToT = Math.hypot(playerPos.x - 8.5, playerPos.z - 8.5);
+            if (distToT < 2.5) {
+              sitDown(playerPos.z < 8.5 ? 'north' : 'south');
+              e.preventDefault();
+              return;
+            }
+          }
+        }
         if (isW) { walkKeys.forward = true; e.preventDefault(); }
         if (isS) { walkKeys.backward = true; e.preventDefault(); }
         if (isA) { walkKeys.left = true; e.preventDefault(); }
@@ -4370,8 +4680,7 @@
       resumeAudioOnGesture();
       if (viewMode === 'walk' && canvas.requestPointerLock && !document.pointerLockElement) {
         canvas.requestPointerLock();
-      } else if (viewMode === 'tour') {
-        switchViewMode('walk');
+
       }
     });
 
@@ -4572,6 +4881,8 @@
     refreshHud(true);
   }
 
+  window.setTime = setTime;
+  window.setWeather = setWeather;
   function setTime(key) {
     if (!TIMES[key] || state.time === key) return;
     state.time = key;
@@ -4931,10 +5242,19 @@
       clampView();
     } else if (viewMode === 'walk') {
       updateWalkMode(dt);
-    } else if (viewMode === 'tour') {
-      updateTourMode(dt);
+
     }
-    renderer.render(scene, camera);
+    if (ssaoEnabled && ssaoRenderTarget && !isMobile) {
+      renderer.setRenderTarget(ssaoRenderTarget);
+      renderer.render(scene, camera);
+      renderer.setRenderTarget(null);
+      ssaoMaterial.uniforms.tDiffuse.value = ssaoRenderTarget.texture;
+      ssaoMaterial.uniforms.tDepth.value = ssaoRenderTarget.depthTexture;
+      ssaoMaterial.uniforms.projInverse.value.copy(camera.projectionMatrixInverse);
+      renderer.render(ssaoScene, ssaoCamera);
+    } else {
+      renderer.render(scene, camera);
+    }
     state.ready = true;
     window.requestAnimationFrame(frame);
   }
@@ -4952,6 +5272,138 @@
     fallback.hidden = false;
   }
 
+  
+  /* ---------------- 16.8 环境光遮蔽（SSAO 屏幕空间环境光遮蔽系统） ---------------- */
+  var ssaoEnabled = true;
+  var ssaoRenderTarget = null;
+  var ssaoScene = null;
+  var ssaoCamera = null;
+  var ssaoMaterial = null;
+  var ssaoQuad = null;
+
+  function initSSAO(width, height) {
+    if (!renderer) return;
+    if (ssaoRenderTarget) ssaoRenderTarget.dispose();
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var w = Math.max(64, Math.floor((width || 1280) * dpr));
+    var h = Math.max(64, Math.floor((height || 720) * dpr));
+
+    ssaoRenderTarget = new THREE.WebGLRenderTarget(w, h, {
+      minFilter: THREE.LinearFilter,
+      magFilter: THREE.LinearFilter,
+      format: THREE.RGBAFormat,
+      type: THREE.UnsignedByteType
+    });
+    ssaoRenderTarget.depthTexture = new THREE.DepthTexture(w, h);
+    ssaoRenderTarget.depthTexture.type = THREE.UnsignedIntType;
+
+    if (!ssaoScene) {
+      ssaoScene = new THREE.Scene();
+      ssaoCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+      var vertShader = [
+        'varying vec2 vUv;',
+        'void main() {',
+        '  vUv = uv;',
+        '  gl_Position = vec4(position.xy, 0.0, 1.0);',
+        '}'
+      ].join('\n');
+
+      var fragShader = [
+        'uniform sampler2D tDiffuse;',
+        'uniform sampler2D tDepth;',
+        'uniform mat4 projInverse;',
+        'uniform vec2 resolution;',
+        'uniform float aoRadius;',
+        'uniform float aoIntensity;',
+        'uniform float aoPower;',
+        'varying vec2 vUv;',
+        '',
+        'float rand(vec2 coord) {',
+        '  return fract(sin(dot(coord, vec2(12.9898, 78.233))) * 43758.5453);',
+        '}',
+        '',
+        'vec3 getViewPos(vec2 uv) {',
+        '  float d = texture2D(tDepth, uv).r;',
+        '  vec4 ndc = vec4(uv * 2.0 - 1.0, d * 2.0 - 1.0, 1.0);',
+        '  vec4 v = projInverse * ndc;',
+        '  return v.xyz / max(v.w, 0.00001);',
+        '}',
+        '',
+        'void main() {',
+        '  vec4 col = texture2D(tDiffuse, vUv);',
+        '  float d = texture2D(tDepth, vUv).r;',
+        '  if (d >= 0.9998) {',
+        '    gl_FragColor = col;',
+        '    return;',
+        '  }',
+        '',
+        '  vec3 pos = getViewPos(vUv);',
+        '  vec3 normal = normalize(cross(dFdx(pos), dFdy(pos)));',
+        '',
+        '  float occ = 0.0;',
+        '  float totalWeight = 0.0;',
+        '  float noise = rand(vUv * resolution * 0.35);',
+        '',
+        '  const int SAMPLES = 12;',
+        '  for (int i = 0; i < SAMPLES; i++) {',
+        '    float fi = float(i);',
+        '    float angle = fi * 2.399963 + noise * 6.283185;',
+        '    float distNorm = (fi + 1.0) / float(SAMPLES);',
+        '    float r = distNorm * aoRadius;',
+        '    vec2 dir2 = vec2(cos(angle), sin(angle));',
+        '    vec2 offsetUv = vUv + (dir2 * r * 42.0) / max(-pos.z, 0.6) / resolution;',
+        '    if (offsetUv.x >= 0.0 && offsetUv.x <= 1.0 && offsetUv.y >= 0.0 && offsetUv.y <= 1.0) {',
+        '      vec3 samplePos = getViewPos(offsetUv);',
+        '      vec3 diff = samplePos - pos;',
+        '      float dist = length(diff);',
+        '      float normalDot = dot(normal, normalize(diff));',
+        '      if (dist > 0.02 && dist < aoRadius * 2.2 && normalDot > 0.04) {',
+        '        float falloff = 1.0 - smoothstep(0.0, aoRadius * 2.2, dist);',
+        '        occ += normalDot * falloff;',
+        '      }',
+        '      totalWeight += 1.0;',
+        '    }',
+        '  }',
+        '',
+        '  float ao = 0.0;',
+        '  if (totalWeight > 0.0) {',
+        '    ao = clamp(pow((occ / float(SAMPLES)) * aoIntensity, aoPower), 0.0, 0.72);',
+        '  }',
+        '  vec3 aoTint = vec3(0.06, 0.08, 0.10);',
+        '  vec3 result = mix(col.rgb * (1.0 - ao), aoTint, ao * 0.06);',
+        '  gl_FragColor = vec4(result, col.a);',
+        '}'
+      ].join('\n');
+
+      ssaoMaterial = new THREE.ShaderMaterial({
+        vertexShader: vertShader,
+        fragmentShader: fragShader,
+        uniforms: {
+          tDiffuse: { value: null },
+          tDepth: { value: null },
+          projInverse: { value: new THREE.Matrix4() },
+          resolution: { value: new THREE.Vector2(w, h) },
+          aoRadius: { value: 0.90 },
+          aoIntensity: { value: 1.25 },
+          aoPower: { value: 1.5 }
+        },
+        depthWrite: false,
+        depthTest: false
+      });
+
+      ssaoQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), ssaoMaterial);
+      ssaoScene.add(ssaoQuad);
+    } else {
+      ssaoMaterial.uniforms.resolution.value.set(w, h);
+    }
+  }
+
+  window.setSSAO = function (enabled) { ssaoEnabled = !!enabled; };
+  window.setSSAORadius = function (r) { if (ssaoMaterial) ssaoMaterial.uniforms.aoRadius.value = r; };
+  window.setSSAOIntensity = function (i) { if (ssaoMaterial) ssaoMaterial.uniforms.aoIntensity.value = i; };
+
   function createRenderer() {
     if (typeof THREE === 'undefined' || !THREE.WebGLRenderer) return null;
     try {
@@ -4959,10 +5411,19 @@
         canvas: canvas, antialias: true, alpha: false, powerPreference: 'high-performance'
       });
       r.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
+
+      // 1. 启用物理正确光照（遵循能量守恒与真实距离衰减）
+      r.physicallyCorrectLights = true;
+      r.useLegacyLights = false;
+
+      // 6. 色彩空间（Color Space）设置为 sRGB，开启 ToneMapping（ACESFilmicToneMapping）与曝光微调
       r.outputEncoding = THREE.sRGBEncoding;
+      if (r.outputColorSpace) r.outputColorSpace = THREE.SRGBColorSpace;
       r.toneMapping = THREE.ACESFilmicToneMapping;
-      r.toneMappingExposure = 1;
-      r.shadowMap.enabled = !isMobile;
+      r.toneMappingExposure = 1.08;
+
+      // 1. 启用阴影贴图（PCFSoftShadowMap 软阴影）
+      r.shadowMap.enabled = true;
       r.shadowMap.type = THREE.PCFSoftShadowMap;
       return r;
     } catch (error) {
@@ -5014,7 +5475,9 @@
       return;
     }
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0xd3dadf, 0.0038);
+    scene.fog = new THREE.FogExp2(0xcfe4f5, 0.0034);
+    var stageEl = document.getElementById('stage');
+    initSSAO(stageEl ? stageEl.clientWidth : 1280, stageEl ? stageEl.clientHeight : 720);
     initParams();
 
     buildCamera();

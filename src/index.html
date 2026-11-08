@@ -17,7 +17,7 @@
 
   <div class="frame" aria-hidden="true"></div>
 
-  <!-- 漫游交互模式切换栏（上帝俯瞰 / 沉浸游园 / 自动导览） -->
+  <!-- 漫游交互模式切换栏（上帝俯瞰 / 沉浸游园） -->
   <nav class="view-switch-bar" id="view-switch-bar" aria-label="游园视角切换">
     <button type="button" class="view-btn active" id="btn-mode-god" data-mode="god" title="上帝视角 · 俯瞰全貌">
       <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -34,13 +34,6 @@
       </svg>
       <span>游园漫步</span>
     </button>
-    <button type="button" class="view-btn" id="btn-mode-tour" data-mode="tour" title="自动导览 · 电影级曲线穿梭">
-      <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polygon points="10 8 16 12 10 16 10 8"></polygon>
-      </svg>
-      <span>自动游园</span>
-    </button>
   </nav>
 
   <!-- 第一人称漫游准星与操作轻提示 -->
@@ -52,18 +45,21 @@
     </div>
   </div>
 
-  <!-- 自动导览全景信息横幅 -->
-  <div class="tour-banner" id="tour-banner" role="status" aria-live="polite">
-    <div class="tour-banner-inner">
-      <span class="tour-seal">导览</span>
-      <div class="tour-texts">
-        <span class="tour-title">自动漫游中 · 穿梭回廊、拱桥、水榭与狮子林奇峰</span>
-        <span class="tour-sub">轻触任意键或点击画面即可退出导览</span>
-      </div>
-      <button type="button" class="tour-exit-btn" id="tour-exit-btn">退出导览</button>
+  <!-- 荷风四面水亭 · 石桌对弈入座交互 -->
+  <div class="pavilion-seat-prompt" id="pavilion-seat-prompt" style="display: none;" role="button" aria-label="入座对弈">
+    <div class="prompt-inner">
+      <span class="prompt-key">E</span>
+      <span class="prompt-text">入座石桌对弈</span>
     </div>
-    <div class="tour-progress-bar"><div class="tour-progress-fill" id="tour-progress-fill"></div></div>
   </div>
+  <div class="pavilion-sitting-hud" id="pavilion-sitting-hud" style="display: none;">
+    <div class="sitting-inner">
+      <span class="sitting-seal">弈</span>
+      <span class="sitting-desc">已入座 · 荷风四面水亭对弈</span>
+      <button type="button" class="btn-stand-up" id="btn-stand-up">起立 (WASD / 空格)</button>
+    </div>
+  </div>
+
 
   <header class="titleblock">
     <span class="seal" aria-hidden="true">江南</span>
