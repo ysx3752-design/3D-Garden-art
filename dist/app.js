@@ -1574,21 +1574,21 @@
     snowCoverMats.push(pierMat);
     applySnowAccumulation(pierMat, 0.85);
 
-    // 廊面标高 = 主屋最低一踏顶面 0.56m：二者同一通行面，穿廊而出即踏台阶登堂；
-    // 且高于水位 0.34m，行于廊上不会被水没脚
+    // 廊面标高 = 0.56m，廊柱净高提升至 3.35m（屋檐梁底标高约 3.98m），气势开朗舒朗，
+    // 漫步其间视野通透，绝不压抑碰头，北端平顺衔接主屋朝南登堂石阶
     var DECK_TOP = 0.56;
     var DECK_THICK = 0.18;
     var deckY = DECK_TOP - DECK_THICK / 2;
-    var width = 2.4;
-    var colH = 2.0;
+    var width = 2.6;
+    var colH = 3.35;
     var colY = deckY + colH / 2;
-    var roofY = deckY + colH + 0.14;
-    var pierH = deckY + 0.7;
+    var roofY = deckY + colH + 0.16;
+    var pierH = deckY + 0.8;
     var pierY = deckY - pierH / 2;      // 柱脚落地/入水生根
 
-    // 一条笔直的南北向长直廊：沿主屋中轴（x=0）自南岸（z=17.6）一直北伸，
-    // 北端与主屋最低一踏的南缘（z=-0.10）严丝合缝对接 —— 穿廊而出即踏上台阶登堂
-    var CORRIDOR_NORTH = -0.10;
+    // 笔直南北向长直廊：沿主屋中轴（x=0）自南岸（z=17.6）向北一直延展至 z=-0.15，
+    // 与主殿最低一阶垂带踏步（z=-0.10）严丝合缝接榫对接 —— 出廊即步步登阶登临主屋大门
+    var CORRIDOR_NORTH = -0.15;
     var runs = [
       { along: 'z', fixed: 0, from: 17.6, to: CORRIDOR_NORTH }
     ];
@@ -1607,31 +1607,31 @@
       // 地栿石板（可通行的廊地面）
       addMesh(new THREE.BoxGeometry(length, DECK_THICK, width), floorMat, 0, deckY, 0, { parent: seg, receive: true });
 
-      // 西侧完整栏杆扶手（面向西侧庭院园林）
+      // 西侧古典凭栏扶手与坐槛（面向西侧庭院假山园景）
       var westSidePz = -1 * (width / 2 - 0.15);
-      addMesh(new THREE.BoxGeometry(length, 0.10, 0.30), woodMat, 0, DECK_TOP + 0.55, westSidePz, { parent: seg });
-      addMesh(new THREE.BoxGeometry(length, 0.12, 0.08), woodMat, 0, DECK_TOP + 1.02, westSidePz, { parent: seg });
+      addMesh(new THREE.BoxGeometry(length, 0.08, 0.28), woodMat, 0, DECK_TOP + 0.45, westSidePz, { parent: seg });
+      addMesh(new THREE.BoxGeometry(length, 0.10, 0.08), woodMat, 0, DECK_TOP + 0.90, westSidePz, { parent: seg });
 
-      // 东侧栏杆扶手（面向右侧水池）：在 z = 7.3 ~ 9.7 处预留通往右侧湖心水亭连桥的出入口
+      // 东侧栏杆扶手（面向右侧大湖）：在 z = 7.3 ~ 9.7 处敞开连通湖心水榭连桥
       var eastSidePz = 1 * (width / 2 - 0.15);
-      // 北段栏杆 (z from -0.10 to 7.3)
-      var lenNorth = 7.3 - (-0.10);
-      var midNorthX = mid - (-0.10 + 7.3) / 2;
-      addMesh(new THREE.BoxGeometry(lenNorth, 0.10, 0.30), woodMat, midNorthX, DECK_TOP + 0.55, eastSidePz, { parent: seg });
-      addMesh(new THREE.BoxGeometry(lenNorth, 0.12, 0.08), woodMat, midNorthX, DECK_TOP + 1.02, eastSidePz, { parent: seg });
+      // 北段栏杆 (z from -0.15 to 7.3)
+      var lenNorth = 7.3 - (-0.15);
+      var midNorthX = mid - (-0.15 + 7.3) / 2;
+      addMesh(new THREE.BoxGeometry(lenNorth, 0.08, 0.28), woodMat, midNorthX, DECK_TOP + 0.45, eastSidePz, { parent: seg });
+      addMesh(new THREE.BoxGeometry(lenNorth, 0.10, 0.08), woodMat, midNorthX, DECK_TOP + 0.90, eastSidePz, { parent: seg });
 
       // 南段栏杆 (z from 9.7 to 17.6)
       var lenSouth = 17.6 - 9.7;
       var midSouthX = mid - (9.7 + 17.6) / 2;
-      addMesh(new THREE.BoxGeometry(lenSouth, 0.10, 0.30), woodMat, midSouthX, DECK_TOP + 0.55, eastSidePz, { parent: seg });
-      addMesh(new THREE.BoxGeometry(lenSouth, 0.12, 0.08), woodMat, midSouthX, DECK_TOP + 1.02, eastSidePz, { parent: seg });
+      addMesh(new THREE.BoxGeometry(lenSouth, 0.08, 0.28), woodMat, midSouthX, DECK_TOP + 0.45, eastSidePz, { parent: seg });
+      addMesh(new THREE.BoxGeometry(lenSouth, 0.10, 0.08), woodMat, midSouthX, DECK_TOP + 0.90, eastSidePz, { parent: seg });
 
-      // 廊柱：端柱 + 按跨度均布的落地柱
+      // 廊柱：端柱 + 按跨度均布的高大落地立柱
       var midCount = Math.max(0, Math.round(length / 4.5) - 1);
       var postXs = [-length / 2 + 0.3, length / 2 - 0.3];
       for (var mi = 1; mi <= midCount; mi++) {
         var px = -length / 2 + (length * mi) / (midCount + 1);
-        if (Math.abs(px - (mid - 8.5)) > 1.2) { // 避开连桥通道
+        if (Math.abs(px - (mid - 8.5)) > 1.2) { // 避开连桥出入口
           postXs.push(px);
         }
       }
@@ -1643,15 +1643,19 @@
         });
       });
 
-      // 廊顶与正脊
-      addMesh(new THREE.BoxGeometry(length + 0.4, 0.24, width + 0.6), roofMat, 0, roofY, 0, { parent: seg, cast: true });
-      addMesh(new THREE.BoxGeometry(length + 0.4, 0.16, 0.32),
-        new THREE.MeshStandardMaterial({ color: COL.roofRidge, roughness: 0.75 }), 0, roofY + 0.2, 0, { parent: seg, cast: true });
+      // 抬高的气派廊顶与正脊
+      addMesh(new THREE.BoxGeometry(length + 0.4, 0.26, width + 0.6), roofMat, 0, roofY, 0, { parent: seg, cast: true });
+      addMesh(new THREE.BoxGeometry(length + 0.4, 0.18, 0.32),
+        new THREE.MeshStandardMaterial({ color: COL.roofRidge, roughness: 0.75 }), 0, roofY + 0.22, 0, { parent: seg, cast: true });
 
-      // 廊内悬挂经典宫灯
+      // 廊内悬挂高雅古典宫灯（悬挂高度提升至 3.46m，高耸开朗，零遮挡视线）
       [3.0, 8.5, 14.0].forEach(function (lz) {
         var lx = mid - lz;
-        addMesh(new THREE.SphereGeometry(0.24, 8, 8), lanternMaterial(), lx, roofY - 0.36, 0, { parent: seg });
+        addMesh(new THREE.SphereGeometry(0.24, 8, 8), lanternMaterial(), lx, roofY - 0.52, 0, { parent: seg });
+        var cLight = new THREE.PointLight(COL.lanternWarm, 0, 10, 2);
+        cLight.position.set(lx, roofY - 0.52, 0);
+        seg.add(cLight);
+        lampLights.push(cLight);
       });
 
       g.add(seg);
@@ -1954,45 +1958,446 @@
     var copingMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.8 });
     roofMats.push(copingMat);
     applySnowAccumulation(copingMat, 1.0, true);
+    var woodDarkMat = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.84 });
+    snowCoverMats.push(woodDarkMat);
+    applySnowAccumulation(woodDarkMat, 0.9);
 
-    // 四面合围游龙云墙：北、西、东三面连续闭合，南面仅留 12m 正门门域（x -6 ~ 6），
-    // 墙端与门楼侧垛墙搭接，围合后园平地与南池，四向环视皆见墙
-    var segments = [
-      [-38, -32, 76, true],   // 北院墙：x -38 → 38
-      [-38, -32, 52, false],  // 西院墙：z -32 → 20
-      [38, -32, 52, false],   // 东院墙：z -32 → 20
-      [-38, 20, 32, true],    // 南院墙西段：x -38 → -6
-      [6, 20, 32, true]       // 南院墙东段：x 6 → 38
-    ];
+    var wallH = 3.5;
+    var wallThick = 0.50;
+    var winY = 2.05; // 赏景黄金视平线高程
 
-    segments.forEach(function (seg) {
-      var g = new THREE.Group();
-      var length = seg[2];
-      var isX = seg[3];
-      var wall = new THREE.Mesh(new THREE.BoxGeometry(isX ? length : 0.5, 3.5, isX ? 0.5 : length), plasterMat);
-      wall.position.y = 1.75;
-      wall.castShadow = true;
-      wall.receiveShadow = true;
-      g.add(wall);
+    // 辅助函数：在指定墙面位置放置一根木构杆件（自动适应南北墙 X-Y 面或东西墙 Z-Y 面）
+    function addMuntin(parent, wx, wy, wz, dx, dy, len, thick, depth, rotAngle, isXWall) {
+      if (isXWall) {
+        addMesh(new THREE.BoxGeometry(len, thick, depth), woodDarkMat,
+          wx + dx, wy + dy, wz,
+          { parent: parent, rotZ: rotAngle || 0, cast: true, receive: true });
+      } else {
+        addMesh(new THREE.BoxGeometry(depth, thick, len), woodDarkMat,
+          wx, wy + dy, wz + dx,
+          { parent: parent, rotX: -(rotAngle || 0), cast: true, receive: true });
+      }
+    }
 
-      var coping = new THREE.Mesh(new THREE.BoxGeometry(isX ? length + 0.8 : 1.0, 0.40, isX ? 1.0 : length + 0.8), copingMat);
-      coping.position.y = 3.65;
-      coping.castShadow = true;
-      g.add(coping);
+    // =========================================================================
+    // 花窗雕刻 1：南墙 —— 【扇形花窗】（放大 1.5 倍，折扇形制、芭蕉摇曳，雅致迎客）
+    // =========================================================================
+    function createFanHole(cx, cy) {
+      var hole = new THREE.Path();
+      var pivotY = cy - 2.55; // 放大 1.5 倍（原 1.70 * 1.5）
+      var r1 = 1.725;        // 放大 1.5 倍（原 1.15 * 1.5）
+      var r2 = 3.375;        // 放大 1.5 倍（原 2.25 * 1.5）
+      var halfA = 0.35;      // 保持优雅展开角
+      var segs = 14;
 
-      if (isX) g.position.set(seg[0] + length / 2, 0, seg[1]);
-      else g.position.set(seg[0], 0, seg[1] + length / 2);
-      scene.add(g);
+      // 顺时针（Path 挖孔规范）
+      var x0 = cx - Math.sin(halfA) * r2;
+      var y0 = pivotY + Math.cos(halfA) * r2;
+      hole.moveTo(x0, y0);
+      for (var i = 1; i <= segs; i++) {
+        var a = -halfA + (2 * halfA * i) / segs;
+        hole.lineTo(cx + Math.sin(a) * r2, pivotY + Math.cos(a) * r2);
+      }
+      hole.lineTo(cx + Math.sin(halfA) * r1, pivotY + Math.cos(halfA) * r1);
+      for (var j = segs - 1; j >= 0; j--) {
+        var a2 = -halfA + (2 * halfA * j) / segs;
+        hole.lineTo(cx + Math.sin(a2) * r1, pivotY + Math.cos(a2) * r1);
+      }
+      hole.closePath();
+      return hole;
+    }
+
+    function buildFanOrnament(parent, wx, wy, wz, isXWall) {
+      var pivotY = -2.55;
+      var r1 = 1.725;
+      var r2 = 3.375;
+      var halfA = 0.35;
+      var segs = 14;
+      var frameThick = 0.085;
+      var frameDepth = 0.56; // 窗框微凸出于墙体两面各 0.03m
+
+      // 外弧边框与内弧边框
+      for (var i = 0; i < segs; i++) {
+        var aMid = -halfA + (halfA * 2 * (i + 0.5)) / segs;
+        var arcLen = (r2 * halfA * 2) / segs + 0.03;
+        var fx2 = Math.sin(aMid) * r2;
+        var fy2 = pivotY + Math.cos(aMid) * r2;
+        addMuntin(parent, wx, wy, wz, fx2, fy2, arcLen, frameThick, frameDepth, -aMid, isXWall);
+
+        var arcLen1 = (r1 * halfA * 2) / segs + 0.03;
+        var fx1 = Math.sin(aMid) * r1;
+        var fy1 = pivotY + Math.cos(aMid) * r1;
+        addMuntin(parent, wx, wy, wz, fx1, fy1, arcLen1, frameThick, frameDepth, -aMid, isXWall);
+      }
+      // 左右斜边收边框
+      [-halfA, halfA].forEach(function (sideA) {
+        var midR = (r1 + r2) / 2;
+        var sx = Math.sin(sideA) * midR;
+        var sy = pivotY + Math.cos(sideA) * midR;
+        addMuntin(parent, wx, wy, wz, sx, sy, r2 - r1 + 0.05, frameThick, frameDepth, -sideA + Math.PI / 2, isXWall);
+      });
+
+      // 内部经典扇骨与横绋雕花（5 根主扇骨放射）
+      var spokeAngles = [-0.24, -0.12, 0, 0.12, 0.24];
+      spokeAngles.forEach(function (sa) {
+        var midR2 = (r1 + r2) / 2;
+        var kx = Math.sin(sa) * midR2;
+        var ky = pivotY + Math.cos(sa) * midR2;
+        addMuntin(parent, wx, wy, wz, kx, ky, r2 - r1 - 0.08, 0.045, 0.10, -sa + Math.PI / 2, isXWall);
+      });
+      // 扇面中部横绋连桥木篾（放大 1.5 倍半径：2.28m 与 2.82m）
+      [2.28, 2.82].forEach(function (ribR) {
+        for (var si = 0; si < segs - 2; si++) {
+          var raMid = -halfA * 0.82 + (halfA * 1.64 * (si + 0.5)) / (segs - 2);
+          var rx = Math.sin(raMid) * ribR;
+          var ry = pivotY + Math.cos(raMid) * ribR;
+          var rLen = (ribR * halfA * 1.64) / (segs - 2) + 0.03;
+          addMuntin(parent, wx, wy, wz, rx, ry, rLen, 0.04, 0.08, -raMid, isXWall);
+        }
+      });
+    }
+
+    // =========================================================================
+    // 花窗雕刻 2：北墙 —— 【八角海棠花窗】（放大 1.5 倍，端庄典雅、中轴对称、回纹格心）
+    // =========================================================================
+    function createOctagonHole(cx, cy) {
+      var hole = new THREE.Path();
+      var R = 1.17; // 原 0.78 * 1.5
+      for (var k = 0; k < 8; k++) {
+        var oa = (k / 8) * Math.PI * 2 + Math.PI / 8;
+        var ox = cx + Math.cos(oa) * R;
+        var oy = cy + Math.sin(oa) * R;
+        if (k === 0) hole.moveTo(ox, oy);
+        else hole.lineTo(ox, oy);
+      }
+      hole.closePath();
+      return hole;
+    }
+
+    function buildOctagonOrnament(parent, wx, wy, wz, isXWall) {
+      var R = 1.17; // 原 0.78 * 1.5
+      var segLen = 2 * R * Math.sin(Math.PI / 8) + 0.03;
+      var frameThick = 0.085;
+      var frameDepth = 0.56;
+
+      // 八角外框
+      for (var k = 0; k < 8; k++) {
+        var a1 = (k / 8) * Math.PI * 2 + Math.PI / 8;
+        var a2 = ((k + 1) / 8) * Math.PI * 2 + Math.PI / 8;
+        var mx = (Math.cos(a1) + Math.cos(a2)) / 2 * R;
+        var my = (Math.sin(a1) + Math.sin(a2)) / 2 * R;
+        var rot = Math.atan2(Math.sin(a2) - Math.sin(a1), Math.cos(a2) - Math.cos(a1));
+        addMuntin(parent, wx, wy, wz, mx, my, segLen, frameThick, frameDepth, rot, isXWall);
+      }
+
+      // 同心内套八角边线
+      var rInner = 0.96; // 原 0.64 * 1.5
+      var innerLen = 2 * rInner * Math.sin(Math.PI / 8) + 0.03;
+      for (var j = 0; j < 8; j++) {
+        var ja1 = (j / 8) * Math.PI * 2 + Math.PI / 8;
+        var ja2 = ((j + 1) / 8) * Math.PI * 2 + Math.PI / 8;
+        var jmx = (Math.cos(ja1) + Math.cos(ja2)) / 2 * rInner;
+        var jmy = (Math.sin(ja1) + Math.sin(ja2)) / 2 * rInner;
+        var jrot = Math.atan2(Math.sin(ja2) - Math.sin(ja1), Math.cos(ja2) - Math.cos(ja1));
+        addMuntin(parent, wx, wy, wz, jmx, jmy, innerLen, 0.042, 0.10, jrot, isXWall);
+      }
+
+      // 中央海棠回纹格心（十字骨架与 45 度交错方胜盘长）
+      addMuntin(parent, wx, wy, wz, 0, 0, rInner * 2 - 0.08, 0.052, 0.09, 0, isXWall);
+      addMuntin(parent, wx, wy, wz, 0, 0, rInner * 2 - 0.08, 0.052, 0.09, Math.PI / 2, isXWall);
+      var diaR = 0.54; // 原 0.36 * 1.5
+      for (var d = 0; d < 4; d++) {
+        var da1 = (d / 4) * Math.PI * 2 + Math.PI / 4;
+        var da2 = ((d + 1) / 4) * Math.PI * 2 + Math.PI / 4;
+        var dmx = (Math.cos(da1) + Math.cos(da2)) / 2 * diaR;
+        var dmy = (Math.sin(da1) + Math.sin(da2)) / 2 * diaR;
+        var drot = Math.atan2(Math.sin(da2) - Math.sin(da1), Math.cos(da2) - Math.cos(da1));
+        addMuntin(parent, wx, wy, wz, dmx, dmy, diaR * 1.414, 0.042, 0.08, drot, isXWall);
+      }
+    }
+
+    // =========================================================================
+    // 花窗雕刻 3：西墙 —— 【方形冰裂纹圆光花窗】（放大 1.5 倍，方形冰裂纹配月洞圆圈，诗意破冰迎春）
+    // =========================================================================
+    function createSquareHole(cx, cy) {
+      var hole = new THREE.Path();
+      var halfW = 1.08; // 原 0.72 * 1.5
+      hole.moveTo(cx - halfW, cy - halfW);
+      hole.lineTo(cx + halfW, cy - halfW);
+      hole.lineTo(cx + halfW, cy + halfW);
+      hole.lineTo(cx - halfW, cy + halfW);
+      hole.closePath();
+      return hole;
+    }
+
+    function buildCrackedIceOrnament(parent, wx, wy, wz, isXWall) {
+      var halfW = 1.08; // 原 0.72 * 1.5
+      var frameThick = 0.085;
+      var frameDepth = 0.56;
+
+      // 外方框四边
+      addMuntin(parent, wx, wy, wz, 0, -halfW, halfW * 2, frameThick, frameDepth, 0, isXWall);
+      addMuntin(parent, wx, wy, wz, 0, halfW, halfW * 2, frameThick, frameDepth, 0, isXWall);
+      addMuntin(parent, wx, wy, wz, -halfW, 0, halfW * 2, frameThick, frameDepth, Math.PI / 2, isXWall);
+      addMuntin(parent, wx, wy, wz, halfW, 0, halfW * 2, frameThick, frameDepth, Math.PI / 2, isXWall);
+
+      // 中央圆光月洞木圈（放大 1.5 倍：半径 0.63m）
+      var moonR = 0.63; // 原 0.42 * 1.5
+      for (var m = 0; m < 8; m++) {
+        var ma1 = (m / 8) * Math.PI * 2;
+        var ma2 = ((m + 1) / 8) * Math.PI * 2;
+        var mmx = (Math.cos(ma1) + Math.cos(ma2)) / 2 * moonR;
+        var mmy = (Math.sin(ma1) + Math.sin(ma2)) / 2 * moonR;
+        var mrot = Math.atan2(Math.sin(ma2) - Math.sin(ma1), Math.cos(ma2) - Math.cos(ma1));
+        var mLen = 2 * moonR * Math.sin(Math.PI / 8) + 0.03;
+        addMuntin(parent, wx, wy, wz, mmx, mmy, mLen, 0.052, 0.12, mrot, isXWall);
+      }
+
+      // 经典冰裂纹折线：连接外框与内圆圈的自然破冰纹理（全部坐标乘以 1.5）
+      var scale = 1.5;
+      var baseCracks = [
+        // 4 组四角主裂纹
+        { x1: -0.72 + 0.03, y1: -0.72 + 0.03, x2: -0.38, y2: -0.26 },
+        { x1: -0.38, y1: -0.26, x2: -0.42 * 0.7, y2: -0.42 * 0.7 },
+        { x1: 0.72 - 0.03, y1: -0.72 + 0.03, x2: 0.36, y2: -0.28 },
+        { x1: 0.36, y1: -0.28, x2: 0.42 * 0.7, y2: -0.42 * 0.7 },
+        { x1: -0.72 + 0.03, y1: 0.72 - 0.03, x2: -0.32, y2: 0.32 },
+        { x1: -0.32, y1: 0.32, x2: -0.42 * 0.7, y2: 0.42 * 0.7 },
+        { x1: 0.72 - 0.03, y1: 0.72 - 0.03, x2: 0.34, y2: 0.30 },
+        { x1: 0.34, y1: 0.30, x2: 0.42 * 0.7, y2: 0.42 * 0.7 },
+        // 4 组边框支裂纹
+        { x1: 0, y1: -0.72 + 0.03, x2: 0.10, y2: -0.42 },
+        { x1: 0, y1: 0.72 - 0.03, x2: -0.08, y2: 0.42 },
+        { x1: -0.72 + 0.03, y1: 0, x2: -0.42, y2: -0.06 },
+        { x1: 0.72 - 0.03, y1: 0, x2: 0.42, y2: 0.08 },
+        // 横向斜贯冰花小叉
+        { x1: -0.38, y1: -0.26, x2: -0.18, y2: -0.48 },
+        { x1: 0.36, y1: -0.28, x2: 0.52, y2: -0.20 },
+        { x1: -0.32, y1: 0.32, x2: -0.50, y2: 0.22 },
+        { x1: 0.34, y1: 0.30, x2: 0.20, y2: 0.48 }
+      ];
+
+      baseCracks.forEach(function (ck) {
+        var x1 = ck.x1 * scale;
+        var y1 = ck.y1 * scale;
+        var x2 = ck.x2 * scale;
+        var y2 = ck.y2 * scale;
+        var cx = (x1 + x2) / 2;
+        var cy = (y1 + y2) / 2;
+        var len = Math.hypot(x2 - x1, y2 - y1);
+        var rot = Math.atan2(y2 - y1, x2 - x1);
+        addMuntin(parent, wx, wy, wz, cx, cy, len + 0.02, 0.040, 0.085, rot, isXWall);
+      });
+    }
+
+    // =========================================================================
+    // 花窗雕刻 4：东墙 —— 【六角龟背花窗】（放大 1.5 倍，龟背长寿、六角透绿、竹影参差）
+    // =========================================================================
+    function createHexagonHole(cx, cy) {
+      var hole = new THREE.Path();
+      var R = 1.20; // 原 0.80 * 1.5
+      for (var h = 0; h < 6; h++) {
+        var ha = (h / 6) * Math.PI * 2;
+        var hx = cx + Math.cos(ha) * R;
+        var hy = cy + Math.sin(ha) * R;
+        if (h === 0) hole.moveTo(hx, hy);
+        else hole.lineTo(hx, hy);
+      }
+      hole.closePath();
+      return hole;
+    }
+
+    function buildHexagonOrnament(parent, wx, wy, wz, isXWall) {
+      var R = 1.20; // 原 0.80 * 1.5
+      var segLen = R + 0.03; // 正六边形边长等于外接圆半径
+      var frameThick = 0.085;
+      var frameDepth = 0.56;
+
+      // 外六边形框
+      for (var h = 0; h < 6; h++) {
+        var ha1 = (h / 6) * Math.PI * 2;
+        var ha2 = ((h + 1) / 6) * Math.PI * 2;
+        var hmx = (Math.cos(ha1) + Math.cos(ha2)) / 2 * R;
+        var hmy = (Math.sin(ha1) + Math.sin(ha2)) / 2 * R;
+        var hrot = Math.atan2(Math.sin(ha2) - Math.sin(ha1), Math.cos(ha2) - Math.cos(ha1));
+        addMuntin(parent, wx, wy, wz, hmx, hmy, segLen, frameThick, frameDepth, hrot, isXWall);
+      }
+
+      // 同心内套六边形
+      var rInner = 0.975; // 原 0.65 * 1.5
+      var innerLen = rInner + 0.03;
+      for (var j = 0; j < 6; j++) {
+        var ja1 = (j / 6) * Math.PI * 2;
+        var ja2 = ((j + 1) / 6) * Math.PI * 2;
+        var jmx = (Math.cos(ja1) + Math.cos(ja2)) / 2 * rInner;
+        var jmy = (Math.sin(ja1) + Math.sin(ja2)) / 2 * rInner;
+        var jrot = Math.atan2(Math.sin(ja2) - Math.sin(ja1), Math.cos(ja2) - Math.cos(ja1));
+        addMuntin(parent, wx, wy, wz, jmx, jmy, innerLen, 0.042, 0.10, jrot, isXWall);
+      }
+
+      // 龟背六角蜂巢格心（中心内接小六边形与 6 根放射状龟背主棱）
+      var rCore = 0.525; // 原 0.35 * 1.5
+      var coreLen = rCore + 0.02;
+      for (var c = 0; c < 6; c++) {
+        var ca1 = (c / 6) * Math.PI * 2;
+        var ca2 = ((c + 1) / 6) * Math.PI * 2;
+        var cmx = (Math.cos(ca1) + Math.cos(ca2)) / 2 * rCore;
+        var cmy = (Math.sin(ca1) + Math.sin(ca2)) / 2 * rCore;
+        var crot = Math.atan2(Math.sin(ca2) - Math.sin(ca1), Math.cos(ca2) - Math.cos(ca1));
+        addMuntin(parent, wx, wy, wz, cmx, cmy, coreLen, 0.040, 0.08, crot, isXWall);
+
+        // 自中心小六角顶点放射至内外圈顶点
+        var rx = (Math.cos(ca1) * rCore + Math.cos(ca1) * rInner) / 2;
+        var ry = (Math.sin(ca1) * rCore + Math.sin(ca1) * rInner) / 2;
+        var rSpokeLen = rInner - rCore + 0.03;
+        addMuntin(parent, wx, wy, wz, rx, ry, rSpokeLen, 0.040, 0.08, ca1, isXWall);
+      }
+    }
+
+    // =========================================================================
+    // 构建四面围墙与对应花窗系统（间距保持原有设计不变，窗体 1.5 倍雕刻）
+    // =========================================================================
+
+    // 1. 【北院墙】（全长 76m，Z = -32）：雕刻【八角海棠花窗】
+    var northGroup = new THREE.Group();
+    var northXs = [-31.5, -22.5, -13.5, -4.5, 4.5, 13.5, 22.5, 31.5];
+    var northShape = new THREE.Shape();
+    northShape.moveTo(-38, 0); northShape.lineTo(38, 0);
+    northShape.lineTo(38, wallH); northShape.lineTo(-38, wallH);
+    northShape.closePath();
+    northXs.forEach(function (nx) {
+      northShape.holes.push(createOctagonHole(nx, winY));
+    });
+    var northWallGeo = new THREE.ExtrudeGeometry(northShape, { depth: wallThick, bevelEnabled: false });
+    var northMesh = new THREE.Mesh(northWallGeo, plasterMat);
+    northMesh.position.set(0, 0, -32 - wallThick / 2);
+    northMesh.castShadow = true;
+    northMesh.receiveShadow = true;
+    northGroup.add(northMesh);
+
+    // 黛瓦压顶
+    var northCoping = new THREE.Mesh(new THREE.BoxGeometry(76.8, 0.40, 1.0), copingMat);
+    northCoping.position.set(0, 3.65, -32);
+    northCoping.castShadow = true;
+    northGroup.add(northCoping);
+
+    // 8 组八角海棠雕花窗架
+    northXs.forEach(function (nx) {
+      buildOctagonOrnament(northGroup, nx, winY, -32, true);
+    });
+    scene.add(northGroup);
+
+    // 2. 【南院墙】（分为西段与东段，Z = 20）：雕刻【扇形花窗】
+    var southGroup = new THREE.Group();
+    var southWestXs = [-31.5, -23.5, -15.5, -9.0];
+    var southEastXs = [9.0, 15.5, 23.5, 31.5];
+
+    // 南墙西段 (-38 到 -6)
+    var swShape = new THREE.Shape();
+    swShape.moveTo(-38, 0); swShape.lineTo(-6, 0);
+    swShape.lineTo(-6, wallH); swShape.lineTo(-38, wallH);
+    swShape.closePath();
+    southWestXs.forEach(function (sx) {
+      swShape.holes.push(createFanHole(sx, winY));
+    });
+    var swGeo = new THREE.ExtrudeGeometry(swShape, { depth: wallThick, bevelEnabled: false });
+    var swMesh = new THREE.Mesh(swGeo, plasterMat);
+    swMesh.position.set(0, 0, 20 - wallThick / 2);
+    swMesh.castShadow = true;
+    swMesh.receiveShadow = true;
+    southGroup.add(swMesh);
+
+    var swCoping = new THREE.Mesh(new THREE.BoxGeometry(32.8, 0.40, 1.0), copingMat);
+    swCoping.position.set(-22, 3.65, 20);
+    swCoping.castShadow = true;
+    southGroup.add(swCoping);
+
+    southWestXs.forEach(function (sx) {
+      buildFanOrnament(southGroup, sx, winY, 20, true);
     });
 
-    // 漏窗：南墙两组与东西院墙各一组；窗框随墙面走向布置、仅凸出墙面 0.06m，不穿出墙体
-    var woodDarkMat = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.85 });
-    [[-20, 20, 'z'], [22, 20, 'z'], [-38, -14, 'x'], [38, -14, 'x']].forEach(function (wp) {
-      var zWall = wp[2] === 'z';
-      addMesh(new THREE.BoxGeometry(zWall ? 1.6 : 0.62, 1.6, zWall ? 0.62 : 1.6), woodDarkMat, wp[0], 2.3, wp[1]);
-      addMesh(new THREE.BoxGeometry(zWall ? 1.4 : 0.1, 0.06, zWall ? 0.1 : 1.4), woodDarkMat, wp[0], 2.3, wp[1]);
-      addMesh(new THREE.BoxGeometry(zWall ? 0.1 : 0.06, 1.4, zWall ? 0.06 : 0.1), woodDarkMat, wp[0], 2.3, wp[1]);
+    // 南墙东段 (6 到 38)
+    var seShape = new THREE.Shape();
+    seShape.moveTo(6, 0); seShape.lineTo(38, 0);
+    seShape.lineTo(38, wallH); seShape.lineTo(6, wallH);
+    seShape.closePath();
+    southEastXs.forEach(function (sx) {
+      seShape.holes.push(createFanHole(sx, winY));
     });
+    var seGeo = new THREE.ExtrudeGeometry(seShape, { depth: wallThick, bevelEnabled: false });
+    var seMesh = new THREE.Mesh(seGeo, plasterMat);
+    seMesh.position.set(0, 0, 20 - wallThick / 2);
+    seMesh.castShadow = true;
+    seMesh.receiveShadow = true;
+    southGroup.add(seMesh);
+
+    var seCoping = new THREE.Mesh(new THREE.BoxGeometry(32.8, 0.40, 1.0), copingMat);
+    seCoping.position.set(22, 3.65, 20);
+    seCoping.castShadow = true;
+    southGroup.add(seCoping);
+
+    southEastXs.forEach(function (sx) {
+      buildFanOrnament(southGroup, sx, winY, 20, true);
+    });
+    scene.add(southGroup);
+
+    // 3. 【西院墙】（全长 52m，X = -38，沿 Z 向延展）：雕刻【方形冰裂纹圆光花窗】
+    var westGroup = new THREE.Group();
+    var westZs = [-26.0, -17.0, -8.0, 1.0, 9.5, 16.5];
+    var westShape = new THREE.Shape();
+    westShape.moveTo(0, 0); westShape.lineTo(52, 0);
+    westShape.lineTo(52, wallH); westShape.lineTo(0, wallH);
+    westShape.closePath();
+    westZs.forEach(function (wz) {
+      var localL = wz - (-32); // 转换到局部长度
+      westShape.holes.push(createSquareHole(localL, winY));
+    });
+    var westGeo = new THREE.ExtrudeGeometry(westShape, { depth: wallThick, bevelEnabled: false });
+    var westMesh = new THREE.Mesh(westGeo, plasterMat);
+    westMesh.position.set(-38 - wallThick / 2, 0, -32);
+    westMesh.rotation.y = -Math.PI / 2;
+    westMesh.castShadow = true;
+    westMesh.receiveShadow = true;
+    westGroup.add(westMesh);
+
+    var westCoping = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.40, 52.8), copingMat);
+    westCoping.position.set(-38, 3.65, -6);
+    westCoping.castShadow = true;
+    westGroup.add(westCoping);
+
+    westZs.forEach(function (wz) {
+      buildCrackedIceOrnament(westGroup, -38, winY, wz, false);
+    });
+    scene.add(westGroup);
+
+    // 4. 【东院墙】（全长 52m，X = 38，沿 Z 向延展）：雕刻【六角龟背花窗】
+    var eastGroup = new THREE.Group();
+    var eastZs = [-26.0, -17.0, -8.0, 1.0, 9.5, 16.5];
+    var eastShape = new THREE.Shape();
+    eastShape.moveTo(0, 0); eastShape.lineTo(52, 0);
+    eastShape.lineTo(52, wallH); eastShape.lineTo(0, wallH);
+    eastShape.closePath();
+    eastZs.forEach(function (ez) {
+      var localL2 = ez - (-32);
+      eastShape.holes.push(createHexagonHole(localL2, winY));
+    });
+    var eastGeo = new THREE.ExtrudeGeometry(eastShape, { depth: wallThick, bevelEnabled: false });
+    var eastMesh = new THREE.Mesh(eastGeo, plasterMat);
+    eastMesh.position.set(38 - wallThick / 2, 0, -32);
+    eastMesh.rotation.y = -Math.PI / 2;
+    eastMesh.castShadow = true;
+    eastMesh.receiveShadow = true;
+    eastGroup.add(eastMesh);
+
+    var eastCoping = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.40, 52.8), copingMat);
+    eastCoping.position.set(38, 3.65, -6);
+    eastCoping.castShadow = true;
+    eastGroup.add(eastCoping);
+
+    eastZs.forEach(function (ez) {
+      buildHexagonOrnament(eastGroup, 38, winY, ez, false);
+    });
+    scene.add(eastGroup);
   }
 
   /* ---------------- 7B. 南面正门门楼（四面合围院墙的唯一出入口） ----------------
@@ -3015,62 +3420,133 @@
 
   function buildLotus() {
     var leafMat = new THREE.MeshStandardMaterial({
-      color: COL.lotusLeaf, roughness: 0.75, side: THREE.DoubleSide
+      color: COL.lotusLeaf, roughness: 0.74, side: THREE.DoubleSide
     });
     var leafGeo = new THREE.CircleGeometry(0.78, 14, 0, Math.PI * 1.76);
     leafGeo.rotateX(-Math.PI / 2);
 
-    var count = isMobile ? 28 : 55;
-    var lotusLeaves = new THREE.InstancedMesh(leafGeo, leafMat, count);
-    var m = new THREE.Matrix4(); var q = new THREE.Quaternion(); var p = new THREE.Vector3(); var s = new THREE.Vector3();
-    var rnd = makeRandom(65);
+    // 荷叶与荷花群落中心规划：
+    // 重点分散小船那一侧（西池）的水面荷叶，避开主屋扎堆，自然散布于小船周围水湾、西岸垂柳下以及全园各个水域
+    var clusterCenters = [
+      // 西池（小船一侧）：自然疏密分布，从小船旁延伸至西岸垂柳水湾，绝不全挤在主屋前
+      { cx: -8.0, cz: 11.5, r: 3.8, count: 18 },  // 小船北侧开阔水面
+      { cx: -12.5, cz: 8.5, r: 3.5, count: 16 },  // 小船西侧近岸石矶与水湾
+      { cx: -13.0, cz: 14.5, r: 2.8, count: 10 }, // 码头与小船南侧近岸
+      { cx: -9.5, cz: 3.5, r: 3.2, count: 12 },   // 西池通往小飞虹拱桥南侧水域
+      // 东池（水亭一侧）：环水榭与东绿渚
+      { cx: 8.5, cz: 12.5, r: 4.2, count: 18 },   // 水亭南侧碧波水面
+      { cx: 13.5, cz: 7.5, r: 3.8, count: 16 },   // 东岸芦苇与石矶旁
+      { cx: 5.5, cz: 5.2, r: 3.2, count: 14 },    // 直廊与水亭之间水面
+      // 南北开阔水域自然点缀
+      { cx: -4.5, cz: 7.5, r: 2.8, count: 10 },   // 直廊西侧中段水面
+      { cx: 0.0, cz: 3.5, r: 2.5, count: 8 }      // 主屋前方适量散布（少量点缀，不再密集扎堆）
+    ];
 
-    for (var i = 0; i < count; i++) {
-      var lx = LAKE_X + (rnd() - 0.5) * (LAKE_W - 6);
-      var lz = LAKE_Z + (rnd() - 0.5) * (LAKE_D - 6);
-      if (Math.abs(lx) < 2.2) continue; // 避让主屋中轴水上长直廊
-      if (Math.hypot(lx - 8.5, lz - 8.5) < 5.0) continue; // 避让右侧水亭
-      if (lx < -10 && lx > -16 && lz > 12) continue; // 避让左侧西码头与乌篷船
-      if (lx < -9.5 && lx > -26.0 && lz > -2.0 && lz < 9.5) continue; // 避让小飞虹拱桥、转角登台大石坪与石阶，防止荷叶卡在石台上
+    var totalLeaves = 0;
+    clusterCenters.forEach(function (c) { totalLeaves += c.count; });
+    var lotusLeaves = new THREE.InstancedMesh(leafGeo, leafMat, totalLeaves);
+    var m = new THREE.Matrix4();
+    var q = new THREE.Quaternion();
+    var p = new THREE.Vector3();
+    var s = new THREE.Vector3();
+    var rnd = makeRandom(68);
 
-      p.set(lx, WATER_Y + 0.16 + rnd() * 0.04, lz);
-      q.setFromEuler(new THREE.Euler((rnd() - 0.5) * 0.15, rnd() * Math.PI * 2, (rnd() - 0.5) * 0.15));
-      var sc = 0.75 + rnd() * 0.8;
-      s.set(sc, 1, sc);
-      m.compose(p, q, s);
-      lotusLeaves.setMatrixAt(i, m);
-    }
+    var leafIdx = 0;
+    clusterCenters.forEach(function (c) {
+      for (var k = 0; k < c.count; k++) {
+        var ang = rnd() * Math.PI * 2;
+        var dist = Math.sqrt(rnd()) * c.r;
+        var lx = c.cx + Math.cos(ang) * dist + (rnd() - 0.5) * 0.8;
+        var lz = c.cz + Math.sin(ang) * dist + (rnd() - 0.5) * 0.8;
+
+        // 精准避让直廊地面
+        if (Math.abs(lx) < 1.4 && lz >= -0.15 && lz <= 17.8) continue;
+        // 避让小船船舱主体（小船位于 x=-8.2, z=14.8）
+        if (Math.hypot(lx - (-8.2), lz - 14.8) < 1.8) continue;
+        // 避让水亭台座
+        if (Math.hypot(lx - 8.5, lz - 8.5) < 3.8) continue;
+        // 避让小飞虹石拱桥桥面
+        var archDx = lx - (-20.5); var archDz = lz - 4.0;
+        var alx = archDx * 0.9004 - archDz * -0.4350;
+        var alz = archDx * -0.4350 + archDz * 0.9004;
+        if (Math.abs(alz) < 2.0 && alx > -5.5 && alx < 7.5) continue;
+        // 避让直廊通往水亭的平桥
+        if (lx > 1.0 && lx < 4.8 && Math.abs(lz - 8.5) < 1.0) continue;
+
+        p.set(lx, WATER_Y + 0.14 + rnd() * 0.035, lz);
+        q.setFromEuler(new THREE.Euler((rnd() - 0.5) * 0.12, rnd() * Math.PI * 2, (rnd() - 0.5) * 0.12));
+        var sc = 0.65 + rnd() * 0.75;
+        s.set(sc, 1, sc);
+        m.compose(p, q, s);
+        lotusLeaves.setMatrixAt(leafIdx++, m);
+      }
+    });
+
+    lotusLeaves.count = leafIdx;
     lotusLeaves.instanceMatrix.needsUpdate = true;
     scene.add(lotusLeaves);
 
-    var petalMat = new THREE.MeshStandardMaterial({
-      color: COL.lotusPetal, roughness: 0.65, flatShading: true
-    });
-    var centerMat = new THREE.MeshStandardMaterial({ color: COL.lotusCenter, roughness: 0.6 });
+    // 荷花材质系统：粉荷、白荷、含苞玫瑰芙蕖，疏密相映、别具神采
+    var petalPinkMat = new THREE.MeshStandardMaterial({ color: COL.lotusPetal, roughness: 0.58, flatShading: true });
+    var petalWhiteMat = new THREE.MeshStandardMaterial({ color: 0xfaf7ee, roughness: 0.55, flatShading: true });
+    var petalRoseMat = new THREE.MeshStandardMaterial({ color: 0xeb7b98, roughness: 0.58, flatShading: true });
+    var centerMat = new THREE.MeshStandardMaterial({ color: COL.lotusCenter, roughness: 0.5 });
+    var stemMat = new THREE.MeshStandardMaterial({ color: 0x486b36, roughness: 0.85 });
 
-    var flowerCount = isMobile ? 9 : 16;
-    for (var f = 0; f < flowerCount; f++) {
-      var fx = LAKE_X + (rnd() - 0.5) * (LAKE_W - 8);
-      var fz = LAKE_Z + (rnd() - 0.5) * (LAKE_D - 8);
-      if (Math.abs(fx) < 2.2) continue;
-      if (Math.hypot(fx - 8.5, fz - 8.5) < 5.0) continue;
-      if (fx < -10 && fx > -16 && fz > 12) continue;
-      if (fx < -9.5 && fx > -26.0 && fz > -2.0 && fz < 9.5) continue;
+    var flowerMats = [petalPinkMat, petalPinkMat, petalWhiteMat, petalRoseMat];
 
-      var fg = new THREE.Group();
-      addMesh(new THREE.CylinderGeometry(0.03, 0.03, 0.5, 4), leafMat, 0, 0.25, 0, { parent: fg });
-      addMesh(new THREE.CylinderGeometry(0.13, 0.09, 0.15, 6), centerMat, 0, 0.5, 0, { parent: fg });
-      for (var pet = 0; pet < 6; pet++) {
-        var pa = (pet / 6) * Math.PI * 2;
-        addMesh(new THREE.ConeGeometry(0.18, 0.48, 4), petalMat,
-          Math.cos(pa) * 0.16, 0.48, Math.sin(pa) * 0.16,
-          { parent: fg, rotZ: Math.cos(pa) * 0.48, rotX: Math.sin(pa) * 0.48 });
+    // 全池增加丰富荷花（荷花总数增加至 42 朵，均匀分布于小船侧、水亭侧及全池各群落）
+    var flowerRnd = makeRandom(92);
+    var flowersPerCluster = [5, 5, 4, 4, 6, 6, 5, 4, 3];
+
+    clusterCenters.forEach(function (c, cIdx) {
+      var numF = flowersPerCluster[cIdx] || 4;
+      for (var f = 0; f < numF; f++) {
+        var fang = flowerRnd() * Math.PI * 2;
+        var fdist = Math.sqrt(flowerRnd()) * (c.r * 0.95);
+        var fx = c.cx + Math.cos(fang) * fdist + (flowerRnd() - 0.5) * 0.6;
+        var fz = c.cz + Math.sin(fang) * fdist + (flowerRnd() - 0.5) * 0.6;
+
+        // 避让建筑物结构
+        if (Math.abs(fx) < 1.4 && fz >= -0.15 && fz <= 17.8) continue;
+        if (Math.hypot(fx - (-8.2), fz - 14.8) < 1.8) continue;
+        if (Math.hypot(fx - 8.5, fz - 8.5) < 3.8) continue;
+        var f_archDx = fx - (-20.5); var f_archDz = fz - 4.0;
+        var f_alx = f_archDx * 0.9004 - f_archDz * -0.4350;
+        var f_alz = f_archDx * -0.4350 + f_archDz * 0.9004;
+        if (Math.abs(f_alz) < 2.0 && f_alx > -5.5 && f_alx < 7.5) continue;
+        if (fx > 1.0 && fx < 4.8 && Math.abs(fz - 8.5) < 1.0) continue;
+
+        var fg = new THREE.Group();
+        var stemH = 0.35 + flowerRnd() * 0.32; // 高出水面婷婷玉立
+        var curPetalMat = flowerMats[Math.floor(flowerRnd() * flowerMats.length)];
+
+        // 荷梗
+        addMesh(new THREE.CylinderGeometry(0.025, 0.025, stemH, 4), stemMat, 0, stemH / 2, 0, { parent: fg });
+
+        // 金黄莲蓬莲心
+        addMesh(new THREE.CylinderGeometry(0.12, 0.08, 0.14, 6), centerMat, 0, stemH + 0.05, 0, { parent: fg });
+
+        // 双层花瓣（外层盛开，内层挺立，或者含苞待放）
+        var isOpen = flowerRnd() > 0.22;
+        var petCount = isOpen ? 8 : 5;
+        for (var pet = 0; pet < petCount; pet++) {
+          var pa = (pet / petCount) * Math.PI * 2 + (flowerRnd() - 0.5) * 0.3;
+          var coneH = isOpen ? (0.42 + flowerRnd() * 0.15) : (0.36 + flowerRnd() * 0.1);
+          var rotTilt = isOpen ? (0.40 + flowerRnd() * 0.18) : (0.15 + flowerRnd() * 0.1);
+          addMesh(new THREE.ConeGeometry(0.14, coneH, 4), curPetalMat,
+            Math.cos(pa) * 0.13, stemH + 0.06, Math.sin(pa) * 0.13,
+            { parent: fg, rotZ: Math.cos(pa) * rotTilt, rotX: Math.sin(pa) * rotTilt });
+        }
+
+        // 适度微调随机朝向
+        fg.rotation.y = flowerRnd() * Math.PI * 2;
+        fg.rotation.z = (flowerRnd() - 0.5) * 0.10;
+        fg.position.set(fx, WATER_Y + 0.14, fz);
+        scene.add(fg);
       }
-      fg.position.set(fx, WATER_Y + 0.16, fz);
-      scene.add(fg);
-    }
+    });
   }
-
 
   /* ---------------- 12.5 古典庭院石灯笼系统（傍水随径，黄昏自动点亮） ---------------- */
 
@@ -3518,6 +3994,7 @@
     controls.update();
     window.appCamera = camera;
     window.appControls = controls;
+    window.appSetPlayer = function(x, z, yaw, pitch) { playerPos.x = x; playerPos.z = z; if (yaw !== undefined) playerYaw = yaw; if (pitch !== undefined) playerPitch = pitch || 0; };
   }
 
   function clampView() {
@@ -3559,235 +4036,136 @@
   // 地面高程判定（包含台阶、踏步、桥梁、走廊、亭榭、石台）
   function getGroundHeight(x, z) {
     // 1. 小飞虹石拱桥（群中心 (-20.5, 4.0)，旋转 0.45 弧度）
+    // 采用连续平滑引坡与高阶正弦平滑拱线，上桥、登顶、下桥如履平地，极致丝滑
     var archDx = x - (-20.5);
     var archDz = z - 4.0;
     var cosArch = 0.9004; // Math.cos(-0.45)
     var sinArch = -0.4350; // Math.sin(-0.45)
     var lx = archDx * cosArch - archDz * sinArch;
     var lz = archDx * sinArch + archDz * cosArch;
-    if (Math.abs(lz) <= 2.0 && lx >= -5.7 && lx <= 7.8) {
-      if (lx < -4.8) return 0.74;
-      if (lx > 5.0) return 0.70 - ((lx - 5.0) / 2.8) * 0.45;
-      var archT = (lx + 5.5) / 11.0;
-      return 0.78 + Math.sin(archT * Math.PI) * 1.58;
+
+    if (Math.abs(lz) <= 2.6 && lx >= -7.2 && lx <= 8.8) {
+      var bridgeH;
+      if (lx < -4.8) {
+        // 西侧桥头平缓引坡：从岸线地坪 0.15m / 水面 0.34m 丝滑平缓过渡至桥台 0.74m
+        var tWest = THREE.MathUtils.clamp((lx - (-7.2)) / 2.4, 0, 1);
+        var sWest = THREE.MathUtils.smoothstep(tWest, 0, 1);
+        bridgeH = THREE.MathUtils.lerp(0.25, 0.74, sWest);
+      } else if (lx > 5.0) {
+        // 东侧桥头平缓石阶引坡：从 0.70m 丝滑降至主屋前地面 0.15m
+        var tEast = THREE.MathUtils.clamp((lx - 5.0) / 3.8, 0, 1);
+        var sEast = THREE.MathUtils.smoothstep(tEast, 0, 1);
+        bridgeH = THREE.MathUtils.lerp(0.70, 0.15, sEast);
+      } else {
+        // 拱桥主拱段：连续完美的正弦圆拱曲线，最高峰标高 2.36m，曲线平滑无顿挫
+        var tArch = (lx - (-4.8)) / 9.8;
+        bridgeH = 0.74 + Math.sin(tArch * Math.PI) * 1.62;
+      }
+
+      // 横向边缘（栏杆与桥侧）平滑羽化，防止靠近边缘时镜头高度发生悬崖式跌落
+      if (Math.abs(lz) > 1.8) {
+        var edgeT = THREE.MathUtils.clamp((Math.abs(lz) - 1.8) / 0.8, 0, 1);
+        var edgeSmooth = THREE.MathUtils.smoothstep(edgeT, 0, 1);
+        return THREE.MathUtils.lerp(bridgeH, 0.34, edgeSmooth);
+      }
+      return bridgeH;
     }
 
-    // 2. 主殿远香堂台座与室内地坪 (1.45m)
-    if (Math.abs(x) < 14.5 && z >= -16.5 && z <= -0.1) {
+    // 2. 主殿朝南垂带石阶（自直廊 0.56m 丝滑攀升至主殿月台 1.45m）
+    if (Math.abs(x) <= 4.8 && z >= -2.74 && z <= -0.10) {
+      var stepRatio = THREE.MathUtils.clamp((-0.10 - z) / 2.64, 0, 1);
+      return 0.56 + THREE.MathUtils.smoothstep(stepRatio, 0, 1) * 0.89;
+    }
+
+    // 3. 主殿远香堂月台与正厅大门口室内地坪 (1.45m，前沿 z = -2.74，直通大门 z = -4.22 及殿内)
+    if (Math.abs(x) < 14.5 && z >= -16.5 && z < -2.74) {
       return 1.45;
     }
-    // 主殿朝南垂带台阶（自廊面 0.56m 升至台座 1.35m）
-    if (Math.abs(x) < 5.0 && z >= -0.2 && z <= 0.8) {
-      var stepRatio = (0.8 - z) / 1.0;
-      return 0.56 + Math.max(0, Math.min(1.0, stepRatio)) * 0.89;
-    }
 
-    // 3. 南大门门楼台座与门内门外石阶
+    // 4. 南大门门楼台座与门内门外石阶
     if (Math.abs(x) < 7.5 && z >= 17.6 && z <= 22.5) {
       if (z > 20.6) {
-        return 0.08 + Math.max(0, Math.min(1.0, (22.5 - z) / 1.9)) * 0.37;
+        return 0.08 + THREE.MathUtils.smoothstep(THREE.MathUtils.clamp((22.5 - z) / 1.9, 0, 1), 0, 1) * 0.37;
       }
       return 0.45;
     }
 
-    // 4. 水上中央直廊（中轴 x=0，自南端 z=17.6 至北端 z=-0.10，标高 0.56m）
-    if (Math.abs(x) <= 1.4 && z >= -0.2 && z <= 17.8) {
+    // 5. 中央水上直廊（中轴 x=0，自南端 z=17.8 至北端台阶接榫处 z=-0.15，标高 0.56m）
+    if (Math.abs(x) <= 1.5 && z >= -0.20 && z <= 17.8) {
       return 0.56;
     }
 
-    // 5. 走廊至水亭横跨平桥（x: 1.0 ~ 5.2, z=8.5, 标高 0.65m）
-    if (x >= 1.0 && x <= 5.2 && Math.abs(z - 8.5) <= 1.2) {
-      return 0.65;
+    // 6. 走廊至水亭横跨平桥（x: 0.8 ~ 5.2, z=8.5, 标高 0.65m，与长廊及水亭丝滑微调衔接）
+    if (x >= 0.8 && x <= 5.2 && Math.abs(z - 8.5) <= 1.4) {
+      var bHeight = 0.65;
+      if (x < 1.8) {
+        var tCorr = (x - 0.8) / 1.0;
+        bHeight = THREE.MathUtils.lerp(0.56, 0.65, THREE.MathUtils.smoothstep(tCorr, 0, 1));
+      }
+      if (Math.abs(z - 8.5) > 1.0) {
+        var tBEdge = (Math.abs(z - 8.5) - 1.0) / 0.4;
+        return THREE.MathUtils.lerp(bHeight, 0.34, THREE.MathUtils.smoothstep(tBEdge, 0, 1));
+      }
+      return bHeight;
     }
 
-    // 6. 荷风四面水亭（中心 (8.5, 8.5)，半径 4.2m，标高 0.65m）
+    // 7. 荷风四面水亭（中心 (8.5, 8.5)，半径 4.2m，标高 0.65m）
     if (Math.hypot(x - 8.5, z - 8.5) <= 4.2) {
       return 0.65;
     }
 
-    // 7. 月洞门延伸石阶与九曲青石板平桥（由主殿东台座通向水亭北入口）
-    if (x >= 7.8 && x <= 11.5 && z >= -2.2 && z <= 4.8) {
-      if (z <= 0.4) {
-        var tStep = (z - (-2.2)) / 2.6;
-        return 1.35 - tStep * 0.70;
+    // 8. 月洞门延伸石阶与九曲青石板平桥（由主殿东台座通向水亭北入口，丝滑斜降）
+    if (x >= 7.6 && x <= 11.8 && z >= -2.4 && z <= 5.0) {
+      if (z <= 0.6) {
+        var tZig = THREE.MathUtils.clamp((z - (-2.4)) / 3.0, 0, 1);
+        return THREE.MathUtils.lerp(1.45, 0.65, THREE.MathUtils.smoothstep(tZig, 0, 1));
       }
       return 0.65;
     }
 
-    // 8. 临水石码头（中心 (-12.0, 14.5)）
+    // 9. 临水石码头（中心 (-12.0, 14.5)）
     if (x >= -14.8 && x <= -9.2 && z >= 12.0 && z <= 18.0) {
       return 0.35;
     }
 
-    // 9. 东书斋卷棚与前台
+    // 10. 东书斋卷棚与前台
     if (x >= 21.0 && x <= 34.0 && z >= -13.0 && z <= 1.5) {
       return 0.56;
     }
 
-    // 10. 沿水石汀步
+    // 11. 沿水石汀步
     if (Math.hypot(x - 0.2, z - 4.2) <= 1.2 || Math.hypot(x - (-1.8), z - 4.2) <= 1.2) {
       return 0.35;
     }
 
-    // 默认平地地坪
+    // 12. 整个水池湖面（可在水上自由漫步闲庭踏水，水面标高 0.34m）
+    if (x > -18.0 && x < 18.0 && z > -0.5 && z < 18.0) {
+      return 0.34;
+    }
+
+    // 默认平地地面
     return 0.08;
   }
 
-  // 判定是否允许通行（围墙阻隔、开阔深水区阻隔；桥梁、走廊、水榭、石径畅通无阻）
+  // 取消所有空气墙：这片地方的任何地方用户都可以自由走到！
   function canWalk(x, z) {
-    if (x < -36.5 || x > 36.5 || z < -30.5 || z > 21.5) return false;
-
-    // 1. 小飞虹石拱桥（西侧跨水拱桥）
-    var archDx = x - (-20.5);
-    var archDz = z - 4.0;
-    var cosArch = 0.9004;
-    var sinArch = -0.4350;
-    var lx = archDx * cosArch - archDz * sinArch;
-    var lz = archDx * sinArch + archDz * cosArch;
-    if (Math.abs(lz) <= 2.0 && lx >= -5.7 && lx <= 7.8) return true;
-
-    // 2. 中央水上直廊
-    if (Math.abs(x) <= 1.4 && z >= -0.2 && z <= 17.8) return true;
-
-    // 3. 走廊至水亭横跨平桥
-    if (x >= 1.0 && x <= 5.2 && Math.abs(z - 8.5) <= 1.2) return true;
-
-    // 4. 荷风四面水亭
-    if (Math.hypot(x - 8.5, z - 8.5) <= 4.2) return true;
-
-    // 5. 月洞门石阶与九曲平桥
-    if (x >= 7.8 && x <= 11.5 && z >= -2.2 && z <= 4.8) return true;
-
-    // 6. 临水石码头
-    if (x >= -14.8 && x <= -9.2 && z >= 12.0 && z <= 18.0) return true;
-
-    // 7. 沿水石汀步
-    if (Math.hypot(x - 0.2, z - 4.2) <= 1.2 || Math.hypot(x - (-1.8), z - 4.2) <= 1.2) return true;
-
-    // 湖面开阔深水区阻挡（排除上述水上走廊、桥梁、水亭、码头后的池水）
-    var inLake = (x > -17.5 && x < 17.5 && z > -1.2 && z < 18.2);
-    if (inLake) {
+    // 仅限制在园林外围超宽外框内，防止走出场景虚空
+    if (Math.abs(x) > 38.5 || Math.abs(z) > 31.0) {
       return false;
     }
     return true;
   }
 
-  // Web Audio 原生实时声学合成（零外部音频文件，离线自洽）
+  // 取消所有声音：全局静音，零外部音频与声音合成
   var audioCtx = null;
   var waterGainNode = null;
   var waterSourceNode = null;
   var audioInitialized = false;
 
-  function initAudio() {
-    if (audioInitialized) return;
-    try {
-      var AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return;
-      audioCtx = new AudioContextClass();
-
-      var bufferSize = Math.floor(audioCtx.sampleRate * 2.5);
-      var noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      var output = noiseBuffer.getChannelData(0);
-      var b0 = 0, b1 = 0, b2 = 0;
-      for (var i = 0; i < bufferSize; i++) {
-        var white = Math.random() * 2 - 1;
-        b0 = 0.99886 * b0 + white * 0.0555179;
-        b1 = 0.99332 * b1 + white * 0.0750759;
-        b2 = 0.96900 * b2 + white * 0.1538520;
-        output[i] = (b0 + b1 + b2) * 0.45;
-      }
-      waterSourceNode = audioCtx.createBufferSource();
-      waterSourceNode.buffer = noiseBuffer;
-      waterSourceNode.loop = true;
-
-      var filter = audioCtx.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.value = 520;
-      filter.Q.value = 2.2;
-
-      var lfo = audioCtx.createOscillator();
-      lfo.frequency.value = 0.40;
-      var lfoGain = audioCtx.createGain();
-      lfoGain.gain.value = 140;
-      lfo.connect(filter.frequency);
-      lfo.start();
-
-      waterGainNode = audioCtx.createGain();
-      waterGainNode.gain.value = 0;
-
-      waterSourceNode.connect(filter);
-      filter.connect(waterGainNode);
-      waterGainNode.connect(audioCtx.destination);
-      waterSourceNode.start();
-
-      audioInitialized = true;
-    } catch (e) {
-      console.warn('Audio init error:', e);
-    }
-  }
-
-  function resumeAudioOnGesture() {
-    if (!audioInitialized) initAudio();
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-  }
-
-  // 播放踏上青石板清脆脚步声（纯原生算法合成）
-  function playFootstep() {
-    if (!audioCtx || audioCtx.state === 'suspended') return;
-    try {
-      var now = audioCtx.currentTime;
-      var osc = audioCtx.createOscillator();
-      var oscGain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(145 + Math.random() * 25, now);
-      osc.frequency.exponentialRampToValueAtTime(42, now + 0.042);
-      oscGain.gain.setValueAtTime(0.14, now);
-      oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.042);
-      osc.connect(oscGain);
-      oscGain.connect(audioCtx.destination);
-      osc.start(now);
-      osc.stop(now + 0.048);
-
-      var snapLen = Math.floor(audioCtx.sampleRate * 0.024);
-      var snapBuf = audioCtx.createBuffer(1, snapLen, audioCtx.sampleRate);
-      var snapData = snapBuf.getChannelData(0);
-      for (var s = 0; s < snapLen; s++) {
-        snapData[s] = (Math.random() * 2 - 1) * Math.exp(-s / (snapLen * 0.32));
-      }
-      var snapSrc = audioCtx.createBufferSource();
-      snapSrc.buffer = snapBuf;
-      var snapFilter = audioCtx.createBiquadFilter();
-      snapFilter.type = 'bandpass';
-      snapFilter.frequency.value = 1750 + Math.random() * 200;
-      snapFilter.Q.value = 3.0;
-      var snapGain = audioCtx.createGain();
-      snapGain.gain.setValueAtTime(0.09, now);
-      snapGain.gain.exponentialRampToValueAtTime(0.001, now + 0.024);
-      snapSrc.connect(snapFilter);
-      snapFilter.connect(snapGain);
-      snapGain.connect(audioCtx.destination);
-      snapSrc.start(now);
-    } catch (e) {}
-  }
-
-  // 根据人与池塘水体边界的真实距离调节流水潺潺声
-  function updateWaterAudio(posX, posZ) {
-    if (!audioCtx || !waterGainNode || audioCtx.state === 'suspended') return;
-    try {
-      var dx = Math.max(0, -18.5 - posX, posX - 21.5);
-      var dz = Math.max(0, 0.3 - posZ, posZ - 16.5);
-      var distToLake = Math.hypot(dx, dz);
-      var maxAudibleDist = 18.0;
-      var targetGain = 0;
-      if (distToLake < maxAudibleDist) {
-        var proximity = 1.0 - (distToLake / maxAudibleDist);
-        targetGain = Math.pow(proximity, 1.4) * 0.32;
-      }
-      waterGainNode.gain.setTargetAtTime(targetGain, audioCtx.currentTime, 0.15);
-    } catch (e) {}
-  }
+  function initAudio() {}
+  function resumeAudioOnGesture() {}
+  function playFootstep() {}
+  function updateWaterAudio(posX, posZ) {}
 
   function updateWalkMode(dt) {
     var fwd = (walkKeys.forward ? 1 : 0) - (walkKeys.backward ? 1 : 0);
@@ -3837,7 +4215,9 @@
     }
 
     var targetEyeY = getGroundHeight(playerPos.x, playerPos.z) + 1.65;
-    playerPos.y = THREE.MathUtils.lerp(playerPos.y, targetEyeY, 0.22);
+    // 基于帧时间的高阶平滑指数滤波，上下桥梁、台阶、坡道极致丝滑、毫无顿挫感
+    var verticalDamp = 1.0 - Math.exp(-14.0 * Math.min(dt, 0.05));
+    playerPos.y = THREE.MathUtils.lerp(playerPos.y, targetEyeY, verticalDamp);
 
     var bobOffset = (isMoving && !reducedMotion) ? Math.sin(walkBobbing) * 0.024 : 0;
     camera.position.set(playerPos.x, playerPos.y + bobOffset, playerPos.z);
@@ -4617,7 +4997,7 @@
       try {
         STEPS[index].run();
       } catch (error) {
-        showFallback('水乡场景生成过程中出现异常，页面已停止渲染，但不会白屏。');
+        window.__stepError = error.stack || String(error); console.error('STEP_ERR:', error); showFallback('水乡场景生成过程中出现异常，页面已停止渲染，但不会白屏。');
         return;
       }
       index += 1;
