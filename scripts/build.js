@@ -35,7 +35,22 @@ const mainContent = srcHtml.substring(bodyStart, bodyEnd);
 
 // Extract head shims from oldIndex
 const headStart = oldIndex.indexOf('<head>');
-const headShims = oldIndex.substring(headStart + '<head>'.length, oldIndex.indexOf('<meta charset="utf-8">'));
+const crypto = require('crypto');
+// 交付合同哈希随合同文件实时计算：合同若被重新生成，产物头部的 provenance 必须同步，避免结构校验报 hash mismatch
+let contractHash = null;
+try {
+  contractHash = crypto.createHash('sha256')
+    .update(fs.readFileSync(path.join(rootDir, '.design-suite', 'website-contract.json')))
+    .digest('hex');
+} catch { contractHash = null; }
+
+let headShims = oldIndex.substring(headStart + '<head>'.length, oldIndex.indexOf('<meta charset="utf-8">'));
+if (contractHash) {
+  headShims = headShims.replace(
+    /(name="design-suite-contract-sha256" content=")[0-9a-f]+(")/,
+    `$1${contractHash}$2`
+  );
+}
 
 const newIndex = '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>' +
   headShims +

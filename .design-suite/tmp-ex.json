@@ -2,7 +2,7 @@
   "ok": true,
   "state": "export-approved",
   "receipt": "C:\\Users\\ZhongKe\\Desktop\\Design\\.design-suite\\execution-receipt.json",
-  "receipt_id": "0b339a1a59616b1d8634cb924a715c1167b6c973ce6d3bda62512369a18823f6",
+  "receipt_id": "3c9dda2b6e8b1c99754606b0238b63ce95a95c67330914946545dfae6c5ce009",
   "errors": [],
   "checks": [
     {
@@ -12,7 +12,7 @@
         "path": "website-contract.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
+        "sha256": "0a1f52ba193186d91de9c4b817940151be9f9fadc0eb967f85ae45bf00c39b95",
         "file_count": 1
       },
       "actual": {
@@ -20,7 +20,7 @@
         "path": "website-contract.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
+        "sha256": "0a1f52ba193186d91de9c4b817940151be9f9fadc0eb967f85ae45bf00c39b95",
         "file_count": 1
       },
       "mismatches": []
@@ -32,7 +32,7 @@
         "path": "../src",
         "path_base": "receipt-directory",
         "type": "directory",
-        "sha256": "7a030ea206b94d9113ea225a77037506b85177ea9c2eb1cdb8736cefb500b610",
+        "sha256": "e168f11ea2c819b84040e9249dd71374778c2877a82a9646f6929e574c14dc93",
         "file_count": 3
       },
       "actual": {
@@ -40,7 +40,7 @@
         "path": "../src",
         "path_base": "receipt-directory",
         "type": "directory",
-        "sha256": "7a030ea206b94d9113ea225a77037506b85177ea9c2eb1cdb8736cefb500b610",
+        "sha256": "e168f11ea2c819b84040e9249dd71374778c2877a82a9646f6929e574c14dc93",
         "file_count": 3
       },
       "mismatches": []
@@ -92,7 +92,7 @@
         "path": "layout-geometry.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "7abc14c8119ec5f5335ca06949aa9c8bc0b895054b7f98bb4dbcb7bd46aadc13",
+        "sha256": "6a09b7fd4180802fc6e4805181b715e022854a1bbe4ace83d3fcd076c303238e",
         "file_count": 1
       },
       "actual": {
@@ -100,7 +100,7 @@
         "path": "layout-geometry.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "7abc14c8119ec5f5335ca06949aa9c8bc0b895054b7f98bb4dbcb7bd46aadc13",
+        "sha256": "6a09b7fd4180802fc6e4805181b715e022854a1bbe4ace83d3fcd076c303238e",
         "file_count": 1
       },
       "mismatches": []
@@ -112,7 +112,7 @@
         "path": "../dist",
         "path_base": "receipt-directory",
         "type": "directory",
-        "sha256": "68480a7d489b31c9d7beae360b4bb195812708d194a62f03e60ed357c2d6d662",
+        "sha256": "66d22cbb45d4a96ecf0eb7a51c5c4848ef87df33fb00ccf97b7404b60d4ce694",
         "file_count": 5
       },
       "actual": {
@@ -120,7 +120,7 @@
         "path": "../dist",
         "path_base": "receipt-directory",
         "type": "directory",
-        "sha256": "68480a7d489b31c9d7beae360b4bb195812708d194a62f03e60ed357c2d6d662",
+        "sha256": "66d22cbb45d4a96ecf0eb7a51c5c4848ef87df33fb00ccf97b7404b60d4ce694",
         "file_count": 5
       },
       "mismatches": []
@@ -132,7 +132,7 @@
         "path": "browser-evidence.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "58294eee038c043da32c4ef84689719ed350d8fd32087a647a4a91f1123c37a3",
+        "sha256": "8eb3112409afbc8aa93edcfeb5b1cbdc4c1dfd6cb9f704da5a65d5f2dbf57884",
         "file_count": 1
       },
       "actual": {
@@ -140,7 +140,7 @@
         "path": "browser-evidence.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "58294eee038c043da32c4ef84689719ed350d8fd32087a647a4a91f1123c37a3",
+        "sha256": "8eb3112409afbc8aa93edcfeb5b1cbdc4c1dfd6cb9f704da5a65d5f2dbf57884",
         "file_count": 1
       },
       "mismatches": []
@@ -152,7 +152,7 @@
         "path": "../index.html",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "64bf4d3d8c66b962902df7c8bb426559d5261b2ad494972634f128a316c8d410",
+        "sha256": "dc8b75b5c3497b184033acdcea9ababdd9df1723612d90cee7f392b9c74590f9",
         "file_count": 1
       },
       "actual": {
@@ -160,7 +160,7 @@
         "path": "../index.html",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "64bf4d3d8c66b962902df7c8bb426559d5261b2ad494972634f128a316c8d410",
+        "sha256": "dc8b75b5c3497b184033acdcea9ababdd9df1723612d90cee7f392b9c74590f9",
         "file_count": 1
       },
       "mismatches": []
@@ -172,7 +172,7 @@
         "path": "static-export-evidence.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "7cd8117976e64e0a1f2845cbde362e5355b8512f4d335c7d8d1a1754327bee5b",
+        "sha256": "97b965c7f729767163a7c8dc44a38b5f1ad9181f9bf20d13f7e2e5d5dcc02a3d",
         "file_count": 1
       },
       "actual": {
@@ -180,7 +180,7 @@
         "path": "static-export-evidence.json",
         "path_base": "receipt-directory",
         "type": "file",
-        "sha256": "7cd8117976e64e0a1f2845cbde362e5355b8512f4d335c7d8d1a1754327bee5b",
+        "sha256": "97b965c7f729767163a7c8dc44a38b5f1ad9181f9bf20d13f7e2e5d5dcc02a3d",
         "file_count": 1
       },
       "mismatches": []

@@ -18,8 +18,33 @@
   <div class="frame" aria-hidden="true"></div>
 
   <!-- 漫游交互模式切换栏（上帝俯瞰 / 沉浸游园） -->
+  <!-- 尺度缩放调节栏（微缩方格 <-> 1:1 当前大小无级滑块与快速切换） -->
+  <aside class="diorama-scale-bar" id="diorama-scale-bar" aria-label="沙盘尺度与比例缩放调节">
+    <button type="button" class="scale-btn" id="btn-scale-mini" title="一键缩小为微缩方格沙盘">
+      <span>📦 微缩方格</span>
+    </button>
+    <div class="scale-slider-wrap">
+      <span class="scale-hint">微缩</span>
+      <input type="range" class="scale-slider" id="diorama-scale-slider" min="0.28" max="1.00" step="0.01" value="1.00" aria-label="沙盘微缩与原寸缩放">
+      <span class="scale-hint">原寸</span>
+    </div>
+    <button type="button" class="scale-btn active" id="btn-scale-full" title="一键恢复至当前1:1原寸">
+      <span>🏛️ 当前大小</span>
+    </button>
+    <span class="scale-badge" id="scale-badge">当前大小 (1.00x)</span>
+  </aside>
+
+  <!-- 漫游交互模式切换栏（微缩沙盘 / 俯瞰全貌 / 沉浸游园） -->
   <nav class="view-switch-bar" id="view-switch-bar" aria-label="游园视角切换">
-    <button type="button" class="view-btn active" id="btn-mode-god" data-mode="god" title="上帝视角 · 俯瞰全貌">
+    <button type="button" class="view-btn" id="btn-mode-diorama" data-mode="diorama" title="微缩方格 · 3D沙盘模型视角">
+      <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      </svg>
+      <span>微缩沙盘</span>
+    </button>
+    <button type="button" class="view-btn active" id="btn-mode-god" data-mode="god" title="上帝视角 · 俯瞰庭院">
       <svg class="view-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
         <polyline points="2 17 12 22 22 17"></polyline>
@@ -60,12 +85,18 @@
     </div>
   </div>
 
+  <!-- 假山后与草丛间的狸奴、仙鹤：点击或漫步靠近时弹出一首随机诗词 -->
+  <aside class="poem-card" id="poem-card" role="status" aria-live="polite" hidden>
+    <span class="poem-seal" id="poem-seal" aria-hidden="true">猫</span>
+    <div class="poem-text">
+      <p class="poem-body" id="poem-body"></p>
+      <p class="poem-source" id="poem-source"></p>
+    </div>
+    <button type="button" class="poem-close" id="poem-close" aria-label="关闭诗词卡">×</button>
+  </aside>
 
-  <header class="titleblock">
-    <span class="seal" aria-hidden="true">江南</span>
-    <h1>江南水乡 · 园林漫境</h1>
-    <p class="lede">四面院墙合围、南面重檐正门可步入园中，融汇拙政园荷池水阁与直廊水庭，兼具狮子林奇峰叠石之胜。平畴之上远眺一池碧水与翠竹林带，沉浸体验江南水乡的诗意画境。</p>
-  </header>
+
+  <!-- 左上角标题与说明小字已按要求移除，界面只保留天气/时辰 HUD、左侧视图切换与诗词卡 -->
 
   <aside class="hud" id="hud" aria-label="场景天气与时间控制">
     <div class="hud-head">
@@ -228,7 +259,6 @@
   <p class="concept-note"><b>风格化概念渲染</b> · 平地园林生态重构，非测绘还原</p>
 
   <div class="loader" id="loader" role="status" aria-live="polite">
-    <p class="loader-title">江南水乡 · 园林漫境</p>
     <div class="loader-track" aria-hidden="true"><div class="loader-fill" id="loader-fill"></div></div>
     <p class="loader-text" id="loader-text">正在生成水乡生态场景…</p>
   </div>

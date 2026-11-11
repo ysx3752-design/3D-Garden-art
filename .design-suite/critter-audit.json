@@ -1,0 +1,92 @@
+[
+  {
+    "name": "狸奴",
+    "kind": "cat",
+    "x": 2,
+    "z": -29,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 0.63
+  },
+  {
+    "name": "玄猫",
+    "kind": "cat",
+    "x": -17.4,
+    "z": -28.6,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 0.43
+  },
+  {
+    "name": "雪儿",
+    "kind": "cat",
+    "x": -33,
+    "z": 9.9,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 1.15
+  },
+  {
+    "name": "小狸",
+    "kind": "cat",
+    "x": 28.3,
+    "z": 16.4,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 1.56
+  },
+  {
+    "name": "玳瑁",
+    "kind": "cat",
+    "x": 23.4,
+    "z": 5.6,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 1.14
+  },
+  {
+    "name": "霜翎",
+    "kind": "crane",
+    "x": 6,
+    "z": -30,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 0.86
+  },
+  {
+    "name": "素羽",
+    "kind": "crane",
+    "x": -18.6,
+    "z": -30.2,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 1.14
+  },
+  {
+    "name": "丹顶",
+    "kind": "crane",
+    "x": -34.6,
+    "z": 2.6,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 0.71
+  },
+  {
+    "name": "青皋",
+    "kind": "crane",
+    "x": 30.6,
+    "z": 12,
+    "floor": 0,
+    "water": false,
+    "obstructed": false,
+    "minClear": 99
+  }
+]

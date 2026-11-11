@@ -57,9 +57,9 @@
       label: '清晨', clock: '06:20', baseTemp: 14,
       // 新海诚/吉卜力风格：明丽清透的淡蓝天顶、晨光初晓的暖金低斜朝阳，拉长亭桥倒影
       skyTop: 0x1d5a98, skyBottom: 0xc8e4f7, glow: 0xffe2ac,
-      sunColor: 0xfff1d2, sunIntensity: 2.8, elevation: 26, azimuth: -54,
-      ambient: 0.18, hemiSky: 0x9bd8ff, hemiGround: 0x2e4426, hemi: 1.05,
-      exposure: 1.08, fogColor: 0xcfe4f5, fogDensity: 0.0034,
+      sunColor: 0xfff1d2, sunIntensity: 3.0, elevation: 26, azimuth: -54,
+      ambient: 0.26, hemiSky: 0x9bd8ff, hemiGround: 0x36512d, hemi: 1.16,
+      exposure: 1.14, fogColor: 0xcfe4f5, fogDensity: 0.0034,
       moon: 0, glowIntensity: 0.15, star: 0, celestial: 0xfffaea,
       firefly: 0
     },
@@ -67,9 +67,9 @@
       label: '正午', clock: '12:30', baseTemp: 25,
       // 吉卜力盛夏晴朗白昼：饱满蓝天、清亮绿水与分明屋檐落影
       skyTop: 0x1668be, skyBottom: 0xcde8fc, glow: 0xfff6db,
-      sunColor: 0xfffef4, sunIntensity: 3.2, elevation: 48, azimuth: -34,
-      ambient: 0.20, hemiSky: 0xa4dbff, hemiGround: 0x324d28, hemi: 1.15,
-      exposure: 1.04, fogColor: 0xd6eaf8, fogDensity: 0.0028,
+      sunColor: 0xfffef4, sunIntensity: 3.35, elevation: 48, azimuth: -34,
+      ambient: 0.28, hemiSky: 0xa4dbff, hemiGround: 0x3b592f, hemi: 1.22,
+      exposure: 1.12, fogColor: 0xd6eaf8, fogDensity: 0.0028,
       moon: 0, glowIntensity: 0, star: 0, celestial: 0xffffff,
       firefly: 0
     },
@@ -77,20 +77,20 @@
       label: '黄昏', clock: '18:40', baseTemp: 20,
       // 高级黄昏电影感：低角度金红晚霞、超长戏剧感拉长阴影、紫金暮色天际
       skyTop: 0x482f64, skyBottom: 0xe88752, glow: 0xff994a,
-      sunColor: 0xff9548, sunIntensity: 2.4, elevation: 13, azimuth: 68,
-      ambient: 0.16, hemiSky: 0x9e6f98, hemiGround: 0x423223, hemi: 0.85,
-      exposure: 1.12, fogColor: 0xde956c, fogDensity: 0.0038,
+      sunColor: 0xff9d52, sunIntensity: 2.9, elevation: 13, azimuth: 68,
+      ambient: 0.26, hemiSky: 0xbe8cae, hemiGround: 0x54402b, hemi: 1.06,
+      exposure: 1.20, fogColor: 0xde956c, fogDensity: 0.0036,
       moon: 0, glowIntensity: 0.95, star: 0.15, celestial: 0xff9e58,
       firefly: 0.8
     },
     night: {
       label: '夜晚', clock: '21:10', baseTemp: 12,
       // 诗意江南静谧水乡月夜：冷调月光与幽蓝天幕，暖黄灯火交相辉映
-      skyTop: 0x091426, skyBottom: 0x182a44, glow: 0x32486c,
-      sunColor: 0x8aa8d8, sunIntensity: 0.38, elevation: 36, azimuth: 118,
-      ambient: 0.10, hemiSky: 0x1c2b44, hemiGround: 0x101814, hemi: 0.42,
-      exposure: 1.16, fogColor: 0x141f30, fogDensity: 0.0048,
-      moon: 0.70, glowIntensity: 1.6, star: 0.95, celestial: 0xe3eaf8,
+      skyTop: 0x18294a, skyBottom: 0x38506f, glow: 0x4a6389,
+      sunColor: 0xa8c4ea, sunIntensity: 0.70, elevation: 36, azimuth: 118,
+      ambient: 0.32, hemiSky: 0x47608a, hemiGround: 0x293732, hemi: 0.92,
+      exposure: 1.24, fogColor: 0x263548, fogDensity: 0.0042,
+      moon: 1.20, glowIntensity: 1.2, star: 0.9, celestial: 0xeaf1fc,
       firefly: 1.0
     }
   };
@@ -105,7 +105,7 @@
       petal: 1.0
     },
     cloudy: {
-      label: '阴', tempOffset: 0, sunMul: 0.32, ambientMul: 1.35, hemiMul: 1.1,
+      label: '阴', tempOffset: 0, sunMul: 0.34, ambientMul: 1.42, hemiMul: 1.14,
       skyDim: 0.32, skyDesat: 0.44, fogMul: 1.5, fogTint: 0xc8c9c4, fogTintAmt: 0.5,
       exposureMul: 0.98, waterRough: 0.22, waterTint: 0x8ba2a6, waterTintAmt: 0.5,
       wetness: 0.05, rain: 0, snow: 0, shadowMul: 0.28, glowMul: 0.9,
@@ -113,7 +113,7 @@
       petal: 0.6
     },
     rain: {
-      label: '雨', tempOffset: -1, sunMul: 0.14, ambientMul: 1.25, hemiMul: 1.0,
+      label: '雨', tempOffset: -1, sunMul: 0.16, ambientMul: 1.38, hemiMul: 1.06,
       skyDim: 0.50, skyDesat: 0.62, fogMul: 2.8, fogTint: 0x9ba4a8, fogTintAmt: 0.75,
       exposureMul: 0.92, waterRough: 0.14, waterTint: 0x768f96, waterTintAmt: 0.58,
       wetness: 1.0, rain: 1.0, snow: 0, shadowMul: 0.12, glowMul: 1.2,
@@ -121,7 +121,7 @@
       petal: 0.2
     },
     snow: {
-      label: '雪', tempOffset: -12, sunMul: 0.20, ambientMul: 1.5, hemiMul: 1.15,
+      label: '雪', tempOffset: -12, sunMul: 0.22, ambientMul: 1.62, hemiMul: 1.2,
       skyDim: 0.44, skyDesat: 0.68, fogMul: 2.2, fogTint: 0xd8dce2, fogTintAmt: 0.8,
       exposureMul: 0.98, waterRough: 0.75, waterTint: 0xdde7f0, waterTintAmt: 0.85,
       wetness: 0.2, rain: 0, snow: 1.0, shadowMul: 0.22, glowMul: 1.0,
@@ -129,7 +129,7 @@
       petal: 0
     },
     fog: {
-      label: '雾', tempOffset: -1, sunMul: 0.10, ambientMul: 1.35, hemiMul: 1.05,
+      label: '雾', tempOffset: -1, sunMul: 0.12, ambientMul: 1.5, hemiMul: 1.1,
       skyDim: 0.52, skyDesat: 0.82, fogMul: 5.0, fogTint: 0xd2d5ce, fogTintAmt: 0.9,
       exposureMul: 0.95, waterRough: 0.28, waterTint: 0xa4aca8, waterTintAmt: 0.6,
       wetness: 0.35, rain: 0, snow: 0, shadowMul: 0.05, glowMul: 1.25,
@@ -360,15 +360,71 @@
     }, 45, 45);
   }
 
-  function plasterTexture() {
-    return makeTexture(128, 128, function (ctx, w, h) {
-      ctx.fillStyle = '#f7f4ec';
+  function roofTexture() {
+    return makeTexture(512, 512, function (ctx, w, h) {
+      ctx.fillStyle = '#2d3237';
       ctx.fillRect(0, 0, w, h);
-      speckle(ctx, w, h, 900, '#ded9cc', 0.32, 1.4);
-      speckle(ctx, w, h, 400, '#ffffff', 0.45, 1.2);
-      ctx.globalAlpha = 0.08;
-      ctx.strokeStyle = '#b7b0a2';
-      for (var i = 0; i < 8; i++) {
+      var flutes = 16;
+      var fluteW = w / flutes;
+      for (var f = 0; f < flutes; f++) {
+        var fx = f * fluteW;
+        var grad = ctx.createLinearGradient(fx, 0, fx + fluteW, 0);
+        grad.addColorStop(0.0, '#1c2024');
+        grad.addColorStop(0.18, '#2a3036');
+        grad.addColorStop(0.50, '#4f575f');
+        grad.addColorStop(0.82, '#2a3036');
+        grad.addColorStop(1.0, '#1a1e22');
+        ctx.fillStyle = grad;
+        ctx.fillRect(fx, 0, fluteW, h);
+
+        ctx.fillStyle = 'rgba(15, 18, 20, 0.45)';
+        for (var y = 0; y < h; y += 32) {
+          ctx.fillRect(fx, y, fluteW, 2.5);
+          ctx.fillStyle = 'rgba(110, 120, 130, 0.22)';
+          ctx.fillRect(fx + 2, y + 2.5, fluteW - 4, 1.2);
+          ctx.fillStyle = 'rgba(15, 18, 20, 0.45)';
+        }
+      }
+      speckle(ctx, w, h, 2500, '#586169', 0.15, 1.2);
+      speckle(ctx, w, h, 1800, '#181b1e', 0.20, 1.4);
+    }, 4, 4);
+  }
+
+  function roofNormalTexture() {
+    return makeTexture(512, 512, function (ctx, w, h) {
+      var img = ctx.createImageData(w, h);
+      var data = img.data;
+      var flutes = 16;
+      var fluteW = w / flutes;
+      for (var y = 0; y < h; y++) {
+        var tilePhase = Math.sin((y % 32) / 32 * Math.PI);
+        for (var x = 0; x < w; x++) {
+          var u = (x % fluteW) / fluteW;
+          var nx = -Math.sin(u * Math.PI * 2.0) * 0.75;
+          var ny = -tilePhase * 0.25;
+          var nz = Math.sqrt(Math.max(0.001, 1.0 - nx * nx - ny * ny));
+          var idx = (y * w + x) * 4;
+          data[idx] = Math.floor((nx * 0.5 + 0.5) * 255);
+          data[idx + 1] = Math.floor((ny * 0.5 + 0.5) * 255);
+          data[idx + 2] = Math.floor((nz * 0.5 + 0.5) * 255);
+          data[idx + 3] = 255;
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+    }, 4, 4, false);
+  }
+
+  function plasterTexture() {
+    return makeTexture(256, 256, function (ctx, w, h) {
+      ctx.fillStyle = '#f6f3eb';
+      ctx.fillRect(0, 0, w, h);
+      speckle(ctx, w, h, 3500, '#ded8cb', 0.35, 1.4);
+      speckle(ctx, w, h, 1600, '#ede8dc', 0.45, 1.6);
+      speckle(ctx, w, h, 800, '#b8b09f', 0.14, 2.0);
+      ctx.globalAlpha = 0.06;
+      ctx.strokeStyle = '#a8a090';
+      ctx.lineWidth = 1.0;
+      for (var i = 0; i < 10; i++) {
         ctx.beginPath();
         ctx.moveTo(Math.random() * w, 0);
         ctx.lineTo(Math.random() * w, h);
@@ -376,26 +432,6 @@
       }
       ctx.globalAlpha = 1;
     }, 4, 4);
-  }
-
-  function roofTexture() {
-    return makeTexture(128, 128, function (ctx, w, h) {
-      ctx.fillStyle = '#444a4f';
-      ctx.fillRect(0, 0, w, h);
-      var rows = 8;
-      var rowH = h / rows;
-      for (var r = 0; r < rows; r++) {
-        for (var c = 0; c < 10; c++) {
-          var offset = (r % 2) * (w / 20);
-          var x = c * (w / 10) + offset;
-          ctx.fillStyle = ['#4e5459', '#3f4449', '#545b61'][Math.floor(Math.random() * 3)];
-          ctx.fillRect(x + 0.8, r * rowH + 0.8, w / 10 - 1.6, rowH - 1.6);
-        }
-        ctx.fillStyle = '#2c3135';
-        ctx.fillRect(0, r * rowH, w, 1.6);
-      }
-      speckle(ctx, w, h, 700, '#6d757b', 0.22, 1.3);
-    }, 8, 6);
   }
 
   function stoneTexture() {
@@ -408,21 +444,44 @@
   }
 
   function woodTexture() {
-    return makeTexture(128, 128, function (ctx, w, h) {
-      ctx.fillStyle = '#6a4e36';
+    return makeTexture(512, 512, function (ctx, w, h) {
+      ctx.fillStyle = '#563c27';
       ctx.fillRect(0, 0, w, h);
-      ctx.strokeStyle = '#543d29';
-      ctx.lineWidth = 1.2;
-      for (var y = 2; y < h; y += 4 + Math.random() * 3) {
-        ctx.globalAlpha = 0.4 + Math.random() * 0.3;
+      for (var y = 0; y < h; y += 2) {
+        var alpha = 0.15 + Math.random() * 0.25;
+        ctx.strokeStyle = (y % 6 === 0) ? 'rgba(54, 34, 18, ' + alpha + ')' : 'rgba(112, 80, 54, ' + (alpha * 0.7) + ')';
+        ctx.lineWidth = 1.0 + Math.random() * 1.5;
         ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.bezierCurveTo(w * 0.33, y + Math.random() * 2 - 1, w * 0.66, y + Math.random() * 2 - 1, w, y);
+        var wave = Math.sin(y * 0.05) * 3;
+        ctx.moveTo(0, y + wave);
+        ctx.bezierCurveTo(w * 0.35, y + wave + (Math.random() * 4 - 2), w * 0.7, y + wave - (Math.random() * 4 - 2), w, y + wave);
         ctx.stroke();
       }
-      ctx.globalAlpha = 1;
-      speckle(ctx, w, h, 400, '#402e1e', 0.3, 1.2);
-    }, 4, 4);
+      speckle(ctx, w, h, 4000, '#362214', 0.28, 1.2);
+      speckle(ctx, w, h, 2000, '#825c3c', 0.18, 1.4);
+    }, 2, 4);
+  }
+
+  function waterNormalTexture() {
+    return makeTexture(256, 256, function (ctx, w, h) {
+      var img = ctx.createImageData(w, h);
+      var data = img.data;
+      for (var y = 0; y < h; y++) {
+        var vy = y / h * Math.PI * 2;
+        for (var x = 0; x < w; x++) {
+          var vx = x / w * Math.PI * 2;
+          var nx = Math.sin(vx * 3.0 + vy * 1.5) * 0.5 + Math.cos(vx * 5.0 - vy * 3.0) * 0.35;
+          var ny = Math.cos(vy * 3.0 + vx * 1.5) * 0.5 + Math.sin(vy * 4.0 - vx * 2.0) * 0.35;
+          var nz = Math.sqrt(Math.max(0.01, 1.0 - (nx * nx + ny * ny) * 0.3));
+          var idx = (y * w + x) * 4;
+          data[idx] = Math.floor((nx * 0.4 + 0.5) * 255);
+          data[idx + 1] = Math.floor((ny * 0.4 + 0.5) * 255);
+          data[idx + 2] = Math.floor(nz * 255);
+          data[idx + 3] = 255;
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+    }, 1, 1, false);
   }
 
   function boatCanopyTexture() {
@@ -657,7 +716,13 @@
       0, 0, 0, { rotX: -Math.PI / 2, receive: true }
     );
     groundMat = ground.material;
+    ground.visible = false; // 600m 全景地坪不再渲染，避免沙盘外侧露出一望无际的平面
     applySnowAccumulation(groundMat, 1.0);
+
+    // 沙盘顶面地坪：按 84m×84m 基座铺满（墙内庭园、南门广场、东西步道、后园连成一片），
+    // 使树木、建筑、围墙、假山、汀步全部踩在实体地面上；水池的池底与水面覆盖其上，水池部分不受影响
+    addMesh(new THREE.PlaneGeometry(84, 84), groundMat, 0, -0.01, -6,
+      { rotX: -Math.PI / 2, receive: true });
 
     var grassMat = new THREE.MeshStandardMaterial({ color: COL.grass, roughness: 0.92, flatShading: true });
     applySnowAccumulation(grassMat, 1.0);
@@ -693,12 +758,14 @@
     // 后院青石界石压边（贴地压边石，非坡地）
     addMesh(new THREE.BoxGeometry(34, 0.45, 0.6), stoneMat, 0, 1.0, -23.5, { receive: true, cast: !isMobile });
 
-    // 3. 平地绿茵：全部贴在平地标高上的薄层草甸与苔痕，不产生任何隆起地形
-    [[-32, 30, 9], [32, 30, 9], [0, 27, 6], [-50, 6, 10], [50, 6, 10]].forEach(function (lawn) {
+    // 3. 平地绿茵：严格收敛于沙盘方格基座边界以内，杜绝穿模出墙与悬空
+    // 移除原突破东西外墙悬浮在空中的飞碟状草甸([-50, 6], [50, 6])
+    // 精确缩减南门前草坪半径并内收坐标，确保 z 最大边界严格在 32 以内（远低于基座南边缘 z=36）
+    [[-25, 27, 4.8], [25, 27, 4.8], [0, 26, 4.0]].forEach(function (lawn) {
       addMesh(new THREE.CircleGeometry(lawn[2], 12), grassMat,
         lawn[0], 0.03, lawn[1], { rotX: -Math.PI / 2, receive: true });
       addMesh(new THREE.CircleGeometry(lawn[2] * 0.42, 10), mossMat,
-        lawn[0] + 1.6, 0.05, lawn[1] - 1.2, { rotX: -Math.PI / 2, receive: true });
+        lawn[0] + 1.2, 0.05, lawn[1] - 0.8, { rotX: -Math.PI / 2, receive: true });
     });
   }
 
@@ -720,29 +787,36 @@
     waterBaseY.set(waterGeo.attributes.position.array);
 
     waterMat = new THREE.MeshStandardMaterial({
-      color: COL.water, roughness: 0.09, metalness: 0.32, transparent: true, opacity: 0.93,
-      side: THREE.DoubleSide
+      color: COL.water, roughness: 0.04, metalness: 0.88, transparent: true, opacity: 0.93,
+      side: THREE.DoubleSide,
+      normalMap: waterNormalTexture(),
+      normalScale: new THREE.Vector2(0.5, 0.5)
     });
 
     // 动态水面：雨天 Shader 程序化生成高密涟漪法线（适度疏朗20%），雨停后平静如镜积水倒影，雪天冰封雪盖
     waterMat.onBeforeCompile = function (shader) {
+      waterCustomShader = shader;
+      shader.uniforms.uReflectTexture = { value: waterReflectTarget ? waterReflectTarget.texture : null };
       shader.uniforms.uWaterTime = waterShaderUniforms.uTime;
       shader.uniforms.uRainRipple = waterShaderUniforms.uRainAmount;
       shader.uniforms.uSnowAmount = snowShaderUniform.uSnowAmount;
 
-      shader.vertexShader = 'varying vec3 vGardenWorldPos;\n' + shader.vertexShader.replace(
+      shader.vertexShader = 'varying vec3 vGardenWorldPos;\nvarying vec4 vClipPos;\n' + shader.vertexShader.replace(
+        '#include <project_vertex>',
+        '#include <project_vertex>\n  vClipPos = gl_Position;'
+      ).replace(
         '#include <worldpos_vertex>',
         '#include <worldpos_vertex>\n  vGardenWorldPos = (modelMatrix * vec4(transformed, 1.0)).xyz;'
       );
 
-      shader.fragmentShader = 'uniform float uWaterTime;\nuniform float uRainRipple;\nuniform float uSnowAmount;\nvarying vec3 vGardenWorldPos;\n' +
+      shader.fragmentShader = 'uniform sampler2D uReflectTexture;\nuniform float uWaterTime;\nuniform float uRainRipple;\nuniform float uSnowAmount;\nvarying vec3 vGardenWorldPos;\nvarying vec4 vClipPos;\n' +
         'vec2 hashRipple(vec2 p) {\n' +
         '  p = fract(p * vec2(5.3983, 5.4427));\n' +
         '  p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));\n' +
         '  return fract(vec2(p.x * p.y * 95.4337, p.x * p.y * 97.597));\n' +
         '}\n' +
         'vec2 calcRipples(vec2 uv, float t) {\n' +
-        '  vec2 p = uv * 2.8;\n' + // 降低 20% 空间密度，涟漪疏落有致更显自然
+        '  vec2 p = uv * 2.8;\n' +
         '  vec2 ip = floor(p);\n' +
         '  vec2 fp = fract(p);\n' +
         '  vec2 totalGrad = vec2(0.0);\n' +
@@ -777,6 +851,14 @@
       shader.fragmentShader = shader.fragmentShader.replace(
         '#include <color_fragment>',
         '#include <color_fragment>\n' +
+        '  vec2 ndc = (vClipPos.xy / max(vClipPos.w, 0.0001)) * 0.5 + 0.5;\n' +
+        '  vec2 waveDistort = vec2(sin(vGardenWorldPos.x * 2.8 + uWaterTime * 2.0), cos(vGardenWorldPos.z * 2.8 + uWaterTime * 1.6)) * 0.015;\n' +
+        '  vec2 reflectUv = clamp(vec2(1.0 - ndc.x, ndc.y) + waveDistort, 0.001, 0.999);\n' +
+        '  vec3 reflectedScene = texture2D(uReflectTexture, reflectUv).rgb;\n' +
+        '  vec3 viewD = normalize(vViewPosition);\n' +
+        '  float fresnel = clamp(pow(1.0 - max(0.0, -viewD.z), 3.0), 0.35, 0.90);\n' +
+        '  vec3 deepWaterCol = vec3(0.18, 0.34, 0.38);\n' +
+        '  diffuseColor.rgb = mix(deepWaterCol, reflectedScene * 1.18, fresnel);\n' +
         '  if (uRainRipple > 0.01) {\n' +
         '    vec2 rGradRing = calcRipples(vGardenWorldPos.xz, uWaterTime);\n' +
         '    float rippleFoam = length(rGradRing);\n' +
@@ -1081,10 +1163,10 @@
   // 1. 【远香正殿】：北岸坐北朝南主殿，汉白玉台座直接坐落于平地，面朝湖水
   function buildMainHall() {
     var hall = new THREE.Group();
-    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: COL.plaster, roughness: 0.88 });
+    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: 0xf7f4ec, roughness: 0.90, metalness: 0.01 });
     var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.wood, roughness: 0.78 });
     var woodDarkMat = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.82 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: COL.stoneStep, roughness: 0.9 });
@@ -1313,10 +1395,10 @@
   // 4. 【涵青书斋雅院】：东苑幽深典雅的四合书斋小院，后侧为平地竹林
   function buildEastStudy() {
     var g = new THREE.Group();
-    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: COL.plaster, roughness: 0.9 });
+    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: 0xf7f4ec, roughness: 0.90, metalness: 0.01 });
     var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.wood, roughness: 0.8 });
     var woodDark = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.85 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: COL.stoneStep, roughness: 0.9 });
@@ -1349,11 +1431,11 @@
   // 与外围大墙（北院墙与西院墙）紧密组合成四面合围独立小院，院内幽静雅致，布置古典小茅厕、铺石引道与竹石小景
   function buildOuthouseCourtyard() {
     var g = new THREE.Group();
-    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: COL.plaster, roughness: 0.9 });
-    var copingMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.8 });
+    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: 0xf7f4ec, roughness: 0.90, metalness: 0.01 });
+    var copingMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(copingMat);
     applySnowAccumulation(copingMat, 1.0, true);
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
     var woodDark = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.85 });
@@ -1576,8 +1658,8 @@
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: 0xbeb9af, roughness: 0.9 });
     snowCoverMats.push(stoneMat);
     applySnowAccumulation(stoneMat, 1.0);
-    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.woodDark, roughness: 0.8 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x483424, roughness: 0.70, metalness: 0.04 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
 
@@ -1766,8 +1848,8 @@
   // 7. 【主屋前侧长走廊】：还原直廊沿主屋中轴（x=0）自南岸湖畔一直北伸，连接正殿前阶
   function buildCoveredCorridor() {
     var g = new THREE.Group();
-    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.woodDark, roughness: 0.8 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x483424, roughness: 0.70, metalness: 0.04 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
     var floorMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: COL.stoneStep, roughness: 0.9 });
@@ -2157,8 +2239,8 @@
 
 
   function buildWalls() {
-    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: COL.plaster, roughness: 0.9 });
-    var copingMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.8 });
+    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: 0xf7f4ec, roughness: 0.90, metalness: 0.01 });
+    var copingMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(copingMat);
     applySnowAccumulation(copingMat, 1.0, true);
     var woodDarkMat = new THREE.MeshStandardMaterial({ color: COL.woodDark, roughness: 0.84 });
@@ -2610,8 +2692,8 @@
 
   function buildMainGate() {
     var g = new THREE.Group();
-    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: COL.plaster, roughness: 0.9 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var plasterMat = new THREE.MeshStandardMaterial({ map: plasterTexture(), color: 0xf7f4ec, roughness: 0.90, metalness: 0.01 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
     var ridgeMat = new THREE.MeshStandardMaterial({ color: COL.roofRidge, roughness: 0.74 });
@@ -2690,7 +2772,7 @@
 
   function buildLionRockeries() {
     var rockMat = new THREE.MeshStandardMaterial({
-      map: stoneTexture(), color: 0x86847e, roughness: 0.94, flatShading: true
+      map: stoneTexture(), color: 0x86847e, roughness: 0.82
     });
     snowCoverMats.push(rockMat);
     applySnowAccumulation(rockMat, 0.9);
@@ -2741,13 +2823,23 @@
   }
 
   function rockGeometry(seed) {
-    var geo = new THREE.IcosahedronGeometry(1, 1);
-    var rnd = makeRandom(seed);
+    var geo = new THREE.IcosahedronGeometry(1.0, 2);
     var pos = geo.attributes.position;
+    var rnd = makeRandom(seed || 42);
+    var v = new THREE.Vector3();
+    var freq1 = 2.2 + rnd() * 0.8;
+    var freq2 = 3.6 + rnd() * 1.0;
+
     for (var i = 0; i < pos.count; i++) {
-      var n = 0.68 + rnd() * 0.62;
-      var y = pos.getY(i);
-      pos.setXYZ(i, pos.getX(i) * n, y * (y > 0 ? 1.5 : 0.7), pos.getZ(i) * n);
+      v.fromBufferAttribute(pos, i);
+      var dir = v.clone().normalize();
+      var d1 = Math.sin(v.x * freq1 + v.y * 2.1) * 0.20;
+      var d2 = Math.cos(v.y * freq2 + v.z * 2.6) * 0.16;
+      var d3 = Math.sin((v.x + v.z) * 3.4) * 0.10;
+      var hollow = (Math.sin(v.y * 4.8 + v.x * 3.0) > 0.65) ? -0.18 : 0.0;
+      var radius = 1.0 + d1 + d2 + d3 + hollow;
+      var yFactor = v.y > 0 ? (1.0 + v.y * 0.4) : (0.75 + v.y * 0.15);
+      pos.setXYZ(i, dir.x * radius, dir.y * radius * yFactor, dir.z * radius);
     }
     geo.computeVertexNormals();
     return geo;
@@ -2758,8 +2850,8 @@
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: COL.stone, roughness: 0.9 });
     snowCoverMats.push(stoneMat);
     applySnowAccumulation(stoneMat, 1.0);
-    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.woodDark, roughness: 0.8 });
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.78 });
+    var woodMat = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x483424, roughness: 0.70, metalness: 0.04 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.15 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0, true);
 
@@ -3365,13 +3457,12 @@
 
   function buildBambooGroves() {
     var stemMat = new THREE.MeshStandardMaterial({
-      color: COL.bambooStem, roughness: 0.65, flatShading: true
+      color: 0x5b8a45, roughness: 0.55
     });
     var leafMat = new THREE.MeshStandardMaterial({
-      color: COL.bambooLeaf, roughness: 0.82, flatShading: true
+      color: 0x527a38, roughness: 0.72, side: THREE.DoubleSide
     });
 
-    // 植被反馈：风力驱动竹林向风向倾斜摇摆（根部扎地不移，竿尖与竹叶顺风摇曳）
     function applyWindToBambooMat(mat, isLeaf) {
       mat.onBeforeCompile = function (shader) {
         shader.uniforms.uWindTime = windShaderUniforms.uTime;
@@ -3390,59 +3481,81 @@
     applyWindToBambooMat(stemMat, false);
     applyWindToBambooMat(leafMat, true);
 
-    // 严格规划在院落空白平地与外围林带，绝对避开所有建筑轮廓
     var groves = [
-      { x: -32, z: 0, r: 3.2, n: isMobile ? 40 : 80, seed: 43 },    // 西侧外院竹林（再收进，竹梢不穿西墙）
-      { x: 33, z: -16, r: 3.0, n: isMobile ? 35 : 70, seed: 49 },   // 东北竹林（再收进，竹梢不穿东墙）
-      { x: 0, z: -55, r: 12.0, n: isMobile ? 40 : 80, seed: 55 },   // 正殿后方平地竹海
-      { x: -75, z: -55, r: 24, n: isMobile ? 35 : 75, seed: 61 },   // 外围西侧竹海
-      { x: 80, z: -60, r: 24, n: isMobile ? 35 : 75, seed: 67 }     // 外围东侧竹海
+      { x: -32, z: 0, r: 3.2, n: isMobile ? 35 : 70, seed: 43 },
+      { x: 33, z: -16, r: 3.0, n: isMobile ? 30 : 60, seed: 49 },
+      { x: 0, z: -40, r: 9.0, n: isMobile ? 35 : 70, seed: 55 },
+      { x: -26, z: -40, r: 7.5, n: isMobile ? 30 : 65, seed: 61 },
+      { x: 26, z: -40, r: 7.5, n: isMobile ? 30 : 65, seed: 67 }
     ];
 
     var total = 0;
     groves.forEach(function (g) { total += g.n; });
 
-    var stems = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.08, 0.12, 8.2, 5), stemMat, total);
-    var leaves = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1.3, 0), leafMat, total);
-    var m = new THREE.Matrix4(); var q = new THREE.Quaternion(); var p = new THREE.Vector3(); var s = new THREE.Vector3();
-    var idx = 0;
+    var stemGeo = new THREE.CylinderGeometry(0.06, 0.11, 8.4, 8);
+    var leafClusterGeo = new THREE.ConeGeometry(0.85, 0.28, 4);
+    leafClusterGeo.rotateX(Math.PI / 2);
+
+    var stems = new THREE.InstancedMesh(stemGeo, stemMat, total);
+    var leaves = new THREE.InstancedMesh(leafClusterGeo, leafMat, total * 4);
+
+    var m = new THREE.Matrix4();
+    var q = new THREE.Quaternion();
+    var p = new THREE.Vector3();
+    var s = new THREE.Vector3();
+    var sIdx = 0;
+    var lIdx = 0;
 
     groves.forEach(function (g) {
       var rnd = makeRandom(g.seed);
       for (var i = 0; i < g.n; i++) {
         var a = rnd() * Math.PI * 2;
         var r = Math.sqrt(rnd()) * g.r;
-        var x = g.x + Math.cos(a) * r;
-        var z = g.z + Math.sin(a) * r;
-        var tilt = (rnd() - 0.5) * 0.20;
-        var sc = 0.85 + rnd() * 0.48;
+        var bx = g.x + Math.cos(a) * r;
+        var bz = g.z + Math.sin(a) * r;
+        var tiltX = (rnd() - 0.5) * 0.18;
+        var tiltZ = (rnd() - 0.5) * 0.22;
+        var sc = 0.88 + rnd() * 0.42;
 
-        p.set(x, 4.1 * sc, z);
-        q.setFromEuler(new THREE.Euler(tilt, rnd() * Math.PI, tilt * 0.5));
+        p.set(bx, 4.2 * sc, bz);
+        q.setFromEuler(new THREE.Euler(tiltX, rnd() * Math.PI, tiltZ));
         s.set(sc, sc, sc);
         m.compose(p, q, s);
-        stems.setMatrixAt(idx, m);
+        stems.setMatrixAt(sIdx, m);
+        sIdx++;
 
-        p.set(x + Math.sin(tilt) * 1.8, 7.8 * sc, z + Math.cos(tilt) * 1.2);
-        q.setFromEuler(new THREE.Euler(rnd() * 0.4, rnd() * 3, rnd() * 0.3));
-        s.set(1.5 + rnd() * 0.8, 0.65 + rnd() * 0.4, 1.5 + rnd() * 0.8);
-        m.compose(p, q, s);
-        leaves.setMatrixAt(idx, m);
-
-        idx += 1;
+        var leafHeights = [4.8, 6.0, 7.1, 8.2];
+        for (var lh = 0; lh < 4; lh++) {
+          var curH = leafHeights[lh] * sc;
+          var lx = bx + Math.sin(tiltX) * curH * 0.35;
+          var lz = bz + Math.sin(tiltZ) * curH * 0.35;
+          p.set(lx, curH, lz);
+          q.setFromEuler(new THREE.Euler(
+            tiltX + (rnd() - 0.5) * 0.35,
+            rnd() * Math.PI * 2,
+            tiltZ + (rnd() - 0.5) * 0.35
+          ));
+          var lScale = (1.1 - lh * 0.15) * sc;
+          s.set(lScale, lScale * 0.5, lScale);
+          m.compose(p, q, s);
+          leaves.setMatrixAt(lIdx, m);
+          lIdx++;
+        }
       }
     });
 
     stems.instanceMatrix.needsUpdate = true;
     leaves.instanceMatrix.needsUpdate = true;
     stems.castShadow = !isMobile;
+    leaves.castShadow = !isMobile;
+    leaves.receiveShadow = true;
     scene.add(stems);
     scene.add(leaves);
   }
 
   function buildWillow(x, y, z, scale) {
     var g = new THREE.Group();
-    var bark = new THREE.MeshStandardMaterial({ map: woodTexture(), color: COL.woodDark, roughness: 0.88 });
+    var bark = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x483424, roughness: 0.70, metalness: 0.048 });
     var leaf = new THREE.MeshStandardMaterial({ color: COL.willow, roughness: 0.85, flatShading: true });
     scale = scale || 1;
 
@@ -3472,28 +3585,52 @@
 
   function buildBlossomTree(x, y, z, scale) {
     var g = new THREE.Group();
-    var bark = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x3d2b1f, roughness: 0.9 });
-    var flowerPink = new THREE.MeshStandardMaterial({ color: COL.blossomPink, roughness: 0.82, flatShading: true });
-    var flowerDeep = new THREE.MeshStandardMaterial({ color: COL.blossomDeep, roughness: 0.80, flatShading: true });
+    var bark = new THREE.MeshStandardMaterial({ map: woodTexture(), color: 0x3d2b1f, roughness: 0.86 });
+    var flowerPink = new THREE.MeshStandardMaterial({ color: 0xf8a8bc, roughness: 0.72 });
+    var flowerLight = new THREE.MeshStandardMaterial({ color: 0xffccd7, roughness: 0.68 });
+    var flowerDeep = new THREE.MeshStandardMaterial({ color: 0xde6382, roughness: 0.78 });
     scale = scale || 1;
 
-    addMesh(new THREE.CylinderGeometry(0.24, 0.44, 4.0, 6), bark, 0, 2.0, 0,
+    addMesh(new THREE.CylinderGeometry(0.24, 0.44, 4.0, 8), bark, 0, 2.0, 0,
       { parent: g, rotZ: 0.22, cast: true });
-    addMesh(new THREE.CylinderGeometry(0.15, 0.24, 2.8, 5), bark, 0.8, 3.8, 0.4,
+    addMesh(new THREE.CylinderGeometry(0.15, 0.24, 2.8, 6), bark, 0.8, 3.8, 0.4,
       { parent: g, rotZ: 0.55, rotX: -0.3, cast: true });
-    addMesh(new THREE.CylinderGeometry(0.14, 0.22, 2.6, 5), bark, -0.7, 3.6, -0.3,
+    addMesh(new THREE.CylinderGeometry(0.14, 0.22, 2.6, 6), bark, -0.7, 3.6, -0.3,
       { parent: g, rotZ: -0.45, rotX: 0.3, cast: true });
 
-    var flowers = [
-      [1.8, 4.6, 0.6, 1.7, flowerPink],
-      [-1.5, 4.5, -0.5, 1.6, flowerDeep],
-      [0.3, 5.4, 0.2, 1.9, flowerPink],
-      [1.2, 6.0, -0.4, 1.4, flowerDeep],
-      [-0.9, 5.8, 0.8, 1.5, flowerPink]
+    var blossomSpheres = [
+      [0.2, 5.2, 0.1, 1.45, flowerPink],
+      [-0.6, 5.5, 0.3, 1.35, flowerLight],
+      [0.8, 5.4, -0.3, 1.30, flowerDeep],
+      [0.0, 6.2, 0.0, 1.25, flowerLight],
+      [1.7, 4.6, 0.5, 1.15, flowerPink],
+      [2.2, 4.3, 0.8, 0.85, flowerLight],
+      [-1.6, 4.4, -0.5, 1.10, flowerDeep],
+      [-2.1, 4.1, -0.8, 0.82, flowerPink],
+      [0.4, 4.8, 1.6, 1.05, flowerLight],
+      [-0.4, 4.9, -1.5, 1.00, flowerDeep],
+      [1.3, 5.9, -0.6, 1.10, flowerPink],
+      [-1.1, 5.8, 0.7, 1.08, flowerLight],
+      [0.1, 6.7, -0.2, 0.95, flowerLight],
+      [1.9, 3.8, 0.3, 0.75, flowerPink],
+      [-1.8, 3.7, 0.2, 0.72, flowerPink],
+      [0.2, 4.1, 1.8, 0.68, flowerLight],
+      [-0.2, 4.2, -1.7, 0.70, flowerDeep],
+      [1.2, 4.0, -1.4, 0.72, flowerPink],
+      [-1.3, 4.0, 1.3, 0.70, flowerLight],
+      [0.9, 6.5, 0.5, 0.78, flowerLight],
+      [-0.8, 6.4, -0.4, 0.75, flowerPink],
+      [0.0, 7.1, 0.1, 0.65, flowerLight]
     ];
-    flowers.forEach(function (f) {
-      addMesh(new THREE.IcosahedronGeometry(f[3], 1), f[4], f[0], f[1], f[2],
-        { parent: g, cast: true, scale: [1, 0.78, 1] });
+
+    var sphereGeo = new THREE.SphereGeometry(1.0, 14, 10);
+    blossomSpheres.forEach(function (f) {
+      var bm = new THREE.Mesh(sphereGeo, f[4]);
+      bm.position.set(f[0], f[1], f[2]);
+      bm.scale.set(f[3], f[3] * 0.85, f[3]);
+      bm.castShadow = true;
+      bm.receiveShadow = true;
+      g.add(bm);
     });
 
     g.position.set(x, y || 0, z);
@@ -3619,6 +3756,222 @@
         addMesh(new THREE.CylinderGeometry(0.04, 0.04, 0.38, 4), headMat, rx, WATER_Y + h, rz);
       }
     });
+  }
+
+  /* ---------------- 11.5 假山后与草丛间的狸奴、仙鹤（若隐若现，点击或漫步靠近触发诗词） ---------------- */
+
+  var critters = [];
+  var critterRaycaster = null;
+  var poemCardEl = null;
+  var poemSealEl = null;
+  var poemBodyEl = null;
+  var poemSourceEl = null;
+  var poemTimer = 0;
+  var poemHideTimer = 0;
+  var lastPoemAt = 0;
+
+  // 与猫、鹤相关的古代诗词（公有领域作品，节选处已注明）
+  var POEMS = {
+    cat: [
+      { text: '裹盐迎得小狸奴，尽护山房万卷书。\n惭愧家贫策勋薄，寒无毡坐食无鱼。', source: '宋 · 陆游《赠猫》' },
+      { text: '秋来鼠辈欺猫死，窥瓮翻盘搅夜眠。\n闻道狸奴将数子，买鱼穿柳聘衔蝉。', source: '宋 · 黄庭坚《乞猫》' },
+      { text: '风卷江湖雨暗村，四山声作海涛翻。\n溪柴火软蛮毡暖，我与狸奴不出门。', source: '宋 · 陆游《十一月四日风雨大作》其一' },
+      { text: '似虎能缘木，如驹不伏辕。', source: '宋 · 陆游《得猫于近村以雪儿名之戏为作诗》节选' }
+    ],
+    crane: [
+      { text: '自古逢秋悲寂寥，我言秋日胜春朝。\n晴空一鹤排云上，便引诗情到碧霄。', source: '唐 · 刘禹锡《秋词》' },
+      { text: '昔人已乘黄鹤去，此地空余黄鹤楼。\n黄鹤一去不复返，白云千载空悠悠。', source: '唐 · 崔颢《黄鹤楼》节选' },
+      { text: '鹤鸣于九皋，声闻于野。\n鱼在于渚，或潜在渊。', source: '《诗经 · 小雅 · 鹤鸣》节选' },
+      { text: '高竹笼前无伴侣，乱鸡群里有风标。\n低头乍恐丹砂落，晒翅常疑白雪消。', source: '唐 · 白居易《池鹤》节选' }
+    ]
+  };
+
+  function critterEyeMat() {
+    return new THREE.MeshStandardMaterial({
+      color: 0xd8c46a, emissive: 0x6a5a20, emissiveIntensity: 0.55, roughness: 0.42
+    });
+  }
+
+  // 猫：低多边形蹲伏姿态，尾绕体侧、耳尖前倾，蹲坐在平地石根之间
+  function buildCat(at) {
+    var g = new THREE.Group();
+    var fur = new THREE.MeshStandardMaterial({ color: at.fur, roughness: 0.9, flatShading: true });
+    applySnowAccumulation(fur, 0.4);
+    var furDark = new THREE.MeshStandardMaterial({ color: 0x2f2b26, roughness: 0.85, flatShading: true });
+    var eyeMat = critterEyeMat();
+
+    addMesh(new THREE.SphereGeometry(0.19, 10, 8), fur, 0, 0.21, -0.02, { parent: g, cast: true, scale: [0.92, 1.24, 1.1] });
+    addMesh(new THREE.SphereGeometry(0.17, 10, 8), fur, 0, 0.16, -0.10, { parent: g, cast: true, scale: [1.02, 1.02, 1.05] });
+    [-1, 1].forEach(function (s) {
+      addMesh(new THREE.CylinderGeometry(0.035, 0.042, 0.17, 6), fur, s * 0.068, 0.085, 0.135, { parent: g, cast: true });
+      addMesh(new THREE.SphereGeometry(0.045, 6, 5), furDark, s * 0.068, 0.016, 0.145, { parent: g, cast: true, scale: [1, 0.5, 1.3] });
+      addMesh(new THREE.ConeGeometry(0.05, 0.10, 4), fur, s * 0.062, 0.52, 0.075, { parent: g, cast: true, rotZ: -s * 0.24 });
+      addMesh(new THREE.SphereGeometry(0.021, 6, 5), eyeMat, s * 0.046, 0.455, 0.185, { parent: g });
+    });
+    addMesh(new THREE.SphereGeometry(0.115, 10, 8), fur, 0, 0.44, 0.075, { parent: g, cast: true, scale: [1.06, 0.96, 1] });
+    addMesh(new THREE.SphereGeometry(0.052, 7, 6), furDark, 0, 0.415, 0.175, { parent: g, cast: true, scale: [1.15, 0.8, 0.9] });
+    addMesh(new THREE.CylinderGeometry(0.03, 0.034, 0.24, 6), fur, 0.135, 0.07, -0.19, { parent: g, cast: true, rotZ: -1.15, rotY: -0.35 });
+    addMesh(new THREE.CylinderGeometry(0.026, 0.03, 0.2, 6), fur, 0.24, 0.055, -0.24, { parent: g, cast: true, rotZ: -1.55, rotY: -0.6 });
+    addMesh(new THREE.SphereGeometry(0.033, 6, 5), furDark, 0.29, 0.05, -0.27, { parent: g });
+
+    g.position.set(at.x, 0, at.z);
+    g.rotation.y = at.ry || 0;
+    g.scale.setScalar(at.scale || 1);
+    return g;
+  }
+
+  // 仙鹤：细长颈、丹顶、长喙、细高腿，立于岸草石隙之间
+  function buildCrane(at) {
+    var g = new THREE.Group();
+    var feather = new THREE.MeshStandardMaterial({ color: 0xf2f4f1, roughness: 0.82, flatShading: true });
+    applySnowAccumulation(feather, 0.35);
+    var tipMat = new THREE.MeshStandardMaterial({ color: 0x2c3034, roughness: 0.8, flatShading: true });
+    var crownMat = new THREE.MeshStandardMaterial({ color: 0xbf3b2c, roughness: 0.66 });
+    var beakMat = new THREE.MeshStandardMaterial({ color: 0x4a463f, roughness: 0.75 });
+    var legMat = new THREE.MeshStandardMaterial({ color: 0x53514a, roughness: 0.8 });
+
+    [-1, 1].forEach(function (s) {
+      addMesh(new THREE.CylinderGeometry(0.017, 0.021, 0.56, 5), legMat, s * 0.05, 0.28, 0, { parent: g, cast: true });
+      addMesh(new THREE.BoxGeometry(0.06, 0.014, 0.075), legMat, s * 0.05, 0.008, 0.022, { parent: g });
+      addMesh(new THREE.SphereGeometry(0.14, 9, 7), feather, s * 0.13, 0.72, -0.02, { parent: g, cast: true, scale: [0.5, 0.9, 1.15] });
+      addMesh(new THREE.SphereGeometry(0.075, 7, 6), tipMat, s * 0.155, 0.68, -0.16, { parent: g, cast: true, scale: [0.5, 0.7, 1.1] });
+    });
+    addMesh(new THREE.SphereGeometry(0.165, 10, 8), feather, 0, 0.72, -0.02, { parent: g, cast: true, scale: [0.92, 0.92, 1.45] });
+    addMesh(new THREE.ConeGeometry(0.09, 0.22, 5), tipMat, 0, 0.71, -0.34, { parent: g, cast: true, rotX: -1.85 });
+    addMesh(new THREE.CylinderGeometry(0.03, 0.044, 0.46, 6), feather, 0, 1.0, 0.055, { parent: g, cast: true, rotX: -0.14 });
+    addMesh(new THREE.SphereGeometry(0.068, 8, 6), feather, 0, 1.245, 0.125, { parent: g, cast: true, scale: [1, 0.95, 1.05] });
+    addMesh(new THREE.SphereGeometry(0.034, 6, 5), crownMat, 0, 1.278, 0.108, { parent: g, cast: true });
+    addMesh(new THREE.ConeGeometry(0.021, 0.23, 5), beakMat, 0, 1.235, 0.275, { parent: g, cast: true, rotX: Math.PI / 2 });
+
+    g.position.set(at.x, 0, at.z);
+    g.rotation.y = at.ry || 0;
+    g.scale.setScalar(at.scale || 1);
+    return g;
+  }
+
+  function buildCritters() {
+    // 坐标均落在假山石群空隙、石群之后与灌木外缘的平地上，避开石体、灌木球心与水面
+    var cats = [
+      { x: 2.0, z: -29.0, ry: 2.35, fur: 0x8f7459, name: '狸奴' },
+      { x: -17.4, z: -28.6, ry: 0.55, fur: 0x3a3835, name: '玄猫' },
+      { x: -33.0, z: 9.9, ry: -0.9, fur: 0xd8ccb9, name: '雪儿' },
+      { x: 28.3, z: 16.4, ry: 2.9, fur: 0x8f7459, name: '小狸' },
+      { x: 23.4, z: 5.6, ry: -1.95, fur: 0x6a5c4c, name: '玳瑁' }
+    ];
+    var cranes = [
+      { x: 6.0, z: -30.0, ry: 0.4, name: '霜翎' },
+      { x: -18.6, z: -30.2, ry: 2.7, name: '素羽' },
+      { x: -34.6, z: 2.6, ry: -1.3, name: '丹顶' },
+      { x: 30.6, z: 12.0, ry: 2.5, name: '青皋' }
+    ];
+
+    cats.forEach(function (c) {
+      var g = buildCat(c);
+      c.kind = 'cat';
+      c.pos = new THREE.Vector3(c.x, 0, c.z);
+      c.lastPoem = -1;
+      c.group = g;
+      g.userData.critter = c;
+      critters.push(c);
+      scene.add(g);
+    });
+    cranes.forEach(function (c) {
+      var g = buildCrane(c);
+      c.kind = 'crane';
+      c.pos = new THREE.Vector3(c.x, 0, c.z);
+      c.lastPoem = -1;
+      c.group = g;
+      g.userData.critter = c;
+      critters.push(c);
+      scene.add(g);
+    });
+  }
+
+  /* 诗词卡：点击命中的狸奴/仙鹤，或漫步模式走近它们时，随机抽取一首相关古诗词并淡入显示 */
+
+  function ensurePoemCard() {
+    if (poemCardEl) return;
+    poemCardEl = document.getElementById('poem-card');
+    poemSealEl = document.getElementById('poem-seal');
+    poemBodyEl = document.getElementById('poem-body');
+    poemSourceEl = document.getElementById('poem-source');
+    var closeBtn = document.getElementById('poem-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        hidePoem();
+      });
+    }
+  }
+
+  function showPoem(critter) {
+    ensurePoemCard();
+    if (!poemCardEl || !critter) return;
+    var now = performance.now();
+    if (now - lastPoemAt < 1200) return;   // 连点或连续靠近时避免刷屏
+    lastPoemAt = now;
+    var list = POEMS[critter.kind];
+    if (!list || !list.length) return;
+    var idx = Math.floor(Math.random() * list.length);
+    if (list.length > 1 && idx === critter.lastPoem) {
+      idx = (idx + 1 + Math.floor(Math.random() * (list.length - 1))) % list.length; // 同一只动物不连着重复同一首
+    }
+    critter.lastPoem = idx;
+    poemSealEl.textContent = critter.kind === 'cat' ? '猫' : '鹤';
+    poemCardEl.setAttribute('data-kind', critter.kind);
+    poemBodyEl.textContent = list[idx].text;
+    poemSourceEl.textContent = list[idx].source + ' · ' + critter.name;
+    poemCardEl.hidden = false;
+    window.clearTimeout(poemTimer);
+    window.clearTimeout(poemHideTimer);
+    window.requestAnimationFrame(function () { poemCardEl.classList.add('is-visible'); });
+    poemTimer = window.setTimeout(hidePoem, 8200);
+  }
+
+  function hidePoem() {
+    if (!poemCardEl) return;
+    window.clearTimeout(poemTimer);
+    poemCardEl.classList.remove('is-visible');
+    poemHideTimer = window.setTimeout(function () { poemCardEl.hidden = true; }, 360);
+  }
+
+  function pickCritterAt(clientX, clientY) {
+    if (!critters.length || !camera || !canvas) return;
+    var ndcX = 0, ndcY = 0;
+    // 仅在「漫步模式且已锁定指针」时以准星中心取点；其余情况（含从漫步切回后残留的锁定）一律用真实点击坐标
+    var lockedAim = viewMode === 'walk' && document.pointerLockElement === canvas;
+    if (!lockedAim) {
+      var rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+      ndcY = -(((clientY - rect.top) / rect.height) * 2 - 1);
+    }
+    if (!critterRaycaster) critterRaycaster = new THREE.Raycaster();
+    critterRaycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+    // 对整场景取最近命中：只有第一眼看到的是狸奴/仙鹤本体才响应，
+    // 被叠石、灌木、荷叶挡住时不触发，与「若隐若现、需走近或换角度才能看见」一致
+    var hits = critterRaycaster.intersectObjects(scene.children, true).filter(function (h) {
+      return h.object.type !== 'Points' && h.object.visible;
+    });
+    if (!hits.length) return;
+    var node = hits[0].object;
+    while (node && !node.userData.critter) node = node.parent;
+    if (node && node.userData.critter) showPoem(node.userData.critter);
+  }
+
+  // 漫步模式下与狸奴/仙鹤相距 2.5m 内自动触发；触发后 9 秒内不重复弹卡
+  function updateCritterProximity() {
+    if (viewMode !== 'walk' || !critters.length || !playerPos) return;
+    if (performance.now() - lastPoemAt < 9000) return;
+    for (var i = 0; i < critters.length; i++) {
+      var c = critters[i];
+      var dx = playerPos.x - c.pos.x;
+      var dz = playerPos.z - c.pos.z;
+      if (dx * dx + dz * dz < 6.25) {
+        showPoem(c);
+        break;
+      }
+    }
   }
 
   function buildLotus() {
@@ -3802,7 +4155,7 @@
     var stoneMat = new THREE.MeshStandardMaterial({ map: stoneTexture(), color: 0x9e9b91, roughness: 0.90 });
     snowCoverMats.push(stoneMat);
     applySnowAccumulation(stoneMat, 0.9);
-    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), color: COL.roof, roughness: 0.85 });
+    var roofMat = new THREE.MeshStandardMaterial({ map: roofTexture(), normalMap: roofNormalTexture(), normalScale: new THREE.Vector2(0.85, 0.85), color: 0x444b52, roughness: 0.38, metalness: 0.155 });
     roofMats.push(roofMat);
     applySnowAccumulation(roofMat, 1.0);
 
@@ -3860,6 +4213,339 @@
     spots.forEach(function (sp) {
       buildStoneLantern(sp[0], sp[1], sp[2], sp[3]);
     });
+  }
+
+  
+  /* ---------------- 13.5 环境细节系统（池岸青苔、散落卵石与飘零花瓣） ---------------- */
+
+  function buildEnvironmentalDetails() {
+    var detailsGroup = new THREE.Group();
+
+    // 1. 池岸水线与石基青苔（湿润墨绿苍苔）
+    var mossMat = new THREE.MeshStandardMaterial({
+      color: 0x486c38,
+      roughness: 0.94,
+      metalness: 0.02
+    });
+
+    var mossSpots = [
+      [5.5, 0.36, 7.2, 1.8, 0.12, 0.8],
+      [5.8, 0.36, 10.2, 1.6, 0.12, 0.9],
+      [11.5, 0.36, 8.5, 1.5, 0.12, 1.0],
+      [1.8, 0.36, 8.5, 0.8, 0.10, 1.4],
+      [3.8, 0.36, 8.5, 0.8, 0.10, 1.4],
+      [-10.2, 0.36, 13.8, 2.2, 0.10, 0.9],
+      [-13.5, 0.36, 15.2, 2.0, 0.10, 0.8],
+      [-14.0, 0.36, 2.0, 2.4, 0.10, 0.7]
+    ];
+    mossSpots.forEach(function (ms) {
+      addMesh(new THREE.BoxGeometry(ms[3], ms[4], ms[5]), mossMat, ms[0], ms[1], ms[2], { parent: detailsGroup, receive: true });
+    });
+
+    // 2. 散落池畔的圆润扁平卵石（不同大小高低错落、天然鹅卵石色泽）
+    var pebbleMat1 = new THREE.MeshStandardMaterial({ color: 0x767879, roughness: 0.72 });
+    var pebbleMat2 = new THREE.MeshStandardMaterial({ color: 0x585a5b, roughness: 0.68 });
+    var pebbleMat3 = new THREE.MeshStandardMaterial({ color: 0x8a7f72, roughness: 0.75 });
+    var pebbleMats = [pebbleMat1, pebbleMat2, pebbleMat3];
+
+    var pebbleGeo = new THREE.SphereGeometry(1.0, 8, 6);
+    var rndPebble = makeRandom(88);
+
+    for (var p = 0; p < 50; p++) {
+      var px, pz, py;
+      var zone = p % 4;
+      if (zone === 0) {
+        px = -11.0 + (rndPebble() - 0.5) * 4.0;
+        pz = 14.5 + (rndPebble() - 0.5) * 3.0;
+        py = 0.38;
+      } else if (zone === 1) {
+        px = -21.0 + (rndPebble() - 0.5) * 3.5;
+        pz = 6.0 + (rndPebble() - 0.5) * 4.0;
+        py = 0.38;
+      } else if (zone === 2) {
+        px = 8.8 + (rndPebble() - 0.5) * 2.5;
+        pz = 3.5 + (rndPebble() - 0.5) * 2.0;
+        py = 0.38;
+      } else {
+        px = -8.0 + (rndPebble() - 0.5) * 8.0;
+        pz = -22.0 + (rndPebble() - 0.5) * 4.0;
+        py = 0.12;
+      }
+
+      var pScale = 0.12 + rndPebble() * 0.18;
+      var pm = new THREE.Mesh(pebbleGeo, pebbleMats[p % 3]);
+      pm.position.set(px, py + pScale * 0.25, pz);
+      pm.scale.set(pScale, pScale * 0.45, pScale * (0.8 + rndPebble() * 0.4));
+      pm.rotation.set(rndPebble() * 0.2, rndPebble() * Math.PI, rndPebble() * 0.2);
+      pm.castShadow = true;
+      pm.receiveShadow = true;
+      detailsGroup.add(pm);
+    }
+
+    // 3. 散落石板路、水榭平台与池畔水面的飘落粉红花瓣（江南落樱落桃诗意）
+    var petalMat = new THREE.MeshStandardMaterial({
+      color: 0xf8a8bc,
+      roughness: 0.65,
+      side: THREE.DoubleSide
+    });
+    var petalGeo = new THREE.CircleGeometry(0.065, 5);
+    petalGeo.rotateX(Math.PI / 2);
+
+    var rndPetal = makeRandom(99);
+    for (var fl = 0; fl < 65; fl++) {
+      var fx, fz, fy;
+      var fZone = fl % 3;
+      if (fZone === 0) {
+        fx = 8.5 + (rndPetal() - 0.5) * 4.0;
+        fz = 8.5 + (rndPetal() - 0.5) * 4.0;
+        fy = 1.15;
+      } else if (fZone === 1) {
+        fx = 3.0 + (rndPetal() - 0.5) * 3.0;
+        fz = 8.5 + (rndPetal() - 0.5) * 1.4;
+        fy = 0.74;
+      } else {
+        fx = 12.0 + (rndPetal() - 0.5) * 6.0;
+        fz = 12.0 + (rndPetal() - 0.5) * 6.0;
+        fy = 0.36;
+      }
+
+      var pMesh = new THREE.Mesh(petalGeo, petalMat);
+      pMesh.position.set(fx, fy + 0.005, fz);
+      pMesh.rotation.set((rndPetal() - 0.5) * 0.3, rndPetal() * Math.PI * 2, (rndPetal() - 0.5) * 0.3);
+      var scP = 0.8 + rndPetal() * 0.6;
+      pMesh.scale.set(scP, scP, scP);
+      pMesh.receiveShadow = true;
+      detailsGroup.add(pMesh);
+    }
+
+    scene.add(detailsGroup);
+  }
+
+  
+  /* ---------------- 13.8 悬浮方格沙盘基座系统（精致微缩立体展台与地层剖面） ---------------- */
+
+  var dioramaGroup = null;
+
+  function buildDioramaPedestal() {
+    dioramaGroup = new THREE.Group();
+
+    var CX = 0;
+    var CZ = -6;
+    var SIZE = 84; // 84m x 84m 完美正方形基座，严格包围四面院墙与前后庭院
+    var HALF = SIZE / 2; // 42m
+    var PLINTH_H = 6.0;  // 垂直地层剖面厚度 6m (Y: 0 -> -6.0)
+    var BEVEL_H = 1.2;   // 底部倒角高度 (Y: -6.0 -> -7.2)
+    var BEVEL_INSET = 1.2; // 底部向内收缩 1.2m
+
+    // 1. 基座周边铺装材质与切面材质
+    var stoneMat = new THREE.MeshStandardMaterial({
+      map: stoneTexture(),
+      color: 0x9e9b92,
+      roughness: 0.88,
+      metalness: 0.02
+    });
+    applySnowAccumulation(stoneMat, 1.0);
+
+    // 深色立体地层剖面材质（类似建筑模型高级黑檀木/深灰玄武岩切片，带横向地质层理微纹）
+    var plinthSideMat = new THREE.MeshStandardMaterial({
+      color: 0x22262b,
+      roughness: 0.82,
+      metalness: 0.16
+    });
+
+    // 乌金石外沿包边条材质（高光微倒角金属边框）
+    var rimMat = new THREE.MeshStandardMaterial({
+      color: 0x363b42,
+      roughness: 0.42,
+      metalness: 0.40
+    });
+
+    // 微光氛围导光槽材质（发光微晶线条，增加现代科技建筑展台质感）
+    var glowLineMat = new THREE.MeshStandardMaterial({
+      color: 0xfff0d8,
+      emissive: 0xffddb0,
+      emissiveIntensity: 0.60,
+      roughness: 0.3
+    });
+
+    // 2. 方格顶面边缘包边护框（Curb Rim）
+    // 四条顶边金属/石质包边（截面 0.45m 宽, 0.16m 高）
+    var rimThick = 0.45;
+    var rimH = 0.16;
+    addMesh(new THREE.BoxGeometry(SIZE + rimThick * 2, rimH, rimThick), rimMat, CX, rimH / 2, CZ - HALF, { parent: dioramaGroup, cast: true, receive: true });
+    addMesh(new THREE.BoxGeometry(SIZE + rimThick * 2, rimH, rimThick), rimMat, CX, rimH / 2, CZ + HALF, { parent: dioramaGroup, cast: true, receive: true });
+    addMesh(new THREE.BoxGeometry(rimThick, rimH, SIZE), rimMat, CX - HALF, rimH / 2, CZ, { parent: dioramaGroup, cast: true, receive: true });
+    addMesh(new THREE.BoxGeometry(rimThick, rimH, SIZE), rimMat, CX + HALF, rimH / 2, CZ, { parent: dioramaGroup, cast: true, receive: true });
+
+    // 3. 悬浮沙盘主厚度切面（4 面深色厚实剖立面，从 Y: 0 垂降至 Y: -6.0）
+    var sideThick = 0.6;
+    addMesh(new THREE.BoxGeometry(SIZE, PLINTH_H, sideThick), plinthSideMat, CX, -PLINTH_H / 2, CZ - HALF + sideThick / 2, { parent: dioramaGroup, receive: true });
+    addMesh(new THREE.BoxGeometry(SIZE, PLINTH_H, sideThick), plinthSideMat, CX, -PLINTH_H / 2, CZ + HALF - sideThick / 2, { parent: dioramaGroup, receive: true });
+    addMesh(new THREE.BoxGeometry(sideThick, PLINTH_H, SIZE - sideThick * 2), plinthSideMat, CX - HALF + sideThick / 2, -PLINTH_H / 2, CZ, { parent: dioramaGroup, receive: true });
+    addMesh(new THREE.BoxGeometry(sideThick, PLINTH_H, SIZE - sideThick * 2), plinthSideMat, CX + HALF - sideThick / 2, -PLINTH_H / 2, CZ, { parent: dioramaGroup, receive: true });
+
+    // 4. 环绕微光导光线槽（嵌入在 Y = -0.35 处）
+    var glowH = 0.08;
+    var glowY = -0.35;
+    addMesh(new THREE.BoxGeometry(SIZE + 0.05, glowH, 0.05), glowLineMat, CX, glowY, CZ - HALF, { parent: dioramaGroup });
+    addMesh(new THREE.BoxGeometry(SIZE + 0.05, glowH, 0.05), glowLineMat, CX, glowY, CZ + HALF, { parent: dioramaGroup });
+    addMesh(new THREE.BoxGeometry(0.05, glowH, SIZE + 0.05), glowLineMat, CX - HALF, glowY, CZ, { parent: dioramaGroup });
+    addMesh(new THREE.BoxGeometry(0.05, glowH, SIZE + 0.05), glowLineMat, CX + HALF, glowY, CZ, { parent: dioramaGroup });
+
+    // 5. 底部斜切收分与底盖（Chamfer Bevel Base: Y 从 -6.0 收至 -7.2）
+    var btmSize = SIZE - BEVEL_INSET * 2;
+    var btmBaseMat = new THREE.MeshStandardMaterial({ color: 0x181a1d, roughness: 0.88 });
+    addMesh(new THREE.BoxGeometry(btmSize, 0.4, btmSize), btmBaseMat, CX, -PLINTH_H - BEVEL_H + 0.2, CZ, { parent: dioramaGroup, receive: true });
+
+    // 6. 围墙外围四大区域的高品位地坪与庭院景观衔接
+    // 南侧正门前入口广场 (Z: 20 到 36, X: -42 到 42)
+    var southPlazaGeo = new THREE.PlaneGeometry(SIZE, 16);
+    var southPlaza = new THREE.Mesh(southPlazaGeo, stoneMat);
+    southPlaza.rotation.x = -Math.PI / 2;
+    southPlaza.position.set(CX, 0.02, 28);
+    southPlaza.receiveShadow = true;
+    dioramaGroup.add(southPlaza);
+
+    // 南侧边缘青石护栏（低矮雅致栏板，高 0.65m；正门中轴区域留出宽畅通道，避免阻断与悬空冲突）
+    for (var bx = -HALF + 2; bx <= HALF - 2; bx += 3.5) {
+      if (Math.abs(bx) < 5.5) continue; // 门前主通道留白
+      addMesh(new THREE.CylinderGeometry(0.08, 0.09, 0.72, 6), stoneMat, bx, 0.36, CZ + HALF - 0.5, { parent: dioramaGroup, cast: true });
+      if (bx < HALF - 2 && Math.abs(bx + 1.75) >= 5.5) {
+        addMesh(new THREE.BoxGeometry(3.3, 0.12, 0.10), stoneMat, bx + 1.75, 0.58, CZ + HALF - 0.5, { parent: dioramaGroup, cast: true });
+        addMesh(new THREE.BoxGeometry(3.3, 0.10, 0.08), stoneMat, bx + 1.75, 0.22, CZ + HALF - 0.5, { parent: dioramaGroup, cast: true });
+      }
+    }
+
+    // 东西两侧外围石板步道
+    var westPath = new THREE.Mesh(new THREE.PlaneGeometry(4, 52), stoneMat);
+    westPath.rotation.x = -Math.PI / 2;
+    westPath.position.set(-40, 0.02, -6);
+    westPath.receiveShadow = true;
+    dioramaGroup.add(westPath);
+
+    var eastPath = new THREE.Mesh(new THREE.PlaneGeometry(4, 52), stoneMat);
+    eastPath.rotation.x = -Math.PI / 2;
+    eastPath.position.set(40, 0.02, -6);
+    eastPath.receiveShadow = true;
+    dioramaGroup.add(eastPath);
+
+    // 北侧后园青翠山林斜坡与青石边 (Z: -48 到 -32)
+    var northSlope = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, 16), new THREE.MeshStandardMaterial({
+      color: COL.grass,
+      roughness: 0.90
+    }));
+    northSlope.rotation.x = -Math.PI / 2;
+    northSlope.position.set(CX, 0.02, -40);
+    northSlope.receiveShadow = true;
+    dioramaGroup.add(northSlope);
+
+    scene.add(dioramaGroup);
+  }
+
+  /* ---------------- 15.6 沙盘微缩与原寸缩放无级控制系统 ---------------- */
+  var dioramaScale = 1.0; // 0.28 (微缩沙盘) ~ 1.0 (当前原寸)
+  var isAnimatingScale = false;
+  var scaleAnimStart = 0;
+  var scaleAnimDuration = 900; // 0.9秒平滑阻尼插值过渡
+  var camFromPos = new THREE.Vector3();
+  var camToPos = new THREE.Vector3();
+  var targetFrom = new THREE.Vector3();
+  var targetTo = new THREE.Vector3();
+
+  // 关键预设机位定义
+  var DIORAMA_CAM_POS = new THREE.Vector3(68, 52, 60); // 经典东南45度鸟瞰方格沙盘机位
+  var DIORAMA_TARGET = new THREE.Vector3(0, 1.5, -6.0); // 沙盘中心
+
+  var FULL_CAM_POS = new THREE.Vector3(-16.0, 11.5, 26.0);   // 当前大小1:1庭院全貌精选机位
+  var FULL_TARGET = new THREE.Vector3(0, 2.0, 5.0);          // 庭院核心全景聚焦点
+
+  function getCamTrack(t) {
+    var u = (t - 0.28) / (1.0 - 0.28);
+    u = clamp(u, 0, 1);
+    var pos = new THREE.Vector3().lerpVectors(DIORAMA_CAM_POS, FULL_CAM_POS, u);
+    var tgt = new THREE.Vector3().lerpVectors(DIORAMA_TARGET, FULL_TARGET, u);
+    return { pos: pos, target: tgt };
+  }
+
+  function setDioramaScale(val, animate) {
+    val = clamp(val, 0.28, 1.0);
+    dioramaScale = val;
+
+    var slider = document.getElementById('diorama-scale-slider');
+    if (slider) slider.value = val.toFixed(2);
+    var badge = document.getElementById('scale-badge');
+    if (badge) {
+      if (val <= 0.32) badge.textContent = '微缩方格 (0.28x)';
+      else if (val >= 0.98) badge.textContent = '当前大小 (1.00x)';
+      else badge.textContent = val.toFixed(2) + 'x';
+    }
+
+    var btnMini = document.getElementById('btn-scale-mini');
+    var btnFull = document.getElementById('btn-scale-full');
+    if (btnMini) btnMini.classList.toggle('active', val <= 0.35);
+    if (btnFull) btnFull.classList.toggle('active', val >= 0.95);
+
+    var btnDiorama = document.getElementById('btn-mode-diorama');
+    var btnGod = document.getElementById('btn-mode-god');
+    if (btnDiorama) btnDiorama.classList.toggle('active', val <= 0.35 && viewMode === 'diorama');
+    if (btnGod) btnGod.classList.toggle('active', val >= 0.95 && viewMode === 'god');
+
+    var track = getCamTrack(val);
+    if (animate) {
+      isAnimatingScale = true;
+      scaleAnimStart = performance.now();
+      camFromPos.copy(camera.position);
+      camToPos.copy(track.pos);
+      targetFrom.copy(controls.target);
+      targetTo.copy(track.target);
+    } else {
+      if (viewMode !== 'walk') {
+        camera.position.copy(track.pos);
+        controls.target.copy(track.target);
+        controls.update();
+      }
+    }
+  }
+
+  function updateScaleAnimation(now) {
+    if (!isAnimatingScale) return;
+    var progress = (now - scaleAnimStart) / scaleAnimDuration;
+    if (progress >= 1.0) {
+      progress = 1.0;
+      isAnimatingScale = false;
+    }
+    var ease = easeOutCubic(progress);
+    camera.position.lerpVectors(camFromPos, camToPos, ease);
+    controls.target.lerpVectors(targetFrom, targetTo, ease);
+    controls.update();
+  }
+
+  function syncDioramaScaleFromCamera() {
+    if (!camera || !controls || viewMode === 'walk') return;
+    var curDist = camera.position.distanceTo(controls.target);
+    var u = clamp((curDist - 22.25) / (105.0 - 22.25), 0, 1);
+    var currentS = 1.0 - u * (1.0 - 0.28);
+    dioramaScale = currentS;
+
+    var slider = document.getElementById('diorama-scale-slider');
+    if (slider && document.activeElement !== slider) {
+      slider.value = currentS.toFixed(2);
+    }
+    var badge = document.getElementById('scale-badge');
+    if (badge) {
+      if (currentS <= 0.32) badge.textContent = '微缩方格 (0.28x)';
+      else if (currentS >= 0.98) badge.textContent = '当前大小 (1.00x)';
+      else badge.textContent = currentS.toFixed(2) + 'x';
+    }
+    var btnMini = document.getElementById('btn-scale-mini');
+    var btnFull = document.getElementById('btn-scale-full');
+    if (btnMini) btnMini.classList.toggle('active', currentS <= 0.35);
+    if (btnFull) btnFull.classList.toggle('active', currentS >= 0.95);
+
+    var btnDiorama = document.getElementById('btn-mode-diorama');
+    var btnGod = document.getElementById('btn-mode-god');
+    if (btnDiorama) btnDiorama.classList.toggle('active', currentS <= 0.35);
+    if (btnGod) btnGod.classList.toggle('active', currentS >= 0.95);
   }
 
   function buildVegetation() {
@@ -4239,7 +4925,8 @@
     controls.panSpeed = 0.7;
     controls.screenSpacePanning = false;
     controls.minDistance = 6;
-    controls.maxDistance = 34; // 院墙合围后收紧缩放上限，远观亦不越出院墙之外
+    controls.minDistance = 2.0;
+    controls.maxDistance = 160.0; // 院墙合围后收紧缩放上限，远观亦不越出院墙之外
     controls.minPolarAngle = 0.18;
     controls.maxPolarAngle = 1.48;
     controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
@@ -4247,6 +4934,9 @@
     controls.autoRotate = false;
     controls.update();
     window.appCamera = camera;
+    window.appScene = scene;
+    window.switchViewMode = switchViewMode;
+    window.setDioramaScale = setDioramaScale;
     window.appControls = controls;
     window.appSetPlayer = function(x, z, yaw, pitch) { playerPos.x = x; playerPos.z = z; if (yaw !== undefined) playerYaw = yaw; if (pitch !== undefined) playerPitch = pitch || 0; };
   }
@@ -4254,7 +4944,7 @@
   function clampView() {
     if (camera.position.y < 2.0) camera.position.y = 2.0;
     if (controls.target.y < 0.4) controls.target.y = 0.4;
-    if (controls.target.y > 9.5) controls.target.y = 9.5;
+    if (controls.target.y > 15.0) controls.target.y = 15.0;
   }
 
   /* ---------------- 15.5 漫游交互、第一人称行走与原生过程化声学合成 ---------------- */
@@ -4556,7 +5246,7 @@
     viewMode = newMode;
     document.body.setAttribute('data-view', newMode);
 
-    ['god', 'walk'].forEach(function (m) {
+    ['diorama', 'god', 'walk'].forEach(function (m) {
       var btn = document.getElementById('btn-mode-' + m);
       if (btn) {
         if (m === newMode) btn.classList.add('active');
@@ -4564,17 +5254,21 @@
       }
     });
 
-    if (newMode === 'god') {
+    if (newMode === 'diorama') {
       if (document.exitPointerLock && document.pointerLockElement) {
         document.exitPointerLock();
       }
       controls.enabled = true;
-      camera.position.set(0, 5.2, 16.2);
-      controls.target.set(0, 3.6, -6.0);
-      controls.update();
+      setDioramaScale(0.28, true);
+    } else if (newMode === 'god') {
+      if (document.exitPointerLock && document.pointerLockElement) {
+        document.exitPointerLock();
+      }
+      controls.enabled = true;
+      setDioramaScale(1.0, true);
     } else if (newMode === 'walk') {
       controls.enabled = false;
-      if (prevMode === 'god') {
+      if (prevMode !== 'walk') {
         playerPos.set(0, getGroundHeight(0, 13.5) + 1.65, 13.5);
         playerYaw = 0;
         playerPitch = -0.05;
@@ -4582,13 +5276,57 @@
       camera.position.copy(playerPos);
     }
   }
-
   function bindRoamingControls() {
+    var btnDiorama = document.getElementById('btn-mode-diorama');
+    var btnDiorama = document.getElementById('btn-mode-diorama');
     var btnGod = document.getElementById('btn-mode-god');
     var btnWalk = document.getElementById('btn-mode-walk');
 
+    if (btnDiorama) btnDiorama.addEventListener('click', function () { switchViewMode('diorama'); });
     if (btnGod) btnGod.addEventListener('click', function () { switchViewMode('god'); });
     if (btnWalk) btnWalk.addEventListener('click', function () { switchViewMode('walk'); });
+
+    var btnScaleMini = document.getElementById('btn-scale-mini');
+    if (btnScaleMini) btnScaleMini.addEventListener('click', function () {
+      if (viewMode === 'walk') switchViewMode('diorama');
+      else setDioramaScale(0.28, true);
+    });
+
+    var btnScaleFull = document.getElementById('btn-scale-full');
+    if (btnScaleFull) btnScaleFull.addEventListener('click', function () {
+      if (viewMode === 'walk') switchViewMode('god');
+      else setDioramaScale(1.0, true);
+    });
+
+    var scaleSlider = document.getElementById('diorama-scale-slider');
+    if (scaleSlider) {
+      scaleSlider.addEventListener('input', function (e) {
+        var v = parseFloat(e.target.value);
+        if (viewMode === 'walk') switchViewMode('god');
+        setDioramaScale(v, false);
+      });
+    }
+
+    var btnScaleMini = document.getElementById('btn-scale-mini');
+    if (btnScaleMini) btnScaleMini.addEventListener('click', function () {
+      if (viewMode === 'walk') switchViewMode('diorama');
+      else setDioramaScale(0.28, true);
+    });
+
+    var btnScaleFull = document.getElementById('btn-scale-full');
+    if (btnScaleFull) btnScaleFull.addEventListener('click', function () {
+      if (viewMode === 'walk') switchViewMode('god');
+      else setDioramaScale(1.0, true);
+    });
+
+    var scaleSlider = document.getElementById('diorama-scale-slider');
+    if (scaleSlider) {
+      scaleSlider.addEventListener('input', function (e) {
+        var v = parseFloat(e.target.value);
+        if (viewMode === 'walk') switchViewMode('god');
+        setDioramaScale(v, false);
+      });
+    }
 
     var promptEl = document.getElementById('pavilion-seat-prompt');
     if (promptEl) {
@@ -4683,6 +5421,19 @@
 
       }
     });
+
+    // 狸奴 / 仙鹤拾取：区分「点选」与「拖拽环视」——按下与抬起位移小于 9px 且间隔小于 800ms 才视为点选
+    var critterTapX = 0, critterTapY = 0, critterTapT = 0;
+    canvas.addEventListener('pointerdown', function (e) {
+      critterTapX = e.clientX;
+      critterTapY = e.clientY;
+      critterTapT = performance.now();
+    }, { passive: true });
+    canvas.addEventListener('pointerup', function (e) {
+      if (Math.abs(e.clientX - critterTapX) > 9 || Math.abs(e.clientY - critterTapY) > 9) return;
+      if (performance.now() - critterTapT > 800) return;
+      pickCritterAt(e.clientX, e.clientY);
+    }, { passive: true });
 
     window.addEventListener('mousemove', function (e) {
       if (viewMode === 'walk') {
@@ -5231,19 +5982,22 @@
     elapsedTotal += dt;
 
     updateTween(now);
+    updateWaterReflection();
+    updateScaleAnimation(now);
+    if (!isAnimatingScale && viewMode !== "walk") syncDioramaScaleFromCamera();
     applyParams();
     updateWater(elapsedTotal);
     updateVegetation(dt, elapsedTotal);
     updateFish(dt, elapsedTotal);
     updateParticles(dt, elapsedTotal);
     updateCelestial();
-    if (viewMode === 'god') {
+    if (viewMode === 'god' || viewMode === 'diorama') {
       controls.update();
       clampView();
     } else if (viewMode === 'walk') {
       updateWalkMode(dt);
-
     }
+    updateCritterProximity();
     if (ssaoEnabled && ssaoRenderTarget && !isMobile) {
       renderer.setRenderTarget(ssaoRenderTarget);
       renderer.render(scene, camera);
@@ -5274,7 +6028,9 @@
 
   
   /* ---------------- 16.8 环境光遮蔽（SSAO 屏幕空间环境光遮蔽系统） ---------------- */
-  var ssaoEnabled = true;
+  // 环境光遮蔽默认关闭：该 pass 会在编译期触发 "gradient instruction used in a loop" 警告，
+  // 且实测是夜景整体压暗约四成的主因；保留代码与 window.setSSAO(true) 开关，默认不参与合成
+  var ssaoEnabled = false;
   var ssaoRenderTarget = null;
   var ssaoScene = null;
   var ssaoCamera = null;
@@ -5369,11 +6125,14 @@
         '',
         '  float ao = 0.0;',
         '  if (totalWeight > 0.0) {',
-        '    ao = clamp(pow((occ / float(SAMPLES)) * aoIntensity, aoPower), 0.0, 0.72);',
+        '    ao = clamp(pow((occ / float(SAMPLES)) * aoIntensity, aoPower), 0.0, 0.38);',
         '  }',
         '  vec3 aoTint = vec3(0.06, 0.08, 0.10);',
         '  vec3 result = mix(col.rgb * (1.0 - ao), aoTint, ao * 0.06);',
-        '  gl_FragColor = vec4(result, col.a);',
+        // 关键修正：场景先渲染进离屏 RT（线性、已做 ACES 色调映射），此合成 pass 必须再做 sRGB 编码，
+        // 否则整幅画面被按线性值直接输出，亮度被人为压掉一档（夜景因此接近全黑）
+        '  vec3 srgb = mix(result * 12.92, 1.055 * pow(max(result, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(vec3(0.0031308), result));',
+        '  gl_FragColor = vec4(srgb, col.a);',
         '}'
       ].join('\n');
 
@@ -5386,8 +6145,8 @@
           projInverse: { value: new THREE.Matrix4() },
           resolution: { value: new THREE.Vector2(w, h) },
           aoRadius: { value: 0.90 },
-          aoIntensity: { value: 1.25 },
-          aoPower: { value: 1.5 }
+          aoIntensity: { value: 0.52 },
+          aoPower: { value: 1.20 }
         },
         depthWrite: false,
         depthTest: false
@@ -5403,6 +6162,71 @@
   window.setSSAO = function (enabled) { ssaoEnabled = !!enabled; };
   window.setSSAORadius = function (r) { if (ssaoMaterial) ssaoMaterial.uniforms.aoRadius.value = r; };
   window.setSSAOIntensity = function (i) { if (ssaoMaterial) ssaoMaterial.uniforms.aoIntensity.value = i; };
+
+  
+  /* ---------------- 16.9 水面动态倒影与水波着色器系统 ---------------- */
+  var waterMirrorCam = null;
+  var waterReflectTarget = null;
+  var waterNormalTex = null;
+  var waterCustomShader = null;
+
+  function initWaterReflector() {
+    if (!renderer) return;
+    if (waterReflectTarget) waterReflectTarget.dispose();
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var rw = Math.floor(512 * dpr);
+    var rh = Math.floor(512 * dpr);
+
+    waterReflectTarget = new THREE.WebGLRenderTarget(rw, rh, {
+      minFilter: THREE.LinearFilter,
+      magFilter: THREE.LinearFilter,
+      format: THREE.RGBAFormat,
+      type: THREE.UnsignedByteType
+    });
+
+    waterMirrorCam = new THREE.PerspectiveCamera(50, 1, 0.1, 800);
+    waterNormalTex = waterNormalTexture();
+  }
+
+  function updateWaterReflection() {
+    if (!renderer || !waterMirrorCam || !waterReflectTarget || isMobile) return;
+    if (!water || !camera) return;
+
+    if (waterCustomShader && waterReflectTarget) {
+      waterCustomShader.uniforms.uReflectTexture.value = waterReflectTarget.texture;
+    }
+
+    var waterPlaneY = WATER_Y;
+    waterMirrorCam.position.copy(camera.position);
+    waterMirrorCam.position.y = 2.0 * waterPlaneY - camera.position.y;
+
+    var camDir = new THREE.Vector3();
+    camera.getWorldDirection(camDir);
+    var targetDist = 20.0;
+    var lookTarget = camera.position.clone().add(camDir.multiplyScalar(targetDist));
+    lookTarget.y = 2.0 * waterPlaneY - lookTarget.y;
+
+    waterMirrorCam.up.set(0, 1, 0);
+    waterMirrorCam.lookAt(lookTarget);
+    waterMirrorCam.fov = camera.fov;
+    waterMirrorCam.aspect = camera.aspect;
+    waterMirrorCam.near = camera.near;
+    waterMirrorCam.far = camera.far;
+    waterMirrorCam.updateProjectionMatrix();
+
+    water.visible = false;
+    if (streamWater) streamWater.visible = false;
+    if (eastStreamWater) eastStreamWater.visible = false;
+
+    renderer.setRenderTarget(waterReflectTarget);
+    renderer.render(scene, waterMirrorCam);
+    renderer.setRenderTarget(null);
+
+    water.visible = true;
+    if (streamWater) streamWater.visible = true;
+    if (eastStreamWater) eastStreamWater.visible = true;
+  }
 
   function createRenderer() {
     if (typeof THREE === 'undefined' || !THREE.WebGLRenderer) return null;
@@ -5438,7 +6262,8 @@
     { label: '筑起小飞虹石桥、九曲平桥、四面云墙与正门门楼…', run: function () { buildBridges(); buildWalls(); buildMainGate(); } },
     { label: '于殿堂后方平地叠筑狮子林假山奇峰与揽胜阁…', run: function () { buildLionRockeries(); } },
     { label: '系泊乌篷船与放养锦鲤…', run: function () { buildBoats(); buildFish(); } },
-    { label: '严格隔离植万竿修竹、垂柳春桃与荷花水生…', run: function () { buildVegetation(); buildPath(); } },
+    { label: '严格隔离植万竿修竹、垂柳春桃与荷花水生…', run: function () { buildVegetation(); buildPath(); buildEnvironmentalDetails(); buildDioramaPedestal(); } },
+    { label: '于假山石后、竹丛草间藏入狸奴与仙鹤…', run: function () { buildCritters(); } },
     { label: '点亮烟雨天光、夜月、飞花与夏夜流萤…', run: function () {
       buildSky();
       buildLights();
@@ -5477,6 +6302,7 @@
     scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0xcfe4f5, 0.0034);
     var stageEl = document.getElementById('stage');
+    initWaterReflector();
     initSSAO(stageEl ? stageEl.clientWidth : 1280, stageEl ? stageEl.clientHeight : 720);
     initParams();
 

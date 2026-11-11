@@ -11,10 +11,10 @@
     "visual_provider": null,
     "artifact_path": "../index.html",
     "artifact_path_base": "evidence-directory",
-    "captured_at": "2026-11-06T15:55:17.631Z",
+    "captured_at": "2026-11-11T03:53:09.085Z",
     "browser": "chrome.exe",
-    "contract_sha256": "409bc8244c7f13a4583ed8244464407560e7e7f059f4fc96c05cfc5f79e04ab5",
-    "artifact_sha256": "64bf4d3d8c66b962902df7c8bb426559d5261b2ad494972634f128a316c8d410",
+    "contract_sha256": "0a1f52ba193186d91de9c4b817940151be9f9fadc0eb967f85ae45bf00c39b95",
+    "artifact_sha256": "dc8b75b5c3497b184033acdcea9ababdd9df1723612d90cee7f392b9c74590f9",
     "media_manifest_sha256": null,
     "checks": {
       "structure": "passed",
@@ -51,8 +51,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       },
       {
@@ -77,8 +76,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       },
       {
@@ -103,8 +101,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       },
       {
@@ -129,8 +126,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       },
       {
@@ -155,8 +151,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       },
       {
@@ -181,8 +176,7 @@
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
           "libpng warning: iCCP: known incorrect sRGB profile",
-          "libpng warning: iCCP: known incorrect sRGB profile",
-          "DevTools listening on ws://127.0.0.1:52831/devtools/browser/28d5d7a3-d4bd-430a-b930-0417c65aeb07"
+          "DevTools listening on ws://127.0.0.1:59315/devtools/browser/cffc8ec3-bf69-4df9-b75b-b73701773258"
         ]
       }
     ],

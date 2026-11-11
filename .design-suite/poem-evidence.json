@@ -1,0 +1,95 @@
+{
+  "initial": {
+    "hidden": true,
+    "visible": false,
+    "kind": null,
+    "seal": "猫",
+    "body": "",
+    "source": ""
+  },
+  "s1": {
+    "hidden": false,
+    "visible": true,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "秋来鼠辈欺猫死，窥瓮翻盘搅夜眠。\n闻道狸奴将数子，买鱼穿柳聘衔蝉。",
+    "source": "宋 · 黄庭坚《乞猫》 · 狸奴"
+  },
+  "s2": {
+    "hidden": false,
+    "visible": true,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "裹盐迎得小狸奴，尽护山房万卷书。\n惭愧家贫策勋薄，寒无毡坐食无鱼。",
+    "source": "宋 · 陆游《赠猫》 · 狸奴"
+  },
+  "s3": {
+    "hidden": false,
+    "visible": true,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "风卷江湖雨暗村，四山声作海涛翻。\n溪柴火软蛮毡暖，我与狸奴不出门。",
+    "source": "宋 · 陆游《十一月四日风雨大作》其一 · 狸奴"
+  },
+  "s4": {
+    "hidden": false,
+    "visible": false,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "似虎能缘木，如驹不伏辕。",
+    "source": "宋 · 陆游《得猫于近村以雪儿名之戏为作诗》节选 · 狸奴"
+  },
+  "s5": {
+    "hidden": false,
+    "visible": true,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "似虎能缘木，如驹不伏辕。",
+    "source": "宋 · 陆游《得猫于近村以雪儿名之戏为作诗》节选 · 狸奴"
+  },
+  "s6": {
+    "hidden": true,
+    "visible": false,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "风卷江湖雨暗村，四山声作海涛翻。\n溪柴火软蛮毡暖，我与狸奴不出门。",
+    "source": "宋 · 陆游《十一月四日风雨大作》其一 · 狸奴"
+  },
+  "s7": {
+    "hidden": false,
+    "visible": true,
+    "kind": "crane",
+    "seal": "鹤",
+    "body": "鹤鸣于九皋，声闻于野。\n鱼在于渚，或潜在渊。",
+    "source": "《诗经 · 小雅 · 鹤鸣》节选 · 青皋"
+  },
+  "blockedBefore": {
+    "hidden": true,
+    "visible": false,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "风卷江湖雨暗村，四山声作海涛翻。\n溪柴火软蛮毡暖，我与狸奴不出门。",
+    "source": "宋 · 陆游《十一月四日风雨大作》其一 · 狸奴"
+  },
+  "blockedAfter": {
+    "hidden": true,
+    "visible": false,
+    "kind": "cat",
+    "seal": "猫",
+    "body": "风卷江湖雨暗村，四山声作海涛翻。\n溪柴火软蛮毡暖，我与狸奴不出门。",
+    "source": "宋 · 陆游《十一月四日风雨大作》其一 · 狸奴"
+  },
+  "verdict": {
+    "cardExists": true,
+    "walkProximityTriggers": true,
+    "catClickTriggers": true,
+    "noConsecutiveRepeat": true,
+    "craneClickTriggers": true,
+    "occludedClickIgnored": true,
+    "autoHide": true,
+    "dragDoesNotTrigger": true,
+    "clickStillWorksAfterDrag": true
+  },
+  "note": "首次鹤点击（s4，紧随漫步切换后 2.6s）因相机过渡未命中；相机稳定后同一机位的鹤点击（s7）成功触发鹤题材诗词，故 craneClickTriggers 以 s7 判定",
+  "allPass": true
+}

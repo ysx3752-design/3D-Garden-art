@@ -72,52 +72,7 @@ body {
   border: 1px solid rgba(34, 32, 29, 0.06);
 }
 
-/* 标题块：左侧留白，短标题 + 一行说明 */
-.titleblock {
-  position: absolute;
-  left: clamp(16px, 4vw, 64px);
-  top: clamp(18px, 6vh, 64px);
-  max-width: min(58vw, 430px);
-  pointer-events: none;
-}
-
-.titleblock h1 {
-  margin: 0 0 10px;
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  font-size: clamp(30px, 4.2vw, 74px);
-  line-height: 1.08;
-  letter-spacing: 0.02em;
-  overflow-wrap: anywhere;
-  text-shadow: 0 1px 0 rgba(247, 242, 232, 0.7);
-}
-
-.titleblock .lede {
-  margin: 0;
-  max-width: 34ch;
-  font-size: clamp(12px, 1.05vw, 14px);
-  line-height: 1.7;
-  color: var(--ink-soft);
-}
-
-.titleblock .seal {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 34px;
-  height: 28px;
-  padding: 0 6px;
-  margin-bottom: 12px;
-  border-radius: 3px;
-  background: var(--cinnabar);
-  color: #f7f2e8;
-  font-family: var(--font-editorial);
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  line-height: 1;
-  box-shadow: 0 2px 6px rgba(158, 47, 40, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+/* 页面标题与说明小字已按要求移除：左上角留白，只保留画面本身 */
 
 /* HUD 卡片：右上角固定，纸面底 + 细分隔线 */
 .hud {
@@ -789,22 +744,23 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* 窄屏重排：HUD 缩小、标题收拢，交互目标不低于 40px */
-/* ---------------- 漫游交互模式切换栏与全景导览 UI ---------------- */
+/* 窄屏重排：HUD 缩小，交互目标不低于 40px */
+/* ---------------- 漫游交互模式切换栏（左侧竖排）与全景导览 UI ---------------- */
 .view-switch-bar {
   position: absolute;
-  bottom: clamp(18px, 3.2vh, 36px);
-  left: 50%;
-  transform: translateX(-50%);
+  left: clamp(10px, 1.8vw, 24px);
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 6px;
-  padding: 5px 7px;
+  padding: 7px;
   background: rgba(247, 242, 232, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--line);
-  border-radius: 40px;
+  border-radius: 16px;
   box-shadow: 0 14px 36px -12px rgba(34, 32, 29, 0.45), 0 2px 6px rgba(34, 32, 29, 0.08);
   z-index: 25;
 }
@@ -812,11 +768,13 @@ a:focus-visible {
 .view-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 7px;
+  width: 100%;
   height: 36px;
-  padding: 0 14px;
+  padding: 0 13px 0 11px;
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: 11px;
   background: transparent;
   color: var(--ink);
   font-family: var(--font-editorial);
@@ -928,15 +886,17 @@ body[data-view="walk"] .walk-hud-tip {
 
 /* 窄屏响应式调整 */
 @media (max-width: 800px) {
-  .view-switch-bar {
-    bottom: 12px;
-    gap: 4px;
-    padding: 4px 6px;
+.view-switch-bar {
+    left: 8px;
+    gap: 5px;
+    padding: 6px;
+    border-radius: 13px;
   }
   .view-btn {
-    height: 32px;
+    height: 34px;
     padding: 0 10px;
     font-size: 12px;
+    gap: 6px;
   }
   .walk-hud-tip {
     font-size: 11px;
@@ -947,11 +907,7 @@ body[data-view="walk"] .walk-hud-tip {
 
 @media (max-width: 800px) {
   .frame { inset: 8px; }
-  /* 窄屏把标题移到底部左侧：HUD 展开时也不会与标题重叠 */
-  .titleblock { top: auto; bottom: 62px; left: 16px; max-width: min(66vw, 300px); }
-  .titleblock h1 { font-size: clamp(22px, 6.2vw, 30px); margin-bottom: 6px; }
-  .titleblock .seal { width: 24px; height: 24px; font-size: 14px; margin-bottom: 8px; }
-  .titleblock .lede { display: none; }
+
   .hud { font-size: 12px; padding: 11px 12px 12px; }
   .hud-temp { font-size: 22px; }
   .hud-weather-name { font-size: 17px; }
@@ -962,7 +918,6 @@ body[data-view="walk"] .walk-hud-tip {
 }
 
 @media (max-width: 380px) {
-  .titleblock { top: auto; bottom: 54px; left: 14px; max-width: 62vw; }
   .hud { padding: 10px 10px 11px; }
   .chip { min-width: 40px; padding: 0 8px; }
 }
@@ -1102,4 +1057,231 @@ body[data-view="walk"] .walk-hud-tip {
   background: #c84b31;
   border-color: #c84b31;
   transform: scale(1.05);
+}
+
+/* ---------------- 尺度缩放调节栏（微缩方格 <-> 1:1 当前大小无级滑块与快速切换） ---------------- */
+.diorama-scale-bar {
+  position: absolute;
+  bottom: clamp(66px, 9.2vh, 92px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(247, 242, 232, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  box-shadow: 0 12px 32px -10px rgba(34, 32, 29, 0.40), 0 2px 6px rgba(34, 32, 29, 0.06);
+  z-index: 24;
+  user-select: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+body[data-view="walk"] .diorama-scale-bar {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(12px);
+}
+
+.scale-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: rgba(34, 32, 29, 0.05);
+  color: var(--ink);
+  font-family: var(--font-editorial);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.scale-btn:hover {
+  background: rgba(158, 47, 40, 0.12);
+  color: var(--cinnabar);
+}
+
+.scale-btn.active {
+  background: var(--cinnabar);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(158, 47, 40, 0.35);
+}
+
+.scale-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scale-hint {
+  font-size: 11px;
+  font-family: var(--font-editorial);
+  color: #7a756b;
+  letter-spacing: 0.02em;
+}
+
+.scale-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: clamp(90px, 14vw, 140px);
+  height: 4px;
+  border-radius: 2px;
+  background: #cfc8b8;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scale-slider:hover {
+  background: #b5ac98;
+}
+
+.scale-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cinnabar);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.scale-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.scale-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cinnabar);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: none;
+}
+
+.scale-badge {
+  font-family: var(--font-editorial);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #5c5549;
+  min-width: 96px;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+/* ---------------- 狸奴 · 仙鹤的随机诗词卡 ---------------- */
+.poem-card {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(20px, 4vh, 44px);
+  transform: translate(-50%, 12px);
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  max-width: min(76vw, 430px);
+  padding: 13px 18px 12px 14px;
+  background: rgba(247, 242, 232, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px -14px rgba(34, 32, 29, 0.5), 0 2px 6px rgba(34, 32, 29, 0.08);
+  opacity: 0;
+  transition: opacity 320ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 26;
+}
+
+.poem-card.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.poem-seal {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 4px;
+  background: var(--cinnabar);
+  color: #f7f2e8;
+  font-family: var(--font-editorial);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.poem-card[data-kind="crane"] .poem-seal {
+  background: #3d5a50;
+}
+
+.poem-text {
+  min-width: 0;
+}
+
+.poem-body {
+  margin: 0;
+  font-family: var(--font-editorial);
+  font-size: clamp(14px, 1.15vw, 16.5px);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  white-space: pre-line;
+}
+
+.poem-source {
+  margin: 6px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.poem-close {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.poem-close:hover {
+  color: var(--cinnabar);
+}
+
+@media (max-width: 800px) {
+  .poem-card {
+    max-width: 84vw;
+    padding: 11px 14px 10px 11px;
+    bottom: 14px;
+    gap: 9px;
+  }
+  .poem-body {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .poem-seal {
+    width: 23px;
+    height: 23px;
+    font-size: 13px;
+  }
 }

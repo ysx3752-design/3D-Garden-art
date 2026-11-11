@@ -1,46 +1,46 @@
 [
   {
     "step": "initial(晴/清晨)",
-    "brightness": 113.75
+    "brightness": 84.9
   },
   {
     "step": "night t=0ms",
-    "brightness": 98.59
+    "brightness": 56.87
   },
   {
     "step": "night t=300ms",
-    "brightness": 87.71
+    "brightness": 56.79
   },
   {
     "step": "night t=600ms",
-    "brightness": 87.65
+    "brightness": 56.78
   },
   {
     "step": "night t=900ms",
-    "brightness": 87.63
+    "brightness": 56.78
   },
   {
     "step": "night t=1400ms(settled)",
-    "brightness": 87.63
+    "brightness": 56.79
   },
   {
     "step": "rain/night",
-    "brightness": 103.76
+    "brightness": 69.24
   },
   {
     "step": "rain/noon",
-    "brightness": 122.9
+    "brightness": 73.71
   },
   {
     "step": "snow/morning",
-    "brightness": 135.65
+    "brightness": 145.01
   },
   {
     "step": "fog/dusk",
-    "brightness": 134.04
+    "brightness": 81.69
   },
   {
     "step": "sunny/noon",
-    "brightness": 146.56
+    "brightness": 94.07
   }
 ]
